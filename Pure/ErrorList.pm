@@ -8,13 +8,6 @@ use strict;
 # Modules.
 use Error::Pure qw(_err);
 use Error::Pure::Output::Text qw(err_bt_simple);
-use Exporter;
-
-# Export.
-our @EXPORT = qw(err);
-
-# Inheritance.
-our @ISA = qw(Exporter);
 
 # Version.
 our $VERSION = 0.01;

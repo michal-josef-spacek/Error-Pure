@@ -7,13 +7,6 @@ use strict;
 
 # Modules.
 use Error::Pure qw(_err);
-use Exporter;
-
-# Export.
-our @EXPORT = qw(err);
-
-# Inheritance.
-our @ISA = qw(Exporter);
 
 # Version.
 our $VERSION = 0.01;
