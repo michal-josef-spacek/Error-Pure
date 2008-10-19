@@ -32,10 +32,6 @@ our $program = '';       # Program name in stack information.
 # Constants.
 use constant EVAL => 'eval {...}';
 
-BEGIN {
-        *CORE::GLOBAL::die = \&err;
-}
-
 #------------------------------------------------------------------------------
 sub err(@) {
 #------------------------------------------------------------------------------
@@ -116,7 +112,7 @@ sub _get_stack(;$) {
 		# Other transformation.
 		} else {
 			$sub =~ s/^$class\:\:([^:]+)$/$1/g;
-			$sub = 'err' if $sub =~ /^Error::Simple::(.*)err$/;
+			$sub = 'die' if $sub =~ /^Error::Pure::(.*)err$/;
 			$prog = $program if $program && $prog =~ /^\(eval/;
 		}
 
@@ -162,5 +158,9 @@ sub _get_stack(;$) {
 	# Stack.
 	return \@stack;
 } 
+
+BEGIN {
+        *CORE::GLOBAL::die = \&err;
+}
 
 1;
