@@ -7,13 +7,6 @@ use strict;
 
 # Modules.
 use Error::Pure qw();
-use Exporter;
-
-# Export.
-our @EXPORT = qw(err);
-
-# Inheritance.
-our @ISA = qw(Exporter);
 
 # Version.
 our $VERSION = 0.01;
@@ -34,7 +27,11 @@ sub err(@) {
 	my $class = $type ? 'Error::Pure::'.$type : 'Error::Pure';
 	eval "require $class";
 	eval $class."::err \@msg";
-	die $@ if $@;
+	CORE::die $@ if $@;
+}
+
+BEGIN {
+        *CORE::GLOBAL::die = \&err;
 }
 
 1;
