@@ -43,4 +43,8 @@ sub err(@) {
 	}
 }
 
+BEGIN {
+        *CORE::GLOBAL::die = \&err;
+}
+
 1;
