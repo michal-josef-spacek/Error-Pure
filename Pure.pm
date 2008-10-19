@@ -32,6 +32,9 @@ our $program = '';       # Program name in stack information.
 # Constants.
 use constant EVAL => 'eval {...}';
 
+# Ignore die signal.
+$SIG{__DIE__} = 'IGNORE';
+
 #------------------------------------------------------------------------------
 sub err(@) {
 #------------------------------------------------------------------------------
