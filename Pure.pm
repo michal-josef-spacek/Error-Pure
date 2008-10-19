@@ -12,14 +12,14 @@ use Exporter;
 use vars qw/@errors/;
 
 # Export.
-our @EXPORT = qw(err err_get);
+our @EXPORT = qw(err_get);
 our @EXPORT_OK = qw(_err);
 
 # Inheritance.
 our @ISA = qw(Exporter);
 
 # Version.
-our $VERSION = 0.05;
+our $VERSION = 0.01;
 
 # Default initialization.
 our $level = 2;
