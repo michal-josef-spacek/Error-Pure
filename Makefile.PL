@@ -5,8 +5,8 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
 	'NAME' => 'Error::Pure',
 	'PREREQ_PM' => {
-#		'Exporter' => 0,
-#		'Data::Compare' => 0,
+		'Exporter' => 0,
+		'Readonly' => 0,
 	},
 	'VERSION' => 0.01,
 );
