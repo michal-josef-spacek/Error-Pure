@@ -7,6 +7,9 @@ use base qw(Exporter);
 use strict;
 use warnings;
 
+# Modules.
+use Readonly;
+
 # Global variables.
 use vars qw/@errors/;
 
