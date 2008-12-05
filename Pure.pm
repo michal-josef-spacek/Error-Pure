@@ -3,23 +3,24 @@ package Error::Pure;
 #------------------------------------------------------------------------------
 
 # Pragmas.
+use base qw(Exporter);
 use strict;
-
-# Modules.
-use Exporter;
+use warnings;
 
 # Global variables.
 use vars qw/@errors/;
 
 # Export.
-our @EXPORT = qw(err_get);
+our @EXPORT = qw(clean err_get);
 our @EXPORT_OK = qw(_err);
-
-# Inheritance.
-our @ISA = qw(Exporter);
 
 # Version.
 our $VERSION = 0.01;
+
+# Constants.
+Readonly::Scalar my $EMPTY => q{};
+Readonly::Scalar my $EVAL => 'eval {...}';
+Readonly::Scalar my $DOTS => '...';
 
 # Default initialization.
 our $level = 2;
@@ -27,13 +28,19 @@ our $max_levels = 50;
 our $max_eval = 100;
 our $max_args = 10;
 our $max_arg_len = 50;
-our $program = '';       # Program name in stack information.
-
-# Constants.
-use constant EVAL => 'eval {...}';
+our $program = $EMPTY;       # Program name in stack information.
 
 # Ignore die signal.
 $SIG{__DIE__} = 'IGNORE';
+
+#------------------------------------------------------------------------------
+sub clean {
+#------------------------------------------------------------------------------
+# Clean internal structure.
+
+	@errors = ();
+	return;
+}
 
 #------------------------------------------------------------------------------
 sub err(@) {
@@ -53,7 +60,7 @@ sub err_get(;$) {
 
 	my $clean = shift;
 	my @ret = @errors;
-	@errors = () unless $clean;
+	clean() if $clean;
 	return wantarray ? @ret : \@ret;
 }
 
@@ -90,7 +97,7 @@ sub _get_stack(;$) {
 	my @stack;
 	my $tmp_level = $level;
 	my ($class, $prog, $line, $sub, $hargs, $evaltext, $is_require);
-	while ($tmp_level < $max_level 
+	while ($tmp_level < $max_level
 		&& do { package DB; ($class, $prog, $line, $sub, $hargs,
 		undef, $evaltext, $is_require) = caller($tmp_level++); }) {
 
@@ -99,33 +106,35 @@ sub _get_stack(;$) {
 			if ($is_require) {
 				$sub = "require $evaltext";
 			} else {
-				$evaltext =~ s/([\\\'])/\\$1/g;
-				if ($max_eval 
+				$evaltext =~ s/\n;//sm;
+				$evaltext =~ s/([\'])/\\$1/gsm;
+				if ($max_eval
 					&& length($evaltext) > $max_eval) {
 
-					substr($evaltext, $max_eval) = '...';
+					substr($evaltext, $max_eval, -1,
+						$DOTS);
 				}
 				$sub = "eval '$evaltext'";
 			}
 
 		# My eval name.
 		} elsif ($sub eq '(eval)') {
-			$sub = EVAL;
+			$sub = $EVAL;
 
 		# Other transformation.
 		} else {
-			$sub =~ s/^$class\:\:([^:]+)$/$1/g;
-			$sub = 'die' if $sub =~ /^Error::Pure::(.*)err$/;
-			$prog = $program if $program && $prog =~ /^\(eval/;
+			$sub =~ s/^$class\:\:([^:]+)$/$1/gsmx;
+			$sub = 'err' if $sub =~ /^Error::Simple::(.*)err$/smx;
+			$prog = $program if $program && $prog =~ /^\(eval/sm;
 		}
 
 		# Args.
-		my $i_args = '';
+		my $i_args = $EMPTY;
 		if ($hargs) {
 			my @args = @DB::args;
 			if ($max_args && $#args > $max_args) {
 				$#args = $max_args;
-				$args[-1] = '...';
+				$args[-1] = $DOTS;
 			}
 
 			# Get them all.
@@ -134,21 +143,21 @@ sub _get_stack(;$) {
 				if (ref $_) {
 
 					# Force string representation.
-					$_ .= '';
+					$_ .= $EMPTY;
 				}
-				s/'/\\'/g;
+				s/'/\\'/gsm;
 				if ($max_arg_len && length > $max_arg_len) {
-					substr($_, $max_arg_len) = '...';
+					substr($_, $max_arg_len, -1, $DOTS);
 				}
 
 				# Quote (not for numbers).
-				$_ = "'$_'" unless /^-?[\d.]+$/;
+				$_ = "'$_'" unless /^-?[\d.]+$/sm;
 			}
 			$i_args = '('.join(', ', @args).')';
 		}
 
 		# Information to stack.
-		$sub =~ s/\n//;
+		$sub =~ s/\n$//sm;
 		push @stack, {
 			'class' => $class,
 			'prog' => $prog,
