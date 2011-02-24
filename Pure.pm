@@ -65,7 +65,9 @@ sub err_get {
 
 	my $clean = shift;
 	my @ret = @errors;
-	clean() if $clean;
+	if ($clean) {
+		clean();
+	}
 	return wantarray ? @ret : \@ret;
 }
 
@@ -129,8 +131,12 @@ sub _get_stack {
 		# Other transformation.
 		} else {
 			$sub =~ s/^$class\:\:([^:]+)$/$1/gsmx;
-			$sub = 'err' if $sub =~ /^Error::Simple::(.*)err$/smx;
-			$prog = $program if $program && $prog =~ /^\(eval/sm;
+			if ($sub =~ /^Error::Pure::(.*)err$/smx) {
+				$sub = 'err';
+			}
+			if ($program && $prog =~ /^\(eval/sm) {
+				$prog = $program;
+			}
 		}
 
 		# Args.
@@ -156,7 +162,9 @@ sub _get_stack {
 				}
 
 				# Quote (not for numbers).
-				$_ = "'$_'" unless /^-?[\d.]+$/sm;
+				if (! m/^-?[\d.]+$/sm) {
+					$_ = "'$_'";
+				}
 			}
 			$i_args = '('.join(', ', @args).')';
 		}
