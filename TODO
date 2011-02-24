@@ -3,7 +3,8 @@ TODO
 1. Multiple nefunguje dobre.
 2. die odchytnute eval vraci divnou strukturu (message by melo byt bez newline).
 3. Projit oproti Error::Simple a poopravovat.
-4.
+4. Dokumentace.
+5.
 
 Applied
 =======
