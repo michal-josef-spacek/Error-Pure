@@ -10,20 +10,17 @@ use warnings;
 # Modules.
 use Readonly;
 
-# Global variables.
-use vars qw/@errors/;
-
-# Export.
-our @EXPORT = qw(clean err_get);
-our @EXPORT_OK = qw(_err);
+# Constants.
+Readonly::Array our @EXPORT_OK => qw(clean err err_get err_helper);
+Readonly::Scalar my $EMPTY => q{};
+Readonly::Scalar my $EVAL => 'eval {...}';
+Readonly::Scalar my $DOTS => '...';
 
 # Version.
 our $VERSION = 0.01;
 
-# Constants.
-Readonly::Scalar my $EMPTY => q{};
-Readonly::Scalar my $EVAL => 'eval {...}';
-Readonly::Scalar my $DOTS => '...';
+# Errors array.
+our @ERRORS;
 
 # Default initialization.
 our $level = 2;
@@ -41,7 +38,7 @@ sub clean {
 #------------------------------------------------------------------------------
 # Clean internal structure.
 
-	@errors = ();
+	@ERRORS = ();
 	return;
 }
 
@@ -52,8 +49,8 @@ sub err {
 
 	my @args = @_;
 	my $msg = \@args;
-	my $errors = _err($msg);
-	my $tmp = $errors->[-1]->{'stack'}->[0];
+	my $ERRORS = _err($msg);
+	my $tmp = $ERRORS->[-1]->{'stack'}->[0];
 	CORE::die $msg->[0]." at $tmp->{'prog'} line $tmp->{'line'}.\n";
 	return;
 }
@@ -64,7 +61,7 @@ sub err_get {
 # Get and clean processed errors.
 
 	my $clean = shift;
-	my @ret = @errors;
+	my @ret = @ERRORS;
 	if ($clean) {
 		clean();
 	}
@@ -72,28 +69,28 @@ sub err_get {
 }
 
 #------------------------------------------------------------------------------
-# Private functions.
-#------------------------------------------------------------------------------
-
-#------------------------------------------------------------------------------
-sub _err {
+sub err_helper {
 #------------------------------------------------------------------------------
 # Process error without die.
 
-	my $msg = shift;
+	my $msg_ar = shift;
 	my $stack = [];
 
 	# Get calling stack.
 	$stack = _get_stack();
 
 	# Create errors message.
-	push @errors, {
-		'msg' => $msg,
+	push @ERRORS, {
+		'msg' => $msg_ar,
 		'stack' => $stack,
 	};
 
-	return \@errors;
+	return \@ERRORS;
 }
+
+#------------------------------------------------------------------------------
+# Private functions.
+#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 sub _get_stack {
