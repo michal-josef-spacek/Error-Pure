@@ -4,12 +4,13 @@ package Error::Pure::Clean;
 
 # Pragmas.
 use strict;
+use warnings;
 
 # Version.
 our $VERSION = 0.01;
 
 #------------------------------------------------------------------------------
-sub clean($$) {
+sub clean {
 #------------------------------------------------------------------------------
 # Remove call stack after value.
 
@@ -38,6 +39,7 @@ sub clean($$) {
 		}
 	}
 	$errors->{'stack'} = \@arr;
+	return;
 }
 
 1;

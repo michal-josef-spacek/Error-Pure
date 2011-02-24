@@ -4,6 +4,7 @@ package Error::Pure::Multiple;
 
 # Pragmas.
 use strict;
+use warnings;
 
 # Modules.
 use Error::Pure qw();
@@ -21,7 +22,7 @@ our $level = 4;
 $SIG{__DIE__} = 'IGNORE';
 
 #------------------------------------------------------------------------------
-sub err(@) {
+sub err {
 #------------------------------------------------------------------------------
 # Process error.
 
@@ -30,7 +31,9 @@ sub err(@) {
 	my $class = $type ? 'Error::Pure::'.$type : 'Error::Pure';
 	eval "require $class";
 	eval $class."::err \@msg";
-	CORE::die "$@" if $@;
+	if ($@) {
+		CORE::die "$@";
+	}
 }
 
 BEGIN {

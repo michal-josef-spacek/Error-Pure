@@ -4,6 +4,7 @@ package Error::Pure::Print;
 
 # Pragmas.
 use strict;
+use warnings;
 
 # Modules.
 use Error::Pure qw(_err);
@@ -15,7 +16,7 @@ our $VERSION = 0.01;
 $SIG{__DIE__} = 'IGNORE';
 
 #------------------------------------------------------------------------------
-sub err(@) {
+sub err {
 #------------------------------------------------------------------------------
 # Process error.
 
