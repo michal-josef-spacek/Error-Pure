@@ -4,10 +4,15 @@ TODO
 2. die odchytnute eval vraci divnou strukturu (message by melo byt bez newline).
 3. Projit oproti Error::Simple a poopravovat.
 4. Dokumentace.
-5. Nefunguje nahrada die globalne (v pripade, ze mam vkladany modul ve stejnem souboru)
-6. Nefunguje nahrada die globalne (Malo veci se stacku), kdyz je modul vkladani
-   z externiho souboru.
 7.
 
 Applied
 =======
+6. Nefunguje nahrada die globalne (Malo veci se stacku), kdyz je modul vkladani
+   z externiho souboru.
+Error trida musi byt nahrana nazacatku pred nactenim ostatnich knihoven.
+OK [20110225] skim
+
+5. Nefunguje nahrada die globalne (v pripade, ze mam vkladany modul ve stejnem souboru)
+Error trida musi byt nahrana nazacatku pred nactenim ostatnich knihoven.
+OK [20110225] skim
