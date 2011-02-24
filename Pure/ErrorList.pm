@@ -7,7 +7,7 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure qw(_err);
+use Error::Pure qw(err_helper);
 use Error::Pure::Output::Text qw(err_bt_simple);
 
 # Version.
@@ -25,7 +25,7 @@ sub err {
 	my $msg = \@_;
 
 	# Errors.
-	my $errors = Error::Pure::_err($msg);
+	my $errors = err_helper($msg);
 
 	# Finalize in main on last err.
 	my $stack = $errors->[-1]->{'stack'};

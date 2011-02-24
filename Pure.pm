@@ -49,7 +49,7 @@ sub err {
 
 	my @args = @_;
 	my $msg = \@args;
-	my $ERRORS = _err($msg);
+	my $ERRORS = err_helper($msg);
 	my $tmp = $ERRORS->[-1]->{'stack'}->[0];
 	CORE::die $msg->[0]." at $tmp->{'prog'} line $tmp->{'line'}.\n";
 	return;
