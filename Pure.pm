@@ -48,10 +48,10 @@ sub err {
 # Process error.
 
 	my @args = @_;
-	my $msg = \@args;
-	my $ERRORS = err_helper($msg);
+	my $msg_ar = \@args;
+	my $ERRORS = err_helper($msg_ar);
 	my $tmp = $ERRORS->[-1]->{'stack'}->[0];
-	CORE::die $msg->[0]." at $tmp->{'prog'} line $tmp->{'line'}.\n";
+	CORE::die $msg_ar->[0]." at $tmp->{'prog'} line $tmp->{'line'}.\n";
 	return;
 }
 
