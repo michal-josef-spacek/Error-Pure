@@ -39,6 +39,7 @@ sub err {
 }
 
 BEGIN {
+	no warnings qw(redefine);
         *CORE::GLOBAL::die = \&err;
 }
 

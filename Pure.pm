@@ -182,6 +182,7 @@ sub _get_stack {
 }
 
 BEGIN {
+	no warnings qw(redefine);
         *CORE::GLOBAL::die = \&err;
 }
 
