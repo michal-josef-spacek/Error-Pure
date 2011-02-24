@@ -3,10 +3,9 @@ package Error::Pure::Output::Text;
 #------------------------------------------------------------------------------
 
 # Pragmas.
+use base qw(Exporter);
 use strict;
-
-# Modules.
-use Exporter;
+use warnings;
 
 # Export.
 our @EXPORT = qw(err_bt_pretty err_bt_simple err_pretty);
@@ -15,10 +14,10 @@ our @EXPORT = qw(err_bt_pretty err_bt_simple err_pretty);
 our @ISA = qw(Exporter);
 
 # Version.
-our $VERSION = 0.03;
+our $VERSION = 0.01;
 
 #------------------------------------------------------------------------------
-sub err_bt_pretty($) {
+sub err_bt_pretty {
 #------------------------------------------------------------------------------
 # Pretty print of backtrace.
 
@@ -31,7 +30,9 @@ sub err_bt_pretty($) {
 		while (my ($f, $t) = (shift @{$error->{'msg'}}, 
 			shift @{$error->{'msg'}})) {
 
-			last unless defined $f;
+			if (! defined $f) {
+				last;
+			}
 			$ret .= $f.': '.$t."\n";
 		}
 		for (my $i = 0; $i <= $#{$error->{'stack'}}; $i++) {
@@ -50,7 +51,7 @@ sub err_bt_pretty($) {
 }
 
 #------------------------------------------------------------------------------
-sub err_bt_simple($) {
+sub err_bt_simple {
 #------------------------------------------------------------------------------
 # Line print of backtrace.
 
@@ -63,7 +64,7 @@ sub err_bt_simple($) {
 }
 
 #------------------------------------------------------------------------------
-sub err_pretty($) {
+sub err_pretty {
 #------------------------------------------------------------------------------
 # Pretty print line error.
 
@@ -76,7 +77,7 @@ sub err_pretty($) {
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-sub _lenghts($) {
+sub _lenghts {
 #------------------------------------------------------------------------------
 # Gets length for errors.
 
@@ -102,7 +103,7 @@ sub _lenghts($) {
 }
 
 #------------------------------------------------------------------------------
-sub _err_line($) {
+sub _err_line {
 #------------------------------------------------------------------------------
 # Pretty print line error.
 
