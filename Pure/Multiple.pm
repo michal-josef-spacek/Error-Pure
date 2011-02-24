@@ -39,7 +39,7 @@ sub err {
 	eval "require $class";
 	eval $class.'::err @msg';
 	if ($EVAL_ERROR) {
-		CORE::die "$@";
+		CORE::die $EVAL_ERROR;
 	}
 	return;
 }

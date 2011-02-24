@@ -3,12 +3,19 @@ package Error::Pure::AllError;
 #------------------------------------------------------------------------------
 
 # Pragmas.
+use base qw(Exporter);
 use strict;
 use warnings;
 
 # Modules.
 use Error::Pure qw(err_helper);
 use Error::Pure::Output::Text qw(err_bt_pretty);
+use List::MoreUtils qw(none);
+use Readonly;
+
+# Constants.
+Readonly::Array our @EXPORT_OK => qw(err);
+Readonly::Scalar my $EVAL => 'eval {...}';
 
 # Version.
 our $VERSION = 0.01;
@@ -21,21 +28,26 @@ sub err {
 #------------------------------------------------------------------------------
 # Process error.
 
-	my $msg = \@_;
-	my $errors = err_helper($msg);
+	my @msg = @_;
+
+	# Get errors structure.
+	my $errors_ar = err_helper(\@msg);
 
 	# Finalize in main on last err.
-	my $stack = $errors->[-1]->{'stack'};
-	if ($stack->[-1]->{'class'} eq 'main'
-		&& ! grep({ $_ eq 'eval {...}' || $_ =~ /^eval '/} 
-		map { $_->{'sub'} } @{$stack})) {
+	my $stack_ar = $errors_ar->[-1]->{'stack'};
+	if ($stack_ar->[-1]->{'class'} eq 'main'
+		&& none { $_ eq $EVAL || $_ =~ /^eval '/ms }
+		map { $_->{'sub'} } @{$stack_ar}) {
 
-		CORE::die Error::Pure::Output::Text::err_bt_pretty($errors);
+		CORE::die err_bt_pretty($errors_ar);
 
 	# Die for eval.
 	} else {
-		CORE::die "$msg->[0]\n";
+		my $e = $errors_ar->[-1]->{'msg'}->[0];
+		chomp $e;
+		CORE::die "$e\n";
 	}
+	return;
 }
 
 BEGIN {
