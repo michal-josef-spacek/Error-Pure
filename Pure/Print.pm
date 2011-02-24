@@ -21,7 +21,7 @@ sub err {
 # Process error.
 
 	my $msg = \@_;
-	my $errors = err_helper($msg);
+	my $errors = err_helper(@{$msg});
 
 	# Finalize in main on last err.
 	my $stack = $errors->[-1]->{'stack'};

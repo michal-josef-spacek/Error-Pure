@@ -49,7 +49,7 @@ sub err {
 
 	my @args = @_;
 	my $msg_ar = \@args;
-	my $ERRORS = err_helper($msg_ar);
+	my $ERRORS = err_helper(@{$msg_ar});
 	my $tmp = $ERRORS->[-1]->{'stack'}->[0];
 	CORE::die $msg_ar->[0]." at $tmp->{'prog'} line $tmp->{'line'}.\n";
 	return;
@@ -73,7 +73,7 @@ sub err_helper {
 #------------------------------------------------------------------------------
 # Process error without die.
 
-	my $msg_ar = shift;
+	my @msg = @_;
 	my $stack = [];
 
 	# Get calling stack.
@@ -81,7 +81,7 @@ sub err_helper {
 
 	# Create errors message.
 	push @ERRORS, {
-		'msg' => $msg_ar,
+		'msg' => \@msg,
 		'stack' => $stack,
 	};
 
@@ -203,7 +203,7 @@ Error::Pure - Perl module for structured errors.
  use Error::Pure qw(err err_get err_helper);
  err 'This is a fatal error', 'name', 'value';
  my @ret = err_get(1);
- my $errors = err_helper(['This is a fatal error', 'name', 'value']);
+ my $errors_ar = err_helper('This is a fatal error', 'name', 'value');
 
 =head1 SUBROUTINES
 
@@ -226,10 +226,10 @@ Error::Pure - Perl module for structured errors.
  In scalar mode return reference to array of errors.
  Exportable as default.
 
-=item B<err_helper($msg_ar)>
+=item B<err_helper(@msg)>
 
  Subroutine for additional classes above Error::Pure. Is exportable.
- $msg is reference to array of messages.
+ @msg is array of messages.
 
 =back
 
