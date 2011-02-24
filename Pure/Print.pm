@@ -30,8 +30,12 @@ sub err {
 		map { $_->{'sub'} } @{$stack})) {
 
 		my $class = $errors->[-1]->{'stack'}->[0]->{'class'};
-		$class = '' if $class eq 'main';
-		$class .= ': ' if $class;
+		if ($class eq 'main') {
+			$class = '';
+		}
+		if ($class) {
+			$class .= ': ';
+		}
 		CORE::die $class."$msg->[0]\n";
 
 	# Die for eval.
