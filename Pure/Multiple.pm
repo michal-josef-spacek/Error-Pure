@@ -30,7 +30,7 @@ sub err(@) {
 	my $class = $type ? 'Error::Pure::'.$type : 'Error::Pure';
 	eval "require $class";
 	eval $class."::err \@msg";
-	CORE::die $@ if $@;
+	CORE::die "$@" if $@;
 }
 
 BEGIN {
