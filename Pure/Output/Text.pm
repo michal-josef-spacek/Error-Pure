@@ -10,9 +10,6 @@ use warnings;
 # Export.
 our @EXPORT = qw(err_bt_pretty err_bt_simple err_pretty);
 
-# Inheritance.
-our @ISA = qw(Exporter);
-
 # Version.
 our $VERSION = 0.01;
 
