@@ -8,27 +8,30 @@ use strict;
 use warnings;
 
 # Modules.
+use Cwd qw(abs_path);
+use List::MoreUtils qw(none);
 use Readonly;
-
-# Constants.
-Readonly::Array our @EXPORT_OK => qw(clean err err_get err_helper);
-Readonly::Scalar my $EMPTY => q{};
-Readonly::Scalar my $EVAL => 'eval {...}';
-Readonly::Scalar my $DOTS => '...';
 
 # Version.
 our $VERSION = 0.01;
+
+# Constants.
+Readonly::Array our @EXPORT_OK => qw(clean err err_get err_helper);
+Readonly::Scalar my $DOTS => '...';
+Readonly::Scalar my $EMPTY_STR => q{};
+Readonly::Scalar my $EVAL => 'eval {...}';
+Readonly::Scalar my $UNDEF => 'undef';
 
 # Errors array.
 our @ERRORS;
 
 # Default initialization.
-our $level = 2;
-our $max_levels = 50;
-our $max_eval = 100;
-our $max_args = 10;
-our $max_arg_len = 50;
-our $program = $EMPTY;       # Program name in stack information.
+our $LEVEL = 2;
+our $MAX_LEVELS = 50;
+our $MAX_EVAL = 100;
+our $MAX_ARGS = 10;
+our $MAX_ARG_LEN = 50;
+our $PROGRAM = $EMPTY_STR;       # Program name in stack information.
 
 # Ignore die signal.
 $SIG{__DIE__} = 'IGNORE';
@@ -47,12 +50,27 @@ sub err {
 #------------------------------------------------------------------------------
 # Process error.
 
-	my @args = @_;
-	my $msg_ar = \@args;
-	my $ERRORS = err_helper(@{$msg_ar});
-	my $tmp = $ERRORS->[-1]->{'stack'}->[0];
-	CORE::die $msg_ar->[0]." at $tmp->{'prog'} line $tmp->{'line'}.\n";
-	return;
+	my @msg = @_;
+
+	# Get errors structure.
+	my $errors_ar = err_helper(\@msg);
+
+	# Error message.
+	my $e = $errors_ar->[-1]->{'msg'}->[0];
+	chomp $e;
+
+	my $stack_ar = $errors_ar->[-1]->{'stack'};
+	if ($stack_ar->[-1]->{'class'} eq 'main'
+		&& none { $_ eq $EVAL || $_ =~ /^eval '/ms }
+		map { $_->{'sub'} } @{$stack_ar}) {
+
+		die "$e at $stack_ar->[0]->{'prog'} line ".
+			"$stack_ar->[0]->{'line'}.\n";
+
+	# Die for eval.
+	} else {
+		die "$e\n";
+	}
 }
 
 #------------------------------------------------------------------------------
@@ -76,6 +94,13 @@ sub err_helper {
 	my @msg = @_;
 	my $stack = [];
 
+	# Check to undefined values in @msg.
+	for (my $i = 0; $i < @msg; $i++) {
+		if (! defined $msg[$i]) {
+			$msg[$i] = $UNDEF;
+		}
+	}
+
 	# Get calling stack.
 	$stack = _get_stack();
 
@@ -92,18 +117,22 @@ sub err_helper {
 # Private functions.
 #------------------------------------------------------------------------------
 
+
 #------------------------------------------------------------------------------
 sub _get_stack {
 #------------------------------------------------------------------------------
 # Get information about place of error.
 
-	my $max_level = shift || $max_levels;
+	my $max_level = shift || $MAX_LEVELS;
 	my @stack;
-	my $tmp_level = $level;
+	my $tmp_level = $LEVEL;
 	my ($class, $prog, $line, $sub, $hargs, $evaltext, $is_require);
 	while ($tmp_level < $max_level
 		&& do { package DB; ($class, $prog, $line, $sub, $hargs,
 		undef, $evaltext, $is_require) = caller($tmp_level++); }) {
+
+		# Prog to absolute path.
+		$prog = abs_path($prog);
 
 		# Sub name.
 		if (defined $evaltext) {
@@ -112,10 +141,10 @@ sub _get_stack {
 			} else {
 				$evaltext =~ s/\n;//sm;
 				$evaltext =~ s/([\'])/\\$1/gsm;
-				if ($max_eval
-					&& length($evaltext) > $max_eval) {
+				if ($MAX_EVAL
+					&& length($evaltext) > $MAX_EVAL) {
 
-					substr($evaltext, $max_eval, -1,
+					substr($evaltext, $MAX_EVAL, -1,
 						$DOTS);
 				}
 				$sub = "eval '$evaltext'";
@@ -128,46 +157,49 @@ sub _get_stack {
 		# Other transformation.
 		} else {
 			$sub =~ s/^$class\:\:([^:]+)$/$1/gsmx;
-			if ($sub =~ /^Error::Pure::(.*)err$/smx) {
+			if ($sub =~ m/^Error::Pure::(.*)err$/smx) {
 				$sub = 'err';
 			}
-			if ($program && $prog =~ /^\(eval/sm) {
-				$prog = $program;
+			if ($PROGRAM && $prog =~ m/^\(eval/sm) {
+				$prog = $PROGRAM;
 			}
 		}
 
 		# Args.
-		my $i_args = $EMPTY;
+		my $i_args = $EMPTY_STR;
 		if ($hargs) {
 			my @args = @DB::args;
-			if ($max_args && $#args > $max_args) {
-				$#args = $max_args;
+			if ($MAX_ARGS && $#args > $MAX_ARGS) {
+				$#args = $MAX_ARGS;
 				$args[-1] = $DOTS;
 			}
 
 			# Get them all.
-			foreach (@args) {
-				$_ = 'undef', next unless defined $_;
-				if (ref $_) {
+			foreach my $arg (@args) {
+				if (! defined $arg) {
+					$arg = 'undef';
+					next;
+				}
+				if (ref $arg) {
 
 					# Force string representation.
-					$_ .= $EMPTY;
+					$arg .= $EMPTY_STR;
 				}
-				s/'/\\'/gsm;
-				if ($max_arg_len && length > $max_arg_len) {
-					substr($_, $max_arg_len, -1, $DOTS);
+				$arg =~ s/'/\\'/gms;
+				if ($MAX_ARG_LEN && length $arg> $MAX_ARG_LEN) {
+					substr $arg, $MAX_ARG_LEN, -1, $DOTS;
 				}
 
 				# Quote (not for numbers).
-				if (! m/^-?[\d.]+$/sm) {
-					$_ = "'$_'";
+				if ($arg !~ m/^-?[\d.]+$/ms) {
+					$arg = "'$arg'";
 				}
 			}
-			$i_args = '('.join(', ', @args).')';
+			$i_args = '('.(join ', ', @args).')';
 		}
 
 		# Information to stack.
-		$sub =~ s/\n$//sm;
+		$sub =~ s/\n$//ms;
 		push @stack, {
 			'class' => $class,
 			'prog' => $prog,
