@@ -5,7 +5,10 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
 	'NAME' => 'Error::Pure',
 	'PREREQ_PM' => {
+		'Cwd' => 0,
+		'English' => 0,
 		'Exporter' => 0,
+		'List::MoreUtils' => 0,
 		'Readonly' => 0,
 	},
 	'VERSION' => 0.01,
