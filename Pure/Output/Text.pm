@@ -5,8 +5,11 @@ use base qw(Exporter);
 use strict;
 use warnings;
 
-# Export.
-our @EXPORT = qw(err_bt_pretty err_bt_simple err_pretty);
+# Modules.
+use Readonly;
+
+# Constants.
+Readonly::Array our @EXPORT => qw(err_bt_pretty err_bt_simple err_pretty);
 
 # Version.
 our $VERSION = 0.01;
