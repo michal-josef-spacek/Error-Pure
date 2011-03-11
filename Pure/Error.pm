@@ -1,12 +1,17 @@
 package Error::Pure::Error;
 
 # Pragmas.
+use base qw(Exporter);
 use strict;
 use warnings;
 
 # Modules.
 use Error::Pure qw(err_helper);
 use Error::Pure::Output::Text qw(err_pretty);
+use Readonly;
+
+# Constants.
+Readonly::Array our @EXPORT_OK => qw(err);
 
 # Version.
 our $VERSION = 0.01;

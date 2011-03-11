@@ -1,6 +1,7 @@
 package Error::Pure::Multiple;
 
 # Pragmas.
+use base qw(Exporter);
 use strict;
 use warnings;
 
