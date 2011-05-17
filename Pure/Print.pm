@@ -6,7 +6,7 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure qw(err_helper);
+use Error::Pure::Utils qw(err_helper);
 use Readonly;
 
 # Constants.
