@@ -6,7 +6,7 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure qw(err_helper);
+use Error::Pure::Utils qw(err_helper);
 use Error::Pure::Output::Text qw(err_bt_pretty);
 use List::MoreUtils qw(none);
 use Readonly;
