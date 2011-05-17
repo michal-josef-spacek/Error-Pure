@@ -45,9 +45,4 @@ sub err {
 	return;
 }
 
-BEGIN {
-	no warnings qw(redefine);
-        *CORE::GLOBAL::die = \&err;
-}
-
 1;

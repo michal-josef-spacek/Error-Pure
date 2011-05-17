@@ -191,11 +191,6 @@ sub _get_stack {
 	return \@stack;
 }
 
-BEGIN {
-	no warnings qw(redefine);
-        *CORE::GLOBAL::die = \&err;
-}
-
 1;
 
 __END__
