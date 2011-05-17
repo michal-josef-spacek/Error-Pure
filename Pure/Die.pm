@@ -1,4 +1,4 @@
-package Error::Pure;
+package Error::Pure::Die;
 
 # Pragmas.
 use base qw(Exporter);
@@ -201,11 +201,11 @@ __END__
 
 =head1 NAME
 
-Error::Pure - Perl module for structured errors.
+Error::Pure::Die - Perl module for structured errors.
 
 =head1 SYNOPSIS
 
- use Error::Pure qw(err err_get err_helper);
+ use Error::Pure::Die qw(err err_get err_helper);
  err 'This is a fatal error', 'name', 'value';
  my @ret = err_get(1);
  my $errors_ar = err_helper('This is a fatal error', 'name', 'value');
@@ -306,7 +306,7 @@ Default value is 50.
  use warnings;
 
  # Modules.
- use Error::Pure;
+ use Error::Pure::Die;
 
  # Error in eval.
  eval { die '1', '2', '3'; };
@@ -350,13 +350,13 @@ L<Readonly(3pm)>.
 
 =head1 SEE ALSO
 
+L<Error::Pure(3pm)>,
 L<Error::Pure::AllError(3pm)>,
 L<Error::Pure::Clean(3pm)>,
 L<Error::Pure::Error(3pm)>,
 L<Error::Pure::ErrorList(3pm)>,
 L<Error::Pure::Output::Text(3pm)>,
-L<Error::Pure::Print(3pm)>,
-L<Error::Pure::Multiple(3pm)>.
+L<Error::Pure::Print(3pm)>.
 
 =head1 AUTHOR
 
