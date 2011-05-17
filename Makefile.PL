@@ -20,6 +20,7 @@ WriteMakefile(
 			't/Error::Pure::Error/*.t '.
 			't/Error::Pure::ErrorList/*.t '.
 			't/Error::Pure::Output::Text/*.t '.
-			't/Error::Pure::Print/*.t',
+			't/Error::Pure::Print/*.t '.
+			't/Error::Pure::Utils/*.t',
 	},
 );
