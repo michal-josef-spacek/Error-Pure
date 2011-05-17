@@ -4,9 +4,9 @@ MANIFEST			This list of files
 Pure.pm
 Pure/AllError.pm
 Pure/Clean.pm
+Pure/Die.pm
 Pure/Error.pm
 Pure/ErrorList.pm
-Pure/Multiple.pm
 Pure/Output/Text.pm
 Pure/Print.pm
 t/Error::Pure/00-use.t
@@ -21,6 +21,10 @@ t/Error::Pure::Clean/00-use.t
 t/Error::Pure::Clean/01-version.t
 t/Error::Pure::Clean/02-pod_coverage.t
 t/Error::Pure::Clean/03-pod.t
+t/Error::Pure::Die/00-use.t
+t/Error::Pure::Die/01-version.t
+t/Error::Pure::Die/02-pod_coverage.t
+t/Error::Pure::Die/03-pod.t
 t/Error::Pure::Error/00-use.t
 t/Error::Pure::Error/01-version.t
 t/Error::Pure::Error/02-pod_coverage.t
@@ -29,10 +33,6 @@ t/Error::Pure::ErrorList/00-use.t
 t/Error::Pure::ErrorList/01-version.t
 t/Error::Pure::ErrorList/02-pod_coverage.t
 t/Error::Pure::ErrorList/03-pod.t
-t/Error::Pure::Multiple/00-use.t
-t/Error::Pure::Multiple/01-version.t
-t/Error::Pure::Multiple/02-pod_coverage.t
-t/Error::Pure::Multiple/03-pod.t
 t/Error::Pure::Output::Text/00-use.t
 t/Error::Pure::Output::Text/01-version.t
 t/Error::Pure::Output::Text/02-pod_coverage.t
