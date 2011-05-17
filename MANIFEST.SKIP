@@ -1,4 +1,3 @@
-\bCVS\b
 \bblib\b
 ^Makefile$
 \.bak$
