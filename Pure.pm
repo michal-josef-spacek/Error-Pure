@@ -1,4 +1,4 @@
-package Error::Pure::Multiple;
+package Error::Pure;
 
 # Pragmas.
 use base qw(Exporter);
@@ -7,7 +7,7 @@ use warnings;
 
 # Modules.
 use English qw(-no_match_vars);
-use Error::Pure qw();
+use Error::Pure::Die qw();
 use Readonly;
 
 # Constants.
@@ -30,8 +30,8 @@ $SIG{__DIE__} = 'IGNORE';
 # Process error.
 sub err {
 	my @msg = @_;
-	$Error::Pure::LEVEL = $LEVEL;
-	my $class = $TYPE ? 'Error::Pure::'.$TYPE : 'Error::Pure';
+	$Error::Pure::Die::LEVEL = $LEVEL;
+	my $class = $TYPE ? 'Error::Pure::'.$TYPE : 'Error::Pure::Die';
 	eval "require $class";
 	eval $class.'::err @msg';
 	if ($EVAL_ERROR) {
