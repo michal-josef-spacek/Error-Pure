@@ -1,3 +1,4 @@
+^\.git
 \bblib\b
 ^Makefile$
 \.bak$
