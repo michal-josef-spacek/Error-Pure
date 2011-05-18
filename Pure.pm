@@ -7,7 +7,7 @@ use warnings;
 
 # Modules.
 use English qw(-no_match_vars);
-use Error::Pure::Die qw();
+use Error::Pure::Utils qw();
 use Readonly;
 
 # Constants.
@@ -30,7 +30,7 @@ $SIG{__DIE__} = 'IGNORE';
 # Process error.
 sub err {
 	my @msg = @_;
-	$Error::Pure::Die::LEVEL = $LEVEL;
+	$Error::Pure::Utils::LEVEL = $LEVEL;
 	my $class = $TYPE ? 'Error::Pure::'.$TYPE : 'Error::Pure::Die';
 	eval "require $class";
 	eval $class.'::err @msg';
