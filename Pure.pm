@@ -41,3 +41,75 @@ sub err {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Error::Pure - Perl module for structured errors.
+
+=head1 SYNOPSIS
+
+ use Error::Simple qw(err);
+ err 'This is a fatal error', 'name', 'value';
+
+=head1 SUBROUTINES
+
+=over 8
+
+=item B<err(@messages)>
+
+ Process error with messages @messages.
+
+=back
+
+=head1 EXAMPLE1
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Simple;
+
+ # Error.
+ err '1';
+
+ # Output:
+ # 1 at example1.pl line 9.
+
+=head1 DEPENDENCIES
+
+L<English(3pm)>,
+L<Error::Pure::Utils(3pm)>,
+L<Exporter(3pm)>,
+L<Readonly(3pm)>.
+
+=head1 SEE ALSO
+
+L<Error::Pure(3pm)>,
+L<Error::Pure::AllError(3pm)>,
+L<Error::Pure::Clean(3pm)>,
+L<Error::Pure::Die(3pm)>,
+L<Error::Pure::Error(3pm)>,
+L<Error::Pure::ErrorList(3pm)>,
+L<Error::Pure::Output::Text(3pm)>,
+L<Error::Pure::Print(3pm)>.
+
+=head1 AUTHOR
+
+Michal Špaček L<skim@cpan.org>
+
+=head1 LICENSE AND COPYRIGHT
+
+BSD license.
+
+=head1 VERSION
+
+0.01
+
+=cut
