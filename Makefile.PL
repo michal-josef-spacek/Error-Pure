@@ -4,6 +4,12 @@ use ExtUtils::MakeMaker;
 # Definition.
 WriteMakefile(
 	'AUTHOR' => 'Michal Špaček <skim@cpan.org>',
+	'BUILD_REQUIRES' => {
+		'File::Object' => 0,
+		'Test::More' => 0,
+		'Test::Pod' => 0,
+		'Test::Pod::Coverage' => 0,
+	},
 	'NAME' => 'Error::Pure',
 	'PREREQ_PM' => {
 		'Cwd' => 0,
