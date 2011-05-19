@@ -3,6 +3,7 @@ use ExtUtils::MakeMaker;
 
 # Definition.
 WriteMakefile(
+	'AUTHOR' => 'Michal Špaček <skim@cpan.org>',
 	'NAME' => 'Error::Pure',
 	'PREREQ_PM' => {
 		'Cwd' => 0,
