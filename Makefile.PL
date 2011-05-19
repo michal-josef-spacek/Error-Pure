@@ -10,6 +10,9 @@ WriteMakefile(
 		'Test::Pod' => 0,
 		'Test::Pod::Coverage' => 0,
 	},
+	'CONFIGURE_REQUIRES' => {
+		'ExtUtils::MakeMaker' => 0,
+	},
 	'NAME' => 'Error::Pure',
 	'PREREQ_PM' => {
 		'Cwd' => 0,
