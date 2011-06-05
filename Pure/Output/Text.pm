@@ -19,7 +19,7 @@ our $VERSION = 0.01;
 sub err_bt_pretty {
 	my $errors_ar = shift;
 	my $ret;
-	my $l = _lenghts($errors_ar);
+	my $l_ar = _lenghts($errors_ar);
 	foreach my $error_hr (@{$errors_ar}) {
 		my $e = shift @{$error_hr->{'msg'}};
 		chomp $e;
@@ -40,11 +40,11 @@ sub err_bt_pretty {
 		foreach my $i (0 .. $#{$error_hr->{'stack'}}) {
 			my $st = $error_hr->{'stack'}->[$i];
 			$ret .= $st->{'class'};
-			$ret .=  $SPACE x ($l->[0] - length $st->{'class'});
+			$ret .=  $SPACE x ($l_ar->[0] - length $st->{'class'});
 			$ret .=  $st->{'sub'};
-			$ret .=  $SPACE x ($l->[1] - length $st->{'sub'});
+			$ret .=  $SPACE x ($l_ar->[1] - length $st->{'sub'});
 			$ret .=  $st->{'prog'};
-			$ret .=  $SPACE x ($l->[2] - length $st->{'prog'});
+			$ret .=  $SPACE x ($l_ar->[2] - length $st->{'prog'});
 			$ret .=  $st->{'line'};
 			$ret .= "\n";
 		}
