@@ -52,28 +52,27 @@ sub err_bt_pretty {
 	return $ret;
 }
 
-# Line print of backtrace.
 sub err_bt_simple {
-	my $errors = shift;
+	my $errors_ar = shift;
 	my $ret;
-	foreach my $error (@{$errors}) {
-		$ret .= _err_line($error);
+	foreach my $error_hr (@{$errors_ar}) {
+		$ret .= _err_line($error_hr);
 	}
 	return $ret;
 }
 
 # Pretty print line error.
 sub err_pretty {
-	my $errors = shift;
-	return _err_line($errors->[-1]);
+	my $errors_ar = shift;
+	return _err_line($errors_ar->[-1]);
 }
 
 # Gets length for errors.
 sub _lenghts {
-	my $errors = shift;
+	my $errors_ar = shift;
 	my $l = [0, 0, 0];
-	foreach my $error (@{$errors}) {
-		foreach my $st (@{$error->{'stack'}}) {
+	foreach my $error_hr (@{$errors_ar}) {
+		foreach my $st (@{$error_hr->{'stack'}}) {
 			if (length $st->{'class'} > $l->[0]) {
 				$l->[0] = length $st->{'class'};
 			}
@@ -93,12 +92,14 @@ sub _lenghts {
 
 # Pretty print line error.
 sub _err_line {
-	my $error = shift;
-	my $stack = $error->{'stack'};
-	my $msg = $error->{'msg'};
-	my $prog = $stack->[0]->{'prog'};
-	$prog =~ s/^\.\///g;
-	return "#Error [$prog:$stack->[0]->{'line'}] $msg->[0]\n";
+	my $error_hr = shift;
+	my $stack_ar = $error_hr->{'stack'};
+	my $msg = $error_hr->{'msg'};
+	my $prog = $stack_ar->[0]->{'prog'};
+	$prog =~ s/^\.\///gms;
+	my $e = $msg->[0];
+	chomp $e;
+	return "#Error [$prog:$stack_ar->[0]->{'line'}] $e\n";
 }
 
 1;
