@@ -10,34 +10,41 @@ use Readonly;
 
 # Constants.
 Readonly::Array our @EXPORT => qw(err_bt_pretty err_bt_simple err_pretty);
+Readonly::Scalar my $SPACE => q{ };
 
 # Version.
 our $VERSION = 0.01;
 
 # Pretty print of backtrace.
 sub err_bt_pretty {
-	my $errors = shift;
+	my $errors_ar = shift;
 	my $ret;
-	my $l = _lenghts($errors);
-	foreach my $error (@{$errors}) {
-		my $tmp = shift @{$error->{'msg'}};
-		$ret .= "ERROR: ".$tmp."\n";
-		while (my ($f, $t) = (shift @{$error->{'msg'}}, 
-			shift @{$error->{'msg'}})) {
+	my $l = _lenghts($errors_ar);
+	foreach my $error_hr (@{$errors_ar}) {
+		my $e = shift @{$error_hr->{'msg'}};
+		chomp $e;
+		$ret .= 'ERROR: '.$e."\n";
+		while (@{$error_hr->{'msg'}}) {
+			my $f = shift @{$error_hr->{'msg'}};
+			my $t = shift @{$error_hr->{'msg'}};
 
 			if (! defined $f) {
 				last;
 			}
-			$ret .= $f.': '.$t."\n";
+			$ret .= $f;
+			if ($t) {
+				$ret .= ': '.$t;
+			}
+			$ret .= "\n";
 		}
-		for (my $i = 0; $i <= $#{$error->{'stack'}}; $i++) {
-			my $st = $error->{'stack'}->[$i];
+		foreach my $i (0 .. $#{$error_hr->{'stack'}}) {
+			my $st = $error_hr->{'stack'}->[$i];
 			$ret .= $st->{'class'};
-			$ret .=  ' ' x ($l->[0] - length $st->{'class'});
+			$ret .=  $SPACE x ($l->[0] - length $st->{'class'});
 			$ret .=  $st->{'sub'};
-			$ret .=  ' ' x ($l->[1] - length $st->{'sub'});
+			$ret .=  $SPACE x ($l->[1] - length $st->{'sub'});
 			$ret .=  $st->{'prog'};
-			$ret .=  ' ' x ($l->[2] - length $st->{'prog'});
+			$ret .=  $SPACE x ($l->[2] - length $st->{'prog'});
 			$ret .=  $st->{'line'};
 			$ret .= "\n";
 		}
