@@ -36,11 +36,11 @@ sub err {
 		if ($class) {
 			$class .= ': ';
 		}
-		CORE::die $class."$msg->[0]\n";
+		die $class."$msg->[0]\n";
 
 	# Die for eval.
 	} else {
-		CORE::die "$msg->[0]\n";
+		die "$msg->[0]\n";
 	}
 }
 

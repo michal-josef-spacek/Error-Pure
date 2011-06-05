@@ -34,13 +34,13 @@ sub err {
 		&& none { $_ eq $EVAL || $_ =~ m/^eval '/ms }
 		map { $_->{'sub'} } @{$stack_ar}) {
 
-		CORE::die err_bt_pretty($errors_ar);
+		die err_bt_pretty($errors_ar);
 
 	# Die for eval.
 	} else {
 		my $e = $errors_ar->[-1]->{'msg'}->[0];
 		chomp $e;
-		CORE::die "$e\n";
+		die "$e\n";
 	}
 	return;
 }

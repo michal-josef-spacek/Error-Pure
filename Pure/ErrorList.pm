@@ -34,11 +34,11 @@ sub err {
 		&& ! grep({ $_ eq 'eval {...}' || $_ =~ /^eval '/} 
 		map { $_->{'sub'} } @{$stack})) {
 
-		CORE::die Error::Pure::Output::Text::err_bt_simple($errors);
+		die Error::Pure::Output::Text::err_bt_simple($errors);
 
 	# Die for eval.
 	} else {
-		CORE::die "$msg->[0]\n";
+		die "$msg->[0]\n";
 	}
 }
 
