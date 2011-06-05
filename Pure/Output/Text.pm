@@ -70,24 +70,24 @@ sub err_pretty {
 # Gets length for errors.
 sub _lenghts {
 	my $errors_ar = shift;
-	my $l = [0, 0, 0];
+	my $l_ar = [0, 0, 0];
 	foreach my $error_hr (@{$errors_ar}) {
 		foreach my $st (@{$error_hr->{'stack'}}) {
-			if (length $st->{'class'} > $l->[0]) {
-				$l->[0] = length $st->{'class'};
+			if (length $st->{'class'} > $l_ar->[0]) {
+				$l_ar->[0] = length $st->{'class'};
 			}
-			if (length $st->{'sub'} > $l->[1]) {
-				$l->[1] = length $st->{'sub'};
+			if (length $st->{'sub'} > $l_ar->[1]) {
+				$l_ar->[1] = length $st->{'sub'};
 			}
-			if (length $st->{'prog'} > $l->[2]) {
-				$l->[2] = length $st->{'prog'};
+			if (length $st->{'prog'} > $l_ar->[2]) {
+				$l_ar->[2] = length $st->{'prog'};
 			}
 		}
 	}
-	$l->[0] += 2;
-	$l->[1] += 2;
-	$l->[2] += 2;
-	return $l;
+	$l_ar->[0] += 2;
+	$l_ar->[1] += 2;
+	$l_ar->[2] += 2;
+	return $l_ar;
 }
 
 # Pretty print line error.
