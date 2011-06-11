@@ -12,7 +12,7 @@ use Readonly;
 
 # Constants.
 Readonly::Array our @EXPORT_OK => qw(err);
-Readonly::Scalar my $TYPE_DEFAULT => 'Print';
+Readonly::Scalar my $TYPE_DEFAULT => 'Die';
 Readonly::Scalar my $LEVEL_DEFAULT => 4;
 
 # Version.
@@ -31,7 +31,15 @@ $SIG{__DIE__} = 'IGNORE';
 sub err {
 	my @msg = @_;
 	$Error::Pure::Utils::LEVEL = $LEVEL;
-	my $class = $TYPE ? 'Error::Pure::'.$TYPE : 'Error::Pure::Die';
+	my $class;
+	if ($TYPE && $TYPE ne $TYPE_DEFAULT) {
+		$class = 'Error::Pure::'.$TYPE;
+	} elsif ($ENV{'ERROR_PURE_TYPE'}) {
+		$class = 'Error::Pure::'.
+			$ENV{'ERROR_PURE_TYPE'};
+	} else {
+		$class = 'Error::Pure::'.$TYPE_DEFAULT;
+	}
 	eval "require $class";
 	eval $class.'::err @msg';
 	if ($EVAL_ERROR) {
@@ -54,7 +62,7 @@ Error::Pure - Perl module for structured errors.
 
 =head1 SYNOPSIS
 
- use Error::Simple qw(err);
+ use Error::Pure qw(err);
  err 'This is a fatal error', 'name', 'value';
 
 =head1 SUBROUTINES
@@ -67,6 +75,29 @@ Error::Pure - Perl module for structured errors.
 
 =back
 
+=head1 VARIABLES
+
+=over 8
+
+=item B<$LEVEL>
+
+ Error level for Error::Pure.
+ Default value is 4.
+
+=item B<$TYPE>
+
+ Available are last names in Error::Pure::* modules.
+ Error::Pure::ErrorList means 'ErrorList'.
+ If does defined ENV variable 'ERROR_PURE_TYPE', system use it.
+ Default value is 'Die'.
+
+ Precedence:
+ 1) $Error::Pure::TYPE
+ 2) $ENV{'ERROR_PURE_TYPE'}
+ 3) $Error::Pure::TYPE_DEFAULT = 'Die'
+
+=back
+
 =head1 EXAMPLE1
 
  # Pragmas.
@@ -74,13 +105,49 @@ Error::Pure - Perl module for structured errors.
  use warnings;
 
  # Modules.
- use Error::Simple;
+ use Error::Pure qw(err);
 
  # Error.
  err '1';
 
  # Output:
  # 1 at example1.pl line 9.
+
+=head1 EXAMPLE2
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Pure qw(err);
+
+ # Set env error type.
+ $ENV{'ERROR_PURE_TYPE'} = 'ErrorList';
+
+ # Error.
+ err '1';
+
+ # Output:
+ # TODO
+
+=head1 EXAMPLE3
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Pure qw(err);
+
+ # Set error type.
+ $Error::Pure::TYPE = 'AllError';
+
+ # Error.
+ err '1';
+
+ # Output:
+ # TODO
 
 =head1 DEPENDENCIES
 
