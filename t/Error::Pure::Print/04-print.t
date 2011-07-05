@@ -3,8 +3,8 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure::Print qw(err);
 use English qw(-no_match_vars);
+use Error::Pure::Print qw(err);
 use File::Object;
 use Test::More 'tests' => 2;
 
