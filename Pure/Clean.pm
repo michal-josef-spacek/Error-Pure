@@ -62,7 +62,7 @@ Error::Pure::Clean - Clean utilities for Error::Pure.
 
 =head1 SYNOPSIS
 
- use Error::Simple::Clean qw(clean);
+ use Error::Pure::Clean qw(clean);
  clean($err_hr, ['main', $script, $line]);
 
 =head1 SUBROUTINES
