@@ -26,7 +26,7 @@ sub err {
 	my @msg = @_;
 
 	# Get errors structure.
-	my $errors_ar = err_helper(\@msg);
+	my $errors_ar = err_helper(@msg);
 
 	# Finalize in main on last err.
 	my $stack_ar = $errors_ar->[-1]->{'stack'};
