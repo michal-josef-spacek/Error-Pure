@@ -59,7 +59,8 @@ Error::Pure::AllError - Error::Pure class with full backtrace.
 
 =head1 SYNOPSIS
 
-err "This is a fatal error.", "name", "value";
+ use Error::Pure::AllError qw(err);
+ err "This is a fatal error.", "name", "value";
 
 =head1 SUBROUTINES
 
@@ -67,7 +68,7 @@ err "This is a fatal error.", "name", "value";
 
 =item B<err(@messages)>
 
-Error with @messages values.
+ Process error with messages @messages.
 
 =back
 
@@ -107,7 +108,7 @@ L<Error::Pure::Error(3pm)>,
 L<Error::Pure::ErrorList(3pm)>,
 L<Error::Pure::Output::Text(3pm)>,
 L<Error::Pure::Print(3pm)>,
-L<Error::Pure::Utils(3pm)>,
+L<Error::Pure::Utils(3pm)>.
 
 =head1 AUTHOR
 
