@@ -26,7 +26,7 @@ sub err {
 	my @msg = @_;
 
 	# Get errors structure.
-	my $errors_ar = err_helper(\@msg);
+	my $errors_ar = err_helper(@msg);
 
 	# Error message.
 	my $e = $errors_ar->[-1]->{'msg'}->[0];
