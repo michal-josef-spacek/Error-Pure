@@ -46,3 +46,79 @@ sub err {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Error::Pure::AllError - Error::Pure class with full backtrace.
+
+=head1 SYNOPSIS
+
+err "This is a fatal error.", "name", "value";
+
+=head1 SUBROUTINES
+
+=over 4
+
+=item B<err(@messages)>
+
+Error with @messages values.
+
+=back
+
+=head1 EXAMPLE
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Pure::AllError qw(err);
+
+ print "1\n";
+ err "This is a fatal error.", "name", "value";
+ print "2\n";
+
+ # Output:
+ # 1
+ # ERROR: This is a fatal error.
+ # name: value
+ # main  err  ./script.pl  12
+
+=head1 DEPENDENCIES
+
+L<Error::Pure::Utils(3pm)>,
+L<Error::Pure::Output::Text(3pm)>,
+L<Exporter(3pm)>,
+L<List::MoreUtils(3pm)>,
+L<Readonly(3pm)>.
+
+=head1 SEE ALSO
+
+L<Error::Pure(3pm)>,
+L<Error::Pure::Clean(3pm)>,
+L<Error::Pure::Die(3pm)>,
+L<Error::Pure::Error(3pm)>,
+L<Error::Pure::ErrorList(3pm)>,
+L<Error::Pure::Output::Text(3pm)>,
+L<Error::Pure::Print(3pm)>,
+L<Error::Pure::Utils(3pm)>,
+
+=head1 AUTHOR
+
+Michal Špaček L<skim@cpan.org>
+
+=head1 LICENSE AND COPYRIGHT
+
+BSD license.
+
+=head1 VERSION
+
+0.01
+
+=cut
