@@ -4,7 +4,8 @@ TODO
 2. die odchytnute eval vraci divnou strukturu (message by melo byt bez newline).
 3. Projit oproti Error::Simple a poopravovat.
 4. Dokumentace.
-7.
+7. Odstranit z Error::Pure::Utils::get_err() moznost predavat odkaz na pole.
+8.
 
 Applied
 =======
