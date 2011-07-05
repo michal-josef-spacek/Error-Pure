@@ -49,3 +49,74 @@ sub clean {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Error::Pure::Clean - Clean utilities for Error::Pure.
+
+=head1 SYNOPSIS
+
+ use Error::Simple::Clean qw(clean);
+ clean($err_hr, ['main', $script, $line]);
+
+=head1 SUBROUTINES
+
+=over 8
+
+=item B<clean($errors_hr, $value_ar)>
+
+ Clean error from $errors_hr hash with $value_ar values.
+ $value_ar is reference to array with:
+ - class name or 'main'
+ - filename
+ - line in filename
+
+=back
+
+=head1 EXAMPLE
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Pure::Clean qw(clean);
+
+ TODO
+
+=head1 DEPENDENCIES
+
+L<Cwd(3pm)>,
+L<Exporter(3pm)>,
+L<Readonly(3pm)>.
+
+=head1 SEE ALSO
+
+L<Error::Pure(3pm)>,
+L<Error::Pure::AllError(3pm)>,
+L<Error::Pure::Die(3pm)>,
+L<Error::Pure::Error(3pm)>,
+L<Error::Pure::ErrorList(3pm)>,
+L<Error::Pure::Output::Text(3pm)>,
+L<Error::Pure::Print(3pm)>,
+L<Error::Pure::Utils(3pm)>,
+
+=head1 AUTHOR
+
+Michal Špaček L<skim@cpan.org>
+
+=head1 LICENSE AND COPYRIGHT
+
+BSD license.
+
+=head1 VERSION
+
+0.01
+
+=cut
