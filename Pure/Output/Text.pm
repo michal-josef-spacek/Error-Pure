@@ -103,3 +103,105 @@ sub _err_line {
 }
 
 1;
+
+__END__
+
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Error::Pure::Output::Text - Output subroutines for Error::Pure.
+
+=head1 SYNOPSIS
+
+ use Error::Pure::Output::Text qw(err_bt_pretty err_bt_simple err_pretty);
+ print err_bt_pretty($err_ar);
+ print err_bt_simple($err_ar);
+ print err_pretty($err_ar);
+
+=head1 SUBROUTINES
+
+=over 8
+
+=item B<err_bt_pretty($errors_ar)>
+
+TODO
+
+=item B<err_bt_simple($errors_ar)>
+
+TODO
+
+=item B<err_pretty($errors_ar)>
+
+TODO
+
+=back
+
+=head1 ERRORS
+
+ None.
+
+=head1 EXAMPLE1
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Pure::Output::Text qw(err_bt_pretty);
+
+ TODO
+
+=head1 EXAMPLE2
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Pure::Output::Text qw(err_bt_simple);
+
+ TODO
+
+=head1 EXAMPLE3
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Pure::Output::Text qw(err_pretty);
+
+ TODO
+
+=head1 DEPENDENCIES
+
+L<Exporter(3pm)>,
+L<Readonly(3pm)>.
+
+=head1 SEE ALSO
+
+L<Error::Pure(3pm)>,
+L<Error::Pure::AllError(3pm)>,
+L<Error::Pure::Clean(3pm)>,
+L<Error::Pure::Die(3pm)>,
+L<Error::Pure::Error(3pm)>,
+L<Error::Pure::ErrorList(3pm)>,
+L<Error::Pure::Print(3pm)>,
+L<Error::Pure::Utils(3pm)>,
+
+=head1 AUTHOR
+
+Michal Špaček L<skim@cpan.org>
+
+=head1 LICENSE AND COPYRIGHT
+
+BSD license.
+
+=head1 VERSION
+
+0.01
+
+=cut
