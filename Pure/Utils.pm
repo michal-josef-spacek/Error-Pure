@@ -49,7 +49,6 @@ sub err_get {
 # Process error without die.
 sub err_helper {
 	my @msg = @_;
-	my $stack = [];
 
 	# Check to undefined values in @msg.
 	for (my $i = 0; $i < @msg; $i++) {
@@ -59,12 +58,12 @@ sub err_helper {
 	}
 
 	# Get calling stack.
-	$stack = _get_stack();
+	my @stack = _get_stack();
 
 	# Create errors message.
 	push @ERRORS, {
 		'msg' => \@msg,
-		'stack' => $stack,
+		'stack' => \@stack,
 	};
 
 	return \@ERRORS;
@@ -159,7 +158,7 @@ sub _get_stack {
 	}
 
 	# Stack.
-	return \@stack;
+	return @stack;
 }
 
 1;
