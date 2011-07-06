@@ -6,7 +6,7 @@ use warnings;
 use English qw(-no_match_vars);
 use Error::Pure::Die qw(err);
 use Error::Pure::Utils qw(clean err_get);
-use Test::More 'tests' => 1;
+use Test::More 'tests' => 3;
 
 # Test.
 eval {
@@ -15,6 +15,7 @@ eval {
 is($EVAL_ERROR, "Error.\n");
 
 # Test.
+clean();
 my $eval_string = <<'END';
 	my $x = 'abc abc abc abc abc abc abc abc abc abc abc abc';
 	$x = 'dba dba dba dba dba dba dba dba dba dba dba dba';
