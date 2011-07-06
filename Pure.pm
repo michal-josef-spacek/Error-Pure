@@ -128,8 +128,8 @@ Error::Pure - Perl module for structured errors.
  # Error.
  err '1';
 
- # Output:
- # TODO
+ # Output something like:
+ # #Error [path_to_script:12] 1
 
 =head1 EXAMPLE3
 
@@ -146,8 +146,9 @@ Error::Pure - Perl module for structured errors.
  # Error.
  err '1';
 
- # Output:
- # TODO
+ # Output something like:
+ # ERROR: 1
+ # main  err  path_to_script  12
 
 =head1 DEPENDENCIES
 
