@@ -130,10 +130,10 @@ Default value is 50.
  use warnings;
 
  # Modules.
- use Error::Pure;
+ use Error::Pure::Die qw(err);
 
  # Error.
- die '1';
+ err '1';
 
  # Output:
  # 1 at example1.pl line 9.
@@ -145,10 +145,10 @@ Default value is 50.
  use warnings;
 
  # Modules.
- use Error::Pure;
+ use Error::Pure::Die qw(err);
 
  # Error.
- die '1', '2', '3';
+ err '1', '2', '3';
 
  # Output:
  # 1 at example2.pl line 9.
@@ -160,10 +160,10 @@ Default value is 50.
  use warnings;
 
  # Modules.
- use Error::Pure::Die;
+ use Error::Pure::Die qw(err);
 
  # Error in eval.
- eval { die '1', '2', '3'; };
+ eval { err '1', '2', '3'; };
 
  # Error structure.
  my $err_struct = err_get();
