@@ -29,4 +29,4 @@ eval {
 is($EVAL_ERROR, 'Something.'."\n");
 
 # TODO Test to normal output? fork? system?
-#ok($@, 'T: Something.'."\n");
+#is($EVAL_ERROR, 'T: Something.'."\n");
