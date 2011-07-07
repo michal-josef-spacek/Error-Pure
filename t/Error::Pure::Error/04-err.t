@@ -12,6 +12,3 @@ eval {
 	err 'Error.';
 };
 is($EVAL_ERROR, "Error.\n");
-
-# TODO Test to normal output? fork? system?
-#ok($@, '#Error [t/ErrorSimpleError/02_error.t:5] Error.'."\n");

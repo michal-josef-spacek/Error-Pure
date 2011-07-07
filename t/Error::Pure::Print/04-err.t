@@ -27,6 +27,3 @@ eval {
 	T::example;
 };
 is($EVAL_ERROR, 'Something.'."\n");
-
-# TODO Test to normal output? fork? system?
-#is($EVAL_ERROR, 'T: Something.'."\n");
