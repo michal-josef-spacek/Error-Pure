@@ -65,3 +65,4 @@ t/Error::Pure::Utils/02-pod_coverage.t
 t/Error::Pure::Utils/03-pod.t
 t/Error::Pure::Utils/04-clean.t
 t/Error::Pure::Utils/05-err_get.t
+t/Error::Pure::Utils/06-err_helper.t
