@@ -58,3 +58,4 @@ t/Error::Pure::Utils/00-use.t
 t/Error::Pure::Utils/01-version.t
 t/Error::Pure::Utils/02-pod_coverage.t
 t/Error::Pure::Utils/03-pod.t
+t/Error::Pure::Utils/04-clean.t
