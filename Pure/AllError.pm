@@ -102,7 +102,6 @@ L<Readonly(3pm)>.
 =head1 SEE ALSO
 
 L<Error::Pure(3pm)>,
-L<Error::Pure::Clean(3pm)>,
 L<Error::Pure::Die(3pm)>,
 L<Error::Pure::Error(3pm)>,
 L<Error::Pure::ErrorList(3pm)>,

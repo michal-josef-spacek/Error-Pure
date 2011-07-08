@@ -9,7 +9,6 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
 	'AUTHOR' => 'Michal Špaček <skim@cpan.org>',
 	'BUILD_REQUIRES' => {
-		'Cwd' => 0,
 		'File::Object' => 0,
 		'Test::More' => 0,
 		'Test::Pod' => 0,
@@ -30,7 +29,6 @@ WriteMakefile(
 	'test' => {
 		'TESTS' => 't/Error::Pure/*.t '.
 			't/Error::Pure::AllError/*.t '.
-			't/Error::Pure::Clean/*.t '.
 			't/Error::Pure::Die/*.t '.
 			't/Error::Pure::Error/*.t '.
 			't/Error::Pure::ErrorList/*.t '.

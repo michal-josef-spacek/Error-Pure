@@ -3,7 +3,6 @@ Makefile.PL
 MANIFEST			This list of files
 Pure.pm
 Pure/AllError.pm
-Pure/Clean.pm
 Pure/Die.pm
 Pure/Error.pm
 Pure/ErrorList.pm
@@ -20,12 +19,6 @@ t/Error::Pure::AllError/01-version.t
 t/Error::Pure::AllError/02-pod_coverage.t
 t/Error::Pure::AllError/03-pod.t
 t/Error::Pure::AllError/04-err.t
-t/Error::Pure::Clean/00-use.t
-t/Error::Pure::Clean/01-version.t
-t/Error::Pure::Clean/02-pod_coverage.t
-t/Error::Pure::Clean/03-pod.t
-t/Error::Pure::Clean/04-clean.t
-t/Error::Pure::Clean/T.pm
 t/Error::Pure::Die/00-use.t
 t/Error::Pure::Die/01-version.t
 t/Error::Pure::Die/02-pod_coverage.t

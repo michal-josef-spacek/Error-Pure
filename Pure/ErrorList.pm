@@ -134,7 +134,6 @@ L<Readonly(3pm)>.
 
 L<Error::Pure(3pm)>,
 L<Error::Pure::AllError(3pm)>,
-L<Error::Pure::Clean(3pm)>,
 L<Error::Pure::die(3pm)>,
 L<Error::Pure::Error(3pm)>,
 L<Error::Pure::Output::Text(3pm)>,
