@@ -11,15 +11,13 @@ my @ret = err_helper('FOO', 'BAR');
 is_deeply(
 	\@ret,
 	[
-		[
-			{
-				'msg' => [
-					'FOO',
-					'BAR',
-				],
-				'stack' => [],
-			}
-		],
+		{
+			'msg' => [
+				'FOO',
+				'BAR',
+			],
+			'stack' => [],
+		}
 	],
 	'Simple test.',
 );
@@ -30,14 +28,12 @@ clean();
 is_deeply(
 	\@ret,
 	[
-		[
-			{
-				'msg' => [
-					'undef',
-				],
-				'stack' => [],
-			}
-		],
+		{
+			'msg' => [
+				'undef',
+			],
+			'stack' => [],
+		}
 	],
 	'Test with undefined value.',
 );

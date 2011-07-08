@@ -26,19 +26,19 @@ sub err {
 	my @msg = @_;
 
 	# Get errors structure.
-	my $errors_ar = err_helper(@msg);
+	my @errors = err_helper(@msg);
 
 	# Error message.
-	my $e = $errors_ar->[-1]->{'msg'}->[0];
+	my $e = $errors[-1]->{'msg'}->[0];
 	chomp $e;
 
 	# Finalize in main on last err.
-	my $stack_ar = $errors_ar->[-1]->{'stack'};
+	my $stack_ar = $errors[-1]->{'stack'};
 	if ($stack_ar->[-1]->{'class'} eq 'main'
 		&& none { $_ eq $EVAL || $_ =~ /^eval '/ms }
 		map { $_->{'sub'} } @{$stack_ar}) {
 
-		my $class = $errors_ar->[-1]->{'stack'}->[0]->{'class'};
+		my $class = $errors[-1]->{'stack'}->[0]->{'class'};
 		if ($class eq 'main') {
 			$class = $EMPTY_STR
 		}

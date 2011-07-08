@@ -66,7 +66,7 @@ sub err_helper {
 		'stack' => \@stack,
 	};
 
-	return \@ERRORS;
+	return @ERRORS;
 }
 
 # Get information about place of error.
@@ -187,6 +187,7 @@ Error::Pure::Utils - Utilities for structured errors.
 =item B<clean()>
 
  Resets internal variables with errors.
+ Is exportable.
 
 =item B<err_get([$clean])>
 
@@ -195,12 +196,14 @@ Error::Pure::Utils - Utilities for structured errors.
  err_get(1) returns error structure and delete it internally.
  In array mode returns array of errors.
  In scalar mode return reference to array of errors.
- Exportable as default.
+ Is exportable.
 
 =item B<err_helper(@msg)>
 
- Subroutine for additional classes above Error::Pure. Is exportable.
+ Subroutine for additional classes above Error::Pure.
  @msg is array of messages.
+ Returns array of errors.
+ Is exportable.
 
 =back
 
