@@ -61,65 +61,14 @@ Error::Pure::Die - Perl module for structured errors.
 
  use Error::Pure::Die qw(err err_get err_helper);
  err 'This is a fatal error', 'name', 'value';
- my @ret = err_get(1);
- my $errors_ar = err_helper('This is a fatal error', 'name', 'value');
 
 =head1 SUBROUTINES
 
 =over 8
 
-=item B<clean()>
-
- Resets internal variables with errors.
-
 =item B<err(@messages)>
 
  Process error with messages @messages.
-
-=item B<err_get([$clean])>
-
- Get and clean processed errors.
- err_get() returns error structure.
- err_get(1) returns error structure and delete it internally.
- In array mode returns array of errors.
- In scalar mode return reference to array of errors.
- Exportable as default.
-
-=item B<err_helper(@msg)>
-
- Subroutine for additional classes above Error::Pure. Is exportable.
- @msg is array of messages.
-
-=back
-
-=head1 VARIABLES
-
-=over 8
-
-=item B<$LEVEL>
-
-Default value is 2.
-
-=item B<$MAX_LEVELS>
-
-Default value is 50.
-
-=item B<$MAX_EVAL>
-
-Default value is 100.
-
-=item B<$MAX_ARGS>
-
-Default value is 10.
-
-=item B<$MAX_ARG_LEN>
-
-Default value is 50.
-
-=item B<$PROGRAM>
-
- Program name in stack information.
- Default value is ''.
 
 =back
 
@@ -160,15 +109,21 @@ Default value is 50.
  use warnings;
 
  # Modules.
+ use Dumpvalue;
  use Error::Pure::Die qw(err);
+ use Error::Pure::Utils qw(err_get);
 
  # Error in eval.
  eval { err '1', '2', '3'; };
 
  # Error structure.
- my $err_struct = err_get();
+ my $err_ar = err_get();
 
- # In $err_struct:
+ # Dump.
+ my $dump = Dumpvalue->new;
+ $dump->dumpValues($err_ar);
+
+ # In $err_ar:
  # [
  #         {
  #                 'msg' => [
@@ -181,14 +136,14 @@ Default value is 50.
  #                                 'args' => '(1)',
  #                                 'class' => 'main',
  #                                 'line' => '9',
- #                                 'prog' => 'ex2.pl',
+ #                                 'prog' => 'script.pl',
  #                                 'sub' => 'err',
  #                         },
  #                         {
  #                                 'args' => '',
  #                                 'class' => 'main',
  #                                 'line' => '9',
- #                                 'prog' => 'ex2.pl',
+ #                                 'prog' => 'script.pl',
  #                                 'sub' => 'eval {...}',
  #                         },
  #                 ],
