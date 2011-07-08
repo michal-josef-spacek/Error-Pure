@@ -56,13 +56,13 @@ my $right_ret = [{
 	}, {
 		'args' => '()',
 		'class' => 'main',
-		'line' => 22,
+		'line' => 21,
 		'prog' => $current_dir->file('04-clean.t')->s,
 		'sub' => 'T::error2',
 	}, {
 		'args' => '',
 		'class' => 'main',
-		'line' => 21,
+		'line' => 20,
 		'prog' => $current_dir->file('04-clean.t')->s,
 		'sub' => 'eval {...}',
 	}],
