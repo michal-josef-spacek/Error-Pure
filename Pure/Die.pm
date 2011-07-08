@@ -152,7 +152,6 @@ Error::Pure::Die - Perl module for structured errors.
 
 =head1 DEPENDENCIES
 
-L<Cwd(3pm)>,
 L<Exporter(3pm)>,
 L<List::MoreUtils(3pm)>,
 L<Readonly(3pm)>.
