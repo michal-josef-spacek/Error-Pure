@@ -22,8 +22,8 @@ sub error2 {
 	};
 	if ($EVAL_ERROR) {
 		my @data = caller;
-		my $errors_ar = err_get();
-		clean($errors_ar->[-1], \@data);
+		my @errors = err_get();
+		clean($errors[-1], \@data);
 		err 'Second error in T2 class.';
 	}
 }
