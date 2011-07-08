@@ -4,7 +4,6 @@ use warnings;
 
 # Modules.
 use English qw(-no_match_vars);
-use Error::Pure::Clean qw(clean);
 use Error::Pure::Utils qw(err_get);
 use File::Object;
 use Test::More 'tests' => 2;
