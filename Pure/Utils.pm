@@ -43,7 +43,7 @@ sub err_get {
 	if ($clean) {
 		clean();
 	}
-	return wantarray ? @ret : \@ret;
+	return @ret;
 }
 
 # Process error without die.
@@ -194,8 +194,7 @@ Error::Pure::Utils - Utilities for structured errors.
  Get and clean processed errors.
  err_get() returns error structure.
  err_get(1) returns error structure and delete it internally.
- In array mode returns array of errors.
- In scalar mode return reference to array of errors.
+ Returns array of errors.
  Is exportable.
 
 =item B<err_helper(@msg)>

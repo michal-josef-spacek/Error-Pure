@@ -4,7 +4,7 @@ use warnings;
 
 # Modules.
 use Error::Pure::Utils qw(err_get);
-use Test::More 'tests' => 6;
+use Test::More 'tests' => 4;
 
 # Test.
 @Error::Pure::Utils::ERRORS = qw(FOO BAR);
@@ -15,26 +15,7 @@ is_deeply(
 		'FOO',
 		'BAR',
 	],
-	'Simple test as array.',
-);
-is_deeply(
-	\@Error::Pure::Utils::ERRORS,
-	[
-		'FOO',
-		'BAR',
-	],
-	'@ERRORS variable control.',
-);
-
-# Test.
-my $ret_ar = err_get();
-is_deeply(
-	$ret_ar,
-	[
-		'FOO',
-		'BAR',
-	],
-	'Simple test as reference to array.',
+	'Simple test.',
 );
 is_deeply(
 	\@Error::Pure::Utils::ERRORS,
@@ -53,7 +34,7 @@ is_deeply(
 		'FOO',
 		'BAR',
 	],
-	'Simple test as array. With cleaning.',
+	'Simple test. With cleaning.',
 );
 is_deeply(
 	\@Error::Pure::Utils::ERRORS,

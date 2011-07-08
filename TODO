@@ -2,7 +2,6 @@ TODO
 ====
 2. die odchytnute eval vraci divnou strukturu (message by melo byt bez newline).
 4. Dokumentace.
-7. Odstranit z Error::Pure::Utils::get_err() moznost predavat odkaz na pole.
 8.
 
 Applied
@@ -21,4 +20,7 @@ Přejmenováno na Error::Pure a Error::Pure na Error::Pure::Die.
 OK [20110708] skim
 
 3. Projit oproti Error::Simple a poopravovat.
+OK [20110708] skim
+
+7. Odstranit z Error::Pure::Utils::get_err() moznost predavat odkaz na pole.
 OK [20110708] skim
