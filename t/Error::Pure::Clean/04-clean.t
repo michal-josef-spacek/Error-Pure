@@ -20,7 +20,7 @@ use T;
 eval {
 	T::error2;
 };
-is($EVAL_ERROR, "Second error in T2 class.\n");
+is($EVAL_ERROR, "Second error in T2 class.\n", 'Error from eval.');
 
 # Test.
 my @errors = err_get();
@@ -29,19 +29,19 @@ my $right_ret = [{
 	'stack' => [{
 		'args' => '(\'Error in T2 class.\')',
 		'class' => 'T',
-		'line' => 15,
+		'line' => 16,
 		'prog' => $current_dir->file('T.pm')->s,
 		'sub' => 'err',
 	}, {
 		'args' => '()',
 		'class' => 'T',
-		'line' => 21,
+		'line' => 22,
 		'prog' => $current_dir->file('T.pm')->s,
 		'sub' => 'error',
 	}, {
 		'args' => '',
 		'class' => 'T',
-		'line' => 20,
+		'line' => 21,
 		'prog' => $current_dir->file('T.pm')->s,
 		'sub' => 'eval {...}',
 	}],
@@ -50,7 +50,7 @@ my $right_ret = [{
 	'stack' => [{
 		'args' => '(\'Second error in T2 class.\')',
 		'class' => 'T',
-		'line' => 27,
+		'line' => 29,
 		'prog' => $current_dir->file('T.pm')->s,
 		'sub' => 'err',
 	}, {
@@ -67,4 +67,4 @@ my $right_ret = [{
 		'sub' => 'eval {...}',
 	}],
 }];
-is_deeply(\@errors, $right_ret);
+is_deeply(\@errors, $right_ret, 'Information after clean.');

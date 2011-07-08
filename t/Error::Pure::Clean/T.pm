@@ -5,6 +5,7 @@ use strict;
 use warnings;
 
 # Modules.
+use Cwd qw(abs_path);
 use English qw(-no_match_vars);
 use Error::Pure::AllError qw(err);
 use Error::Pure::Clean qw(clean);
@@ -22,6 +23,7 @@ sub error2 {
 	};
 	if ($EVAL_ERROR) {
 		my @data = caller;
+		$data[1] = abs_path($data[1]);
 		my @errors = err_get();
 		clean($errors[-1], \@data);
 		err 'Second error in T2 class.';

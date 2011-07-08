@@ -6,7 +6,6 @@ use strict;
 use warnings;
 
 # Modules.
-use Cwd qw(abs_path);
 use Readonly;
 
 # Constants.
@@ -24,9 +23,7 @@ sub clean {
 		return;
 	}
 
-	# To absolute path.
-	$value_ar->[1] = abs_path($value_ar->[1]);
-
+	# Filter values.
 	my @arr;
 	my $log = 0;
 	foreach my $st_hr (@{$errors_hr->{'stack'}}) {
@@ -63,7 +60,7 @@ Error::Pure::Clean - Clean utilities for Error::Pure.
 =head1 SYNOPSIS
 
  use Error::Pure::Clean qw(clean);
- clean($err_hr, ['main', $script, $line]);
+ clean($err_hr, ['main', $path_to_script, $line]);
 
 =head1 SUBROUTINES
 
@@ -74,7 +71,7 @@ Error::Pure::Clean - Clean utilities for Error::Pure.
  Clean error from $errors_hr hash with $value_ar values.
  $value_ar is reference to array with:
  - class name or 'main'
- - filename
+ - file path
  - line in filename
 
 =back
@@ -92,7 +89,6 @@ Error::Pure::Clean - Clean utilities for Error::Pure.
 
 =head1 DEPENDENCIES
 
-L<Cwd(3pm)>,
 L<Exporter(3pm)>,
 L<Readonly(3pm)>.
 
