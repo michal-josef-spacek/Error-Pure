@@ -1,9 +1,4 @@
 CHANGES
-cover_db/cover.13
-cover_db/cover.css
-cover_db/coverage.html
-cover_db/digests
-cover_db/structure/2d8e9f64bccb8068d5d460918486b798
 Makefile.PL
 MANIFEST			This list of files
 Pure.pm
