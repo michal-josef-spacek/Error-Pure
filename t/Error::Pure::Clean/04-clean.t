@@ -23,7 +23,7 @@ eval {
 is($EVAL_ERROR, "Second error in T2 class.\n");
 
 # Test.
-my $errors = err_get();
+my @errors = err_get();
 my $right_ret = [{
 	'msg' => ['Error in T2 class.'],
 	'stack' => [{
@@ -67,4 +67,4 @@ my $right_ret = [{
 		'sub' => 'eval {...}',
 	}],
 }];
-is_deeply($errors, $right_ret);
+is_deeply(\@errors, $right_ret);
