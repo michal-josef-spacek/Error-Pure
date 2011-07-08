@@ -7,7 +7,7 @@ use Error::Pure::Output::Text qw(err_bt_simple);
 use Test::More 'tests' => 3;
 
 # Test.
-my $errors = [
+my @errors = (
 	{
 		'msg' => ['Error.'],
 		'stack' => [
@@ -20,12 +20,12 @@ my $errors = [
 			},
 		],
 	},
-];
-my $ret = err_bt_simple($errors);
+);
+my $ret = err_bt_simple(@errors);
 is($ret, "#Error [example.pl:12] Error.\n");
 
 # Test.
-$errors = [
+@errors = (
 	{
 		'msg' => ['Error.'],
 		'stack' => [
@@ -45,12 +45,12 @@ $errors = [
 			},
 		],
 	},
-];
-$ret = err_bt_simple($errors);
+);
+$ret = err_bt_simple(@errors);
 is($ret, "#Error [example.pl:12] Error.\n");
 
 # Test.
-$errors = [
+@errors = (
 	{
 		'msg' => ['Error 1.'],
 		'stack' => [
@@ -89,10 +89,10 @@ $errors = [
 			},
 		],
 	},
-];
+);
 my $right_ret = <<'END';
 #Error [example.pl:12] Error 1.
 #Error [example.pl:12] Error 2.
 END
-$ret = err_bt_simple($errors);
+$ret = err_bt_simple(@errors);
 is($ret, $right_ret);

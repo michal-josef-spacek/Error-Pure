@@ -17,16 +17,17 @@ our $VERSION = 0.01;
 
 # Pretty print of backtrace.
 sub err_bt_pretty {
-	my $errors_ar = shift;
+	my @errors = @_;
 	my $ret;
-	my $l_ar = _lenghts($errors_ar);
-	foreach my $error_hr (@{$errors_ar}) {
-		my $e = shift @{$error_hr->{'msg'}};
+	my $l_ar = _lenghts(@errors);
+	foreach my $error_hr (@errors) {
+		my @msg = @{$error_hr->{'msg'}};
+		my $e = shift @msg;
 		chomp $e;
 		$ret .= 'ERROR: '.$e."\n";
-		while (@{$error_hr->{'msg'}}) {
-			my $f = shift @{$error_hr->{'msg'}};
-			my $t = shift @{$error_hr->{'msg'}};
+		while (@msg) {
+			my $f = shift @msg;
+			my $t = shift @msg;
 
 			if (! defined $f) {
 				last;
@@ -53,9 +54,9 @@ sub err_bt_pretty {
 }
 
 sub err_bt_simple {
-	my $errors_ar = shift;
+	my @errors = @_;
 	my $ret;
-	foreach my $error_hr (@{$errors_ar}) {
+	foreach my $error_hr (@errors) {
 		$ret .= _err_line($error_hr);
 	}
 	return $ret;
@@ -63,15 +64,15 @@ sub err_bt_simple {
 
 # Pretty print line error.
 sub err_pretty {
-	my $errors_ar = shift;
-	return _err_line($errors_ar->[-1]);
+	my @errors = @_;
+	return _err_line($errors[-1]);
 }
 
 # Gets length for errors.
 sub _lenghts {
-	my $errors_ar = shift;
+	my @errors = @_;
 	my $l_ar = [0, 0, 0];
-	foreach my $error_hr (@{$errors_ar}) {
+	foreach my $error_hr (@errors) {
 		foreach my $st (@{$error_hr->{'stack'}}) {
 			if (length $st->{'class'} > $l_ar->[0]) {
 				$l_ar->[0] = length $st->{'class'};
@@ -117,23 +118,23 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 =head1 SYNOPSIS
 
  use Error::Pure::Output::Text qw(err_bt_pretty err_bt_simple err_pretty);
- print err_bt_pretty($err_ar);
- print err_bt_simple($err_ar);
- print err_pretty($err_ar);
+ print err_bt_pretty(@errors);
+ print err_bt_simple(@errors);
+ print err_pretty(@errors);
 
 =head1 SUBROUTINES
 
 =over 8
 
-=item B<err_bt_pretty($errors_ar)>
+=item B<err_bt_pretty(@errors)>
 
 TODO
 
-=item B<err_bt_simple($errors_ar)>
+=item B<err_bt_simple(@errors)>
 
 TODO
 
-=item B<err_pretty($errors_ar)>
+=item B<err_pretty(@errors)>
 
 TODO
 
