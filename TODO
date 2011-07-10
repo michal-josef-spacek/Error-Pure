@@ -1,7 +1,6 @@
 TODO
 ====
 2. die odchytnute eval vraci divnou strukturu (message by melo byt bez newline).
-4. Dokumentace.
 8. Prejmenovat err_bt_simple na neco jako err_all_line.
 9. Prejmenovat err_pretty na neco jako err_line.
 10.
@@ -26,3 +25,6 @@ OK [20110708] skim
 
 7. Odstranit z Error::Pure::Utils::get_err() moznost predavat odkaz na pole.
 OK [20110708] skim
+
+4. Dokumentace.
+OK [20110710] skim
