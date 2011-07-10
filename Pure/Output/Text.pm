@@ -143,7 +143,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
 =item B<err_bt_simple(@errors)>
 
- Returns string with errors on one line.
+ Returns string with errors each on one line.
  Use all errors in @errors structure.
  Format of error line is: "#Error [%s:%s] %s\n"
  Values of error line are: $program, $line, $message
@@ -212,7 +212,48 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
  # Modules.
  use Error::Pure::Output::Text qw(err_bt_simple);
 
- TODO
+ # Fictional error structure.
+ my @err = (
+         {
+                 'msg' => [
+                         'FOO',
+                         'BAR',
+                 ],
+                 'stack' => [
+                         {
+                                 'args' => '(2)',
+                                 'class' => 'main',
+                                 'line' => 1,
+                                 'prog' => 'script.pl',
+                                 'sub' => 'err',
+                         }, {
+                                 'args' => '',
+                                 'class' => 'main',
+                                 'line' => 20,
+                                 'prog' => 'script.pl',
+                                 'sub' => 'eval {...}',
+                         }
+                 ],
+         }, {
+                 'msg' => ['XXX'],
+                 'stack' => [
+                         {
+                                 'args' => '',
+                                 'class' => 'main',
+                                 'line' => 2,
+                                 'prog' => 'script.pl',
+                                 'sub' => 'err',
+                         },
+                 ],
+         }
+ );
+
+ # Print out.
+ print err_bt_simple(@err);
+
+ # Output:
+ # #Error [script.pl:1] FOO
+ # #Error [script.pl:2] XXX
 
 =head1 EXAMPLE3
 
