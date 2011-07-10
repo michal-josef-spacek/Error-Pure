@@ -9,7 +9,7 @@ use warnings;
 use Readonly;
 
 # Constants.
-Readonly::Array our @EXPORT => qw(err_bt_pretty err_line err_line_all);
+Readonly::Array our @EXPORT_OK => qw(err_bt_pretty err_line err_line_all);
 Readonly::Scalar my $SPACE => q{ };
 
 # Version.
