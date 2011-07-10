@@ -150,6 +150,29 @@ Error::Pure - Perl module for structured errors.
  # ERROR: 1
  # main  err  path_to_script  12
 
+=head1 EXAMPLE4
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use Error::Pure qw(err);
+
+ $SIG{__DIE__} = sub {
+         my $err = shift;
+         $err =~ s/ at .*\n//ms;
+         $Error::Pure::LEVEL = 5;
+         $Error::Pure::TYPE = 'ErrorList';
+         err $err;
+ };
+
+ # Error.
+ die 'Error';
+
+ # Output.
+ # #Error [path_to_script.pl:17] Error
+
 =head1 DEPENDENCIES
 
 L<English(3pm)>,
