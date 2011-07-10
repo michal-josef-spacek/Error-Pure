@@ -12,7 +12,7 @@ use Test::More 'tests' => 4;
 eval {
 	err 'Error.';
 };
-is($EVAL_ERROR, "Error.\n");
+is($EVAL_ERROR, "Error.\n", 'Simple message in eval.');
 
 # Test.
 eval {
@@ -22,7 +22,7 @@ my $tmp = $EVAL_ERROR;
 eval {
 	err $tmp;
 };
-is($EVAL_ERROR, "Error.\n");
+is($EVAL_ERROR, "Error.\n", 'More evals.');
 
 # Test.
 clean();

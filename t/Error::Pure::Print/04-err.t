@@ -18,7 +18,7 @@ use T;
 eval {
 	err 'Error.';
 };
-is($EVAL_ERROR, 'Error.'."\n");
+is($EVAL_ERROR, 'Error.'."\n", 'Simple message in eval.');
 
 # Test.
 eval {
@@ -28,10 +28,10 @@ my $tmp = $EVAL_ERROR;
 eval {
 	err $tmp;
 };
-is($EVAL_ERROR, "Error.\n");
+is($EVAL_ERROR, "Error.\n", 'More evals.');
 
 # Test.
 eval {
 	T::example;
 };
-is($EVAL_ERROR, 'Something.'."\n");
+is($EVAL_ERROR, 'Something.'."\n", 'Error from module.');

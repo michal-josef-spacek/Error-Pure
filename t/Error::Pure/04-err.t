@@ -14,7 +14,7 @@ if (exists $ENV{'ERROR_PURE_TYPE'}) {
 eval {
 	err 'Error.';
 };
-is($EVAL_ERROR, "Error.\n", 'Default TYPE variable.');
+is($EVAL_ERROR, "Error.\n", 'Simple message in eval. Default TYPE variable.');
 
 # Test.
 eval {
@@ -24,21 +24,22 @@ my $tmp = $EVAL_ERROR;
 eval {
 	err $tmp;
 };
-is($EVAL_ERROR, "Error.\n");
+is($EVAL_ERROR, "Error.\n", 'More evals.');
 
 # Test.
 $Error::Pure::TYPE = undef;
 eval {
 	err 'Error.';
 };
-is($EVAL_ERROR, "Error.\n", 'Undefined TYPE variable.');
+is($EVAL_ERROR, "Error.\n", 'Simple message in eval. Undefined TYPE '.
+	'variable.');
 
 # Test.
 $Error::Pure::TYPE = 'Print';
 eval {
 	err 'Error.';
 };
-is($EVAL_ERROR, "Error.\n", 'Explicit TYPE variable.');
+is($EVAL_ERROR, "Error.\n", 'Simple message in eval. Explicit TYPE variable.');
 
 # Test.
 $Error::Pure::TYPE = 'Die';
@@ -46,4 +47,5 @@ $ENV{'ERROR_PURE_TYPE'} = 'Error';
 eval {
 	err 'Error.';
 };
-is($EVAL_ERROR, "Error.\n", 'TYPE in environment variable.');
+is($EVAL_ERROR, "Error.\n", 'Simple message in eval. TYPE in environment '.
+	'variable.');

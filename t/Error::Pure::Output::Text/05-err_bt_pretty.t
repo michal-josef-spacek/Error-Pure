@@ -26,7 +26,7 @@ ERROR: Error.
 main  err  ./example.pl  12
 END
 my $ret = err_bt_pretty(@errors);
-is($ret, $right_ret);
+is($ret, $right_ret, 'Backtrace print in simple error.');
 
 # Test.
 @errors = (
@@ -56,7 +56,7 @@ main  err         ./example.pl  12
 main  eval {...}  ./example.pl  10
 END
 $ret = err_bt_pretty(@errors);
-is($ret, $right_ret);
+is($ret, $right_ret, 'Backtrace print in complicated error.');
 
 # Test.
 @errors = (
@@ -108,4 +108,4 @@ main  err         ./example.pl  12
 main  eval {...}  ./example.pl  10
 END
 $ret = err_bt_pretty(@errors);
-is($ret, $right_ret);
+is($ret, $right_ret, 'Backtrace print in more errors.');

@@ -22,7 +22,7 @@ my @errors = (
 	},
 );
 my $ret = err_line(@errors);
-is($ret, "#Error [example.pl:12] Error.\n");
+is($ret, "#Error [example.pl:12] Error.\n", 'Line print in simple error.');
 
 # Test.
 @errors = (
@@ -47,7 +47,8 @@ is($ret, "#Error [example.pl:12] Error.\n");
 	},
 );
 $ret = err_line(@errors);
-is($ret, "#Error [example.pl:12] Error.\n");
+is($ret, "#Error [example.pl:12] Error.\n", 'Line print in complicated '.
+	'error.');
 
 # Test.
 @errors = (
@@ -91,4 +92,5 @@ is($ret, "#Error [example.pl:12] Error.\n");
 	},
 );
 $ret = err_line(@errors);
-is($ret, "#Error [example.pl:12] Error 2.\n");
+is($ret, "#Error [example.pl:12] Error 2.\n", 'Line print in situation with '.
+	'two errors.');
