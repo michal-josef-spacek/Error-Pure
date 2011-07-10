@@ -16,6 +16,7 @@ our $VERSION = 0.01;
 # Constants.
 Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $EVAL => 'eval {...}';
+Readonly::Scalar my $EMPTY_STR => q{};
 
 # Ignore die signal.
 $SIG{__DIE__} = 'IGNORE';
@@ -27,20 +28,21 @@ sub err {
 	# Get errors structure.
 	my @errors = err_helper(@msg);
 
-	# Error message.
-	my $e = $errors[-1]->{'msg'}->[0];
-	chomp $e;
+	# Error messages.
+	chomp $errors[-1]->{'msg'}->[0];
 
 	my $stack_ar = $errors[-1]->{'stack'};
 	if ($stack_ar->[-1]->{'class'} eq 'main'
 		&& none { $_ eq $EVAL || $_ =~ /^eval '/ms }
 		map { $_->{'sub'} } @{$stack_ar}) {
 
-		die "$e at $stack_ar->[0]->{'prog'} line ".
+		die (join $EMPTY_STR, @{$errors[-1]->{'msg'}}).
+			"at $stack_ar->[0]->{'prog'} line ".
 			"$stack_ar->[0]->{'line'}.\n";
 
 	# Die for eval.
 	} else {
+		my $e = $errors[-1]->{'msg'}->[0];
 		die "$e\n";
 	}
 }
