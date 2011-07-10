@@ -6,13 +6,19 @@ use warnings;
 use English qw(-no_match_vars);
 use Error::Pure::Die qw(err);
 use Error::Pure::Utils qw(clean err_get);
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 
 # Test.
 eval {
 	err 'Error.';
 };
 is($EVAL_ERROR, "Error.\n", 'Simple message in eval.');
+
+# Test.
+eval {
+	err 'Error.', 1, 2;
+};
+is($EVAL_ERROR, "Error.\n", 'More messages in eval.');
 
 # Test.
 eval {
