@@ -1,6 +1,8 @@
 TODO
 ====
-10.
+10. Opravit Error::Pure::Die tak, aby se chovalo presne jako die. Tzn. bere i v
+    evalu vize zprav a dava je za sebe.
+11.
 
 Applied
 =======
