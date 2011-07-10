@@ -128,14 +128,25 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
 =item B<err_bt_pretty(@errors)>
 
+ Returns string with full backtrace.
+ Format of error is:
+  ERROR: %s
+  %s: %s
+  ...
+  %s %s %s %s
+  ...
+ Values of error are:
+  message
+  message as key, $message as value
+  ...
+  sub, caller, program, line
+
+=item B<err_bt_simple(@errors)>
+
  Returns string with errors on one line.
  Use all errors in @errors structure.
  Format of error line is: "#Error [%s:%s] %s\n"
  Values of error line are: $program, $line, $message
-
-=item B<err_bt_simple(@errors)>
-
-TODO
 
 =item B<err_pretty(@errors)>
 
@@ -159,7 +170,38 @@ TODO
  # Modules.
  use Error::Pure::Output::Text qw(err_bt_pretty);
 
- TODO
+ # Fictional error structure.
+ my $err_hr = {
+         'msg' => [
+                 'FOO',
+                 'KEY',
+                 'VALUE',
+         ],
+         'stack' => [
+                 {
+                         'args' => '(2)',
+                         'class' => 'main',
+                         'line' => 1,
+                         'prog' => 'script.pl',
+                         'sub' => 'err',
+                 }, {
+                         'args' => '',
+                         'class' => 'main',
+                         'line' => 20,
+                         'prog' => 'script.pl',
+                         'sub' => 'eval {...}',
+                 }
+         ],
+ };
+
+ # Print out.
+ print err_bt_pretty($err_hr);
+
+ # Output:
+ # ERROR: FOO
+ # KEY: VALUE
+ # main  err         script.pl  1
+ # main  eval {...}  script.pl  20
 
 =head1 EXAMPLE2
 
