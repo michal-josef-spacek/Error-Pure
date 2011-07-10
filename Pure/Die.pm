@@ -59,7 +59,7 @@ Error::Pure::Die - Perl module for structured errors.
 
 =head1 SYNOPSIS
 
- use Error::Pure::Die qw(err err_get err_helper);
+ use Error::Pure::Die qw(err);
  err 'This is a fatal error', 'name', 'value';
 
 =head1 SUBROUTINES
