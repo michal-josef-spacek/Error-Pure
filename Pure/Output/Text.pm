@@ -128,7 +128,10 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
 =item B<err_bt_pretty(@errors)>
 
-TODO
+ Returns string with errors on one line.
+ Use all errors in @errors structure.
+ Format of error line is: "#Error [%s:%s] %s\n"
+ Values of error line are: $program, $line, $message
 
 =item B<err_bt_simple(@errors)>
 
@@ -136,7 +139,10 @@ TODO
 
 =item B<err_pretty(@errors)>
 
-TODO
+ Returns string with error on one line.
+ Use last error in @errors structure..
+ Format of error is: "#Error [%s:%s] %s\n"
+ Values of error are: $program, $line, $message
 
 =back
 
@@ -175,7 +181,34 @@ TODO
  # Modules.
  use Error::Pure::Output::Text qw(err_pretty);
 
- TODO
+ # Fictional error structure.
+ my $err_hr = {
+         'msg' => [
+                 'FOO',
+                 'BAR',
+         ],
+         'stack' => [
+                 {
+                         'args' => '(2)',
+                         'class' => 'main',
+                         'line' => 1,
+                         'prog' => 'script.pl',
+                         'sub' => 'err',
+                 }, {
+                         'args' => '',
+                         'class' => 'main',
+                         'line' => 20,
+                         'prog' => 'script.pl',
+                         'sub' => 'eval {...}',
+                 }
+         ],
+ };
+
+ # Print out.
+ print err_pretty($err_hr);
+
+ # Output:
+ # #Error [script.pl:1] FOO
 
 =head1 DEPENDENCIES
 
