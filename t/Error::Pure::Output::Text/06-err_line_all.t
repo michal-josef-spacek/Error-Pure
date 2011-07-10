@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure::Output::Text qw(err_bt_simple);
+use Error::Pure::Output::Text qw(err_line_all);
 use Test::More 'tests' => 3;
 
 # Test.
@@ -21,7 +21,7 @@ my @errors = (
 		],
 	},
 );
-my $ret = err_bt_simple(@errors);
+my $ret = err_line_all(@errors);
 is($ret, "#Error [example.pl:12] Error.\n");
 
 # Test.
@@ -46,7 +46,7 @@ is($ret, "#Error [example.pl:12] Error.\n");
 		],
 	},
 );
-$ret = err_bt_simple(@errors);
+$ret = err_line_all(@errors);
 is($ret, "#Error [example.pl:12] Error.\n");
 
 # Test.
@@ -94,5 +94,5 @@ my $right_ret = <<'END';
 #Error [example.pl:12] Error 1.
 #Error [example.pl:12] Error 2.
 END
-$ret = err_bt_simple(@errors);
+$ret = err_line_all(@errors);
 is($ret, $right_ret);

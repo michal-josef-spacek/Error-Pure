@@ -9,7 +9,7 @@ use warnings;
 use Readonly;
 
 # Constants.
-Readonly::Array our @EXPORT => qw(err_bt_pretty err_bt_simple err_line);
+Readonly::Array our @EXPORT => qw(err_bt_pretty err_line err_line_all);
 Readonly::Scalar my $SPACE => q{ };
 
 # Version.
@@ -53,7 +53,7 @@ sub err_bt_pretty {
 	return $ret;
 }
 
-sub err_bt_simple {
+sub err_line_all {
 	my @errors = @_;
 	my $ret;
 	foreach my $error_hr (@errors) {
@@ -117,9 +117,9 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
 =head1 SYNOPSIS
 
- use Error::Pure::Output::Text qw(err_bt_pretty err_bt_simple err_line);
+ use Error::Pure::Output::Text qw(err_bt_pretty err_line err_line_all);
  print err_bt_pretty(@errors);
- print err_bt_simple(@errors);
+ print err_line_all(@errors);
  print err_line(@errors);
 
 =head1 SUBROUTINES
@@ -141,7 +141,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
   ...
   sub, caller, program, line
 
-=item B<err_bt_simple(@errors)>
+=item B<err_line_all(@errors)>
 
  Returns string with errors each on one line.
  Use all errors in @errors structure.
@@ -210,7 +210,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
  use warnings;
 
  # Modules.
- use Error::Pure::Output::Text qw(err_bt_simple);
+ use Error::Pure::Output::Text qw(err_line_all);
 
  # Fictional error structure.
  my @err = (
@@ -249,7 +249,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
  );
 
  # Print out.
- print err_bt_simple(@err);
+ print err_line_all(@err);
 
  # Output:
  # #Error [script.pl:1] FOO

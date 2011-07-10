@@ -7,7 +7,7 @@ use warnings;
 
 # Modules.
 use Error::Pure::Utils qw(err_helper);
-use Error::Pure::Output::Text qw(err_bt_simple);
+use Error::Pure::Output::Text qw(err_line_all);
 use List::MoreUtils qw(none);
 use Readonly;
 
@@ -34,7 +34,7 @@ sub err {
 		&& none { $_ eq $EVAL || $_ =~ /^eval '/ms }
 		map { $_->{'sub'} } @{$stack_ar}) {
 
-		die err_bt_simple(@errors);
+		die err_line_all(@errors);
 
 	# Die for eval.
 	} else {
