@@ -9,7 +9,7 @@ use warnings;
 use Readonly;
 
 # Constants.
-Readonly::Array our @EXPORT => qw(err_bt_pretty err_bt_simple err_pretty);
+Readonly::Array our @EXPORT => qw(err_bt_pretty err_bt_simple err_line);
 Readonly::Scalar my $SPACE => q{ };
 
 # Version.
@@ -63,7 +63,7 @@ sub err_bt_simple {
 }
 
 # Pretty print line error.
-sub err_pretty {
+sub err_line {
 	my @errors = @_;
 	return _err_line($errors[-1]);
 }
@@ -117,10 +117,10 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
 =head1 SYNOPSIS
 
- use Error::Pure::Output::Text qw(err_bt_pretty err_bt_simple err_pretty);
+ use Error::Pure::Output::Text qw(err_bt_pretty err_bt_simple err_line);
  print err_bt_pretty(@errors);
  print err_bt_simple(@errors);
- print err_pretty(@errors);
+ print err_line(@errors);
 
 =head1 SUBROUTINES
 
@@ -148,7 +148,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
  Format of error line is: "#Error [%s:%s] %s\n"
  Values of error line are: $program, $line, $message
 
-=item B<err_pretty(@errors)>
+=item B<err_line(@errors)>
 
  Returns string with error on one line.
  Use last error in @errors structure..
@@ -262,7 +262,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
  use warnings;
 
  # Modules.
- use Error::Pure::Output::Text qw(err_pretty);
+ use Error::Pure::Output::Text qw(err_line);
 
  # Fictional error structure.
  my $err_hr = {
@@ -288,7 +288,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
  };
 
  # Print out.
- print err_pretty($err_hr);
+ print err_line($err_hr);
 
  # Output:
  # #Error [script.pl:1] FOO

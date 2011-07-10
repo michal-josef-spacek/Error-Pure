@@ -2,7 +2,6 @@ TODO
 ====
 2. die odchytnute eval vraci divnou strukturu (message by melo byt bez newline).
 8. Prejmenovat err_bt_simple na neco jako err_all_line.
-9. Prejmenovat err_pretty na neco jako err_line.
 10.
 
 Applied
@@ -27,4 +26,7 @@ OK [20110708] skim
 OK [20110708] skim
 
 4. Dokumentace.
+OK [20110710] skim
+
+9. Prejmenovat err_pretty na neco jako err_line.
 OK [20110710] skim
