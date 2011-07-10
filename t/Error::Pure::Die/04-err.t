@@ -6,11 +6,21 @@ use warnings;
 use English qw(-no_match_vars);
 use Error::Pure::Die qw(err);
 use Error::Pure::Utils qw(clean err_get);
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 
 # Test.
 eval {
 	err 'Error.';
+};
+is($EVAL_ERROR, "Error.\n");
+
+# Test.
+eval {
+	err 'Error.';
+};
+my $tmp = $EVAL_ERROR;
+eval {
+	err $tmp;
 };
 is($EVAL_ERROR, "Error.\n");
 
