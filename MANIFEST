@@ -38,8 +38,8 @@ t/Error::Pure::Output::Text/00-use.t
 t/Error::Pure::Output::Text/01-version.t
 t/Error::Pure::Output::Text/02-pod_coverage.t
 t/Error::Pure::Output::Text/03-pod.t
-t/Error::Pure::Output::Text/04-err_line.t
-t/Error::Pure::Output::Text/05-err_bt_pretty.t
+t/Error::Pure::Output::Text/04-err_bt_pretty.t
+t/Error::Pure::Output::Text/05-err_line.t
 t/Error::Pure::Output::Text/06-err_line_all.t
 t/Error::Pure::Print/00-use.t
 t/Error::Pure::Print/01-version.t
