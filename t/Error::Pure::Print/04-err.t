@@ -3,16 +3,14 @@ use strict;
 use warnings;
 
 # Modules.
+use FindBin qw($Bin);
 use English qw(-no_match_vars);
 use Error::Pure::Print qw(err);
-use File::Object;
 use Test::More 'tests' => 3;
 
 # Path to dir with T.pm. And load T.pm.
-my $current_dir;
 BEGIN {
-	$current_dir = File::Object->new;
-	unshift @INC, $current_dir->s;
+	unshift @INC, $Bin;
 };
 use T;
 

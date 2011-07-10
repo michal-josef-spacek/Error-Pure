@@ -9,7 +9,9 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
 	'AUTHOR' => 'Michal Špaček <skim@cpan.org>',
 	'BUILD_REQUIRES' => {
-		'File::Object' => 0,
+		'Cwd' => 0,
+		'File::Spec::Functions' => 0,
+		'FindBin' => 0,
 		'Test::More' => 0,
 		'Test::Pod' => 0,
 		'Test::Pod::Coverage' => 0,

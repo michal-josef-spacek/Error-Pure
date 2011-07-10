@@ -3,9 +3,11 @@ use strict;
 use warnings;
 
 # Modules.
-use File::Object;
+use Cwd qw(realpath);
+use File::Spec::Functions qw(catfile);
+use FindBin qw($Bin);
 use Test::More 'tests' => 1;
 use Test::Pod;
 
 # Test.
-pod_file_ok(File::Object->new->up(2)->file('Pure', 'ErrorList.pm')->s);
+pod_file_ok(realpath(catfile($Bin, '..', '..', 'Pure', 'ErrorList.pm')));
