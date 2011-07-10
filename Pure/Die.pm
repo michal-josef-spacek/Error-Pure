@@ -55,7 +55,7 @@ __END__
 
 =head1 NAME
 
-Error::Pure::Die - Perl module for structured errors.
+Error::Pure::Die - Error::Pure class with classic die.
 
 =head1 SYNOPSIS
 
