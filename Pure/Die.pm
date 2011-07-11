@@ -31,6 +31,7 @@ sub err {
 	# Error messages.
 	chomp $errors[-1]->{'msg'}->[0];
 
+	# Finalize in main on last err.
 	my $stack_ar = $errors[-1]->{'stack'};
 	if ($stack_ar->[-1]->{'class'} eq 'main'
 		&& none { $_ eq $EVAL || $_ =~ /^eval '/ms }
