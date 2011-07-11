@@ -42,6 +42,7 @@ sub err {
 		chomp $e;
 		die "$e\n";
 	}
+
 	return;
 }
 

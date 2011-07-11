@@ -51,6 +51,7 @@ sub err {
 	} else {
 		die "$e\n";
 	}
+
 	return;
 }
 

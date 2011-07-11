@@ -45,6 +45,8 @@ sub err {
 		my $e = $errors[-1]->{'msg'}->[0];
 		die "$e\n";
 	}
+
+	return;
 }
 
 1;
