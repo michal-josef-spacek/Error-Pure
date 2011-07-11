@@ -1,7 +1,5 @@
 TODO
 ====
-10. Opravit Error::Pure::Die tak, aby se chovalo presne jako die. Tzn. Pokud
-    neni v evalu, tak se na vystup predaji vsechny zpravy.
 11.
 
 Applied
@@ -37,3 +35,7 @@ OK [20110710] skim
 2. die odchytnute eval vraci divnou strukturu (message by melo byt bez newline).
 Nechapu.
 NONE [20110710] skim
+
+10. Opravit Error::Pure::Die tak, aby se chovalo presne jako die. Tzn. Pokud
+    neni v evalu, tak se na vystup predaji vsechny zpravy.
+OK [20110710] skim
