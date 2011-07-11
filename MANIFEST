@@ -9,6 +9,7 @@ Pure/ErrorList.pm
 Pure/Output/Text.pm
 Pure/Print.pm
 Pure/Utils.pm
+README
 t/Error::Pure/00-use.t
 t/Error::Pure/01-version.t
 t/Error::Pure/02-pod_coverage.t
