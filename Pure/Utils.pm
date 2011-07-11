@@ -199,7 +199,7 @@ Error::Pure::Utils - Utilities for structured errors.
 
 =item B<err_helper(@msg)>
 
- Subroutine for additional classes above Error::Pure.
+ Subroutine for additional module above Error::Pure.
  @msg is array of messages.
  Returns array of errors.
  Is exportable.

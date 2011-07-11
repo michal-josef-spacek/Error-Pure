@@ -55,7 +55,7 @@ __END__
 
 =head1 NAME
 
-Error::Pure::Error - Error::Pure class with error on one line with informations.
+Error::Pure::Error - Error::Pure module with error on one line with informations.
 
 =head1 SYNOPSIS
 

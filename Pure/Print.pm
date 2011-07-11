@@ -64,7 +64,7 @@ __END__
 
 =head1 NAME
 
-Error::Pure::Print - Error::Pure class for simple error print.
+Error::Pure::Print - Error::Pure module for simple error print.
 
 =head1 SYNOPSIS
 

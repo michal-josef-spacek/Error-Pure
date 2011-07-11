@@ -54,7 +54,7 @@ __END__
 
 =head1 NAME
 
-Error::Pure::ErrorList - Error::Pure class with list of errors in one line
+Error::Pure::ErrorList - Error::Pure module with list of errors in one line
 with informations.
 
 =head1 SYNOPSIS

@@ -55,7 +55,7 @@ __END__
 
 =head1 NAME
 
-Error::Pure::AllError - Error::Pure class with full backtrace.
+Error::Pure::AllError - Error::Pure module with full backtrace.
 
 =head1 SYNOPSIS
 

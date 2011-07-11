@@ -57,7 +57,7 @@ __END__
 
 =head1 NAME
 
-Error::Pure::Die - Error::Pure class with classic die.
+Error::Pure::Die - Error::Pure module with classic die.
 
 =head1 SYNOPSIS
 
