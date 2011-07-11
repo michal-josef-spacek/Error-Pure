@@ -110,6 +110,10 @@ L<Error::Pure::Output::Text(3pm)>,
 L<Error::Pure::Print(3pm)>,
 L<Error::Pure::Utils(3pm)>.
 
+=head1 REPOSITORY
+
+ https://github.com/tupinek/Error-Pure
+
 =head1 AUTHOR
 
  Michal Špaček L<skim@cpan.org>

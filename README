@@ -104,6 +104,9 @@ SEE ALSO
     Error::Pure::Error(3pm), Error::Pure::ErrorList(3pm),
     Error::Pure::Output::Text(3pm), Error::Pure::Print(3pm).
 
+REPOSITORY
+     https://github.com/tupinek/Error-Pure
+
 AUTHOR
      Michal Špaček L<skim@cpan.org>
      http://skim.cz
