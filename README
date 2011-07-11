@@ -1,0 +1,116 @@
+NAME
+    Error::Pure - Perl module for structured errors.
+
+SYNOPSIS
+     use Error::Pure qw(err);
+     err 'This is a fatal error', 'name', 'value';
+
+SUBROUTINES
+    err(@messages)
+             Process error with messages @messages.
+
+VARIABLES
+    $LEVEL
+             Error level for Error::Pure.
+             Default value is 4.
+
+    $TYPE
+             Available are last names in Error::Pure::* modules.
+             Error::Pure::ErrorList means 'ErrorList'.
+             If does defined ENV variable 'ERROR_PURE_TYPE', system use it.
+             Default value is 'Die'.
+
+             Precedence:
+             1) $Error::Pure::TYPE
+             2) $ENV{'ERROR_PURE_TYPE'}
+             3) $Error::Pure::TYPE_DEFAULT = 'Die'
+
+EXAMPLE1
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Error::Pure qw(err);
+
+     # Error.
+     err '1';
+
+     # Output:
+     # 1 at example1.pl line 9.
+
+EXAMPLE2
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Error::Pure qw(err);
+
+     # Set env error type.
+     $ENV{'ERROR_PURE_TYPE'} = 'ErrorList';
+
+     # Error.
+     err '1';
+
+     # Output something like:
+     # #Error [path_to_script:12] 1
+
+EXAMPLE3
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Error::Pure qw(err);
+
+     # Set error type.
+     $Error::Pure::TYPE = 'AllError';
+
+     # Error.
+     err '1';
+
+     # Output something like:
+     # ERROR: 1
+     # main  err  path_to_script  12
+
+EXAMPLE4
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use Error::Pure qw(err);
+
+     $SIG{__DIE__} = sub {
+             my $err = shift;
+             $err =~ s/ at .*\n//ms;
+             $Error::Pure::LEVEL = 5;
+             $Error::Pure::TYPE = 'ErrorList';
+             err $err;
+     };
+
+     # Error.
+     die 'Error';
+
+     # Output.
+     # #Error [path_to_script.pl:17] Error
+
+DEPENDENCIES
+    English(3pm), Error::Pure::Utils(3pm), Exporter(3pm), Readonly(3pm).
+
+SEE ALSO
+    Error::Pure(3pm), Error::Pure::AllError(3pm), Error::Pure::Die(3pm),
+    Error::Pure::Error(3pm), Error::Pure::ErrorList(3pm),
+    Error::Pure::Output::Text(3pm), Error::Pure::Print(3pm).
+
+AUTHOR
+     Michal Špaček L<skim@cpan.org>
+     http://skim.cz
+
+LICENSE AND COPYRIGHT
+    BSD license.
+
+VERSION
+    0.01
+
