@@ -10,7 +10,7 @@ use Cwd qw(abs_path);
 use Readonly;
 
 # Version.
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # Constants.
 Readonly::Array our @EXPORT_OK => qw(clean err_get err_helper);
@@ -315,6 +315,6 @@ BSD license.
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut

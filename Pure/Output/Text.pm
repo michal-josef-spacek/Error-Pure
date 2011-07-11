@@ -13,7 +13,7 @@ Readonly::Array our @EXPORT_OK => qw(err_bt_pretty err_line err_line_all);
 Readonly::Scalar my $SPACE => q{ };
 
 # Version.
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # Pretty print of backtrace.
 sub err_bt_pretty {
@@ -323,6 +323,6 @@ BSD license.
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut

@@ -28,7 +28,7 @@ WriteMakefile(
 		'List::MoreUtils' => 0,
 		'Readonly' => 0,
 	},
-	'VERSION' => 0.01,
+	'VERSION' => 0.02,
 	'test' => {
 		'TESTS' => 't/Error::Pure/*.t '.
 			't/Error::Pure::AllError/*.t '.
