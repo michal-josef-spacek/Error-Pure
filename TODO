@@ -2,15 +2,6 @@ TODO
 ====
 11. Testy pro priklady v dokumentaci.
 12. Testy pro verzi v dokumentaci oproti verzi v kodu.
-13. Prepsat Makefile.PL na Module::Install s tim, ze tu bude resources promenna?
-14. Zakomponovat do Makefile.PL resources:
-	'resources' => {
-		'repository' => {
-			'url' => 'git://github.com/tupinek/Error-Pure',
-			'web' => 'https://github.com/tupinek/Error-Pure',
-			'type' => 'git',
-		},
-	},
 15. Opravit RT#69402 (https://rt.cpan.org/Ticket/Display.html?id=69402).
 16.
 
@@ -51,3 +42,16 @@ NONE [20110710] skim
 10. Opravit Error::Pure::Die tak, aby se chovalo presne jako die. Tzn. Pokud
     neni v evalu, tak se na vystup predaji vsechny zpravy.
 OK [20110710] skim
+
+13. Prepsat Makefile.PL na Module::Install s tim, ze tu bude resources promenna?
+OK [20110712] skim
+
+14. Zakomponovat do Makefile.PL resources:
+	'resources' => {
+		'repository' => {
+			'url' => 'git://github.com/tupinek/Error-Pure',
+			'web' => 'https://github.com/tupinek/Error-Pure',
+			'type' => 'git',
+		},
+	},
+OK [20110712] skim

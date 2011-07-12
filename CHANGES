@@ -2,6 +2,7 @@
 - Rename module test directories to better names (':' isn't allowed on window
   platform). PR#69402
 - Add ACKNOWLEDGMENTS section to Error::Pure doc.
+- Rewrite build system to Module::Install.
 
 0.01: July 11, 2011
 - First version.

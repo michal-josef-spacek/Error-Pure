@@ -3,40 +3,31 @@ use strict;
 use warnings;
 
 # Modules.
-use ExtUtils::MakeMaker;
+use inc::Module::Install;
 
 # Definition.
-WriteMakefile(
-	'AUTHOR' => 'Michal Špaček <skim@cpan.org>',
-	'BUILD_REQUIRES' => {
-		'Cwd' => 0,
-		'File::Spec::Functions' => 0,
-		'FindBin' => 0,
-		'Test::More' => 0,
-		'Test::Pod' => 0,
-		'Test::Pod::Coverage' => 0,
-	},
-	'CONFIGURE_REQUIRES' => {
-		'ExtUtils::MakeMaker' => 0,
-	},
-	'LICENSE' => 'bsd',
-	'NAME' => 'Error::Pure',
-	'PREREQ_PM' => {
-		'Cwd' => 0,
-		'English' => 0,
-		'Exporter' => 0,
-		'List::MoreUtils' => 0,
-		'Readonly' => 0,
-	},
-	'VERSION' => 0.02,
-	'test' => {
-		'TESTS' => 't/Error-Pure/*.t '.
-			't/Error-Pure-AllError/*.t '.
-			't/Error-Pure-Die/*.t '.
-			't/Error-Pure-Error/*.t '.
-			't/Error-Pure-ErrorList/*.t '.
-			't/Error-Pure-Output-Text/*.t '.
-			't/Error-Pure-Print/*.t '.
-			't/Error-Pure-Utils/*.t',
-	},
-);
+abstract 'Perl module for structured errors.';
+author 'Michal Špaček <skim@cpan.org>';
+license 'bsd';
+name 'Error-Pure';
+requires 'Cwd' => 0;
+requires 'English' => 0;
+requires 'Exporter' => 0;
+requires 'List::MoreUtils' => 0;
+requires 'Readonly' => 0;
+resources 'repository' => {
+	'url' => 'git://github.com/tupinek/Error-Pure',
+	'web' => 'https://github.com/tupinek/Error-Pure',
+	'type' => 'git',
+};
+test_requires 'Cwd' => 0;
+test_requires 'File::Spec::Functions' => 0;
+test_requires 'FindBin' => 0;
+test_requires 'Test::More' => 0;
+test_requires 'Test::Pod' => 0;
+test_requires 'Test::Pod::Coverage' => 0;
+tests_recursive;
+version '0.02';
+
+# Run.
+WriteAll();
