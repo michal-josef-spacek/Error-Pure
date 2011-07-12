@@ -11,7 +11,8 @@ TODO
 			'type' => 'git',
 		},
 	},
-15.
+15. Opravit RT#69402 (https://rt.cpan.org/Ticket/Display.html?id=69402).
+16.
 
 Applied
 =======
