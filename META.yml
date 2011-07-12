@@ -35,4 +35,4 @@ resources:
     type: git
     url: git://github.com/tupinek/Error-Pure
     web: https://github.com/tupinek/Error-Pure
-version: 0.02
+version: 0.03

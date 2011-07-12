@@ -7,4 +7,4 @@ use Error::Pure::Output::Text;
 use Test::More 'tests' => 1;
 
 # Test.
-is($Error::Pure::Output::Text::VERSION, 0.02, 'Version.');
+is($Error::Pure::Output::Text::VERSION, 0.03, 'Version.');
