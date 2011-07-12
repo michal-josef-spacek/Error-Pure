@@ -30,13 +30,13 @@ WriteMakefile(
 	},
 	'VERSION' => 0.02,
 	'test' => {
-		'TESTS' => 't/Error::Pure/*.t '.
-			't/Error::Pure::AllError/*.t '.
-			't/Error::Pure::Die/*.t '.
-			't/Error::Pure::Error/*.t '.
-			't/Error::Pure::ErrorList/*.t '.
-			't/Error::Pure::Output::Text/*.t '.
-			't/Error::Pure::Print/*.t '.
-			't/Error::Pure::Utils/*.t',
+		'TESTS' => 't/Error-Pure/*.t '.
+			't/Error-Pure-AllError/*.t '.
+			't/Error-Pure-Die/*.t '.
+			't/Error-Pure-Error/*.t '.
+			't/Error-Pure-ErrorList/*.t '.
+			't/Error-Pure-Output-Text/*.t '.
+			't/Error-Pure-Print/*.t '.
+			't/Error-Pure-Utils/*.t',
 	},
 );
