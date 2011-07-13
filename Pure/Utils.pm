@@ -80,7 +80,9 @@ sub _get_stack {
 		undef, $evaltext, $is_require) = caller($tmp_level++); }) {
 
 		# Prog to absolute path.
-		$prog = abs_path($prog);
+		if (-e $prog) {
+			$prog = abs_path($prog);
+		}
 
 		# Sub name.
 		if (defined $evaltext) {
