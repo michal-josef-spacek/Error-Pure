@@ -54,9 +54,7 @@ eval $eval_string;
 my @err = err_get();
 my $print_eval_string = $eval_string;
 $print_eval_string =~ s/([\'])/\\$1/gsm;
-if (length $print_eval_string > 100) {
-	substr $print_eval_string, 100, -1, '...';
-}
+substr $print_eval_string, 100, -1, '...';
 is($err[0]->{'stack'}->[1]->{'sub'}, "eval '$print_eval_string'",
 	'Eval message trim after 100 chars.');
 
@@ -67,8 +65,6 @@ eval $eval_string;
 @err = err_get();
 $print_eval_string = $eval_string;
 $print_eval_string =~ s/([\'])/\\$1/gsm;
-if (length $print_eval_string > 10) {
-	substr $print_eval_string, 10, -1, '...';
-}
+substr $print_eval_string, 10, -1, '...';
 is($err[0]->{'stack'}->[1]->{'sub'}, "eval '$print_eval_string'", 
 	'Eval message trim after 10 chars.');
