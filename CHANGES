@@ -1,5 +1,5 @@
 0.04
-- Fix situation Test::Pod. It not usable in Perl lesser then 5.8.0.
+- Fix situation with Test::Pod. It not usable in Perl lesser then 5.8.0.
 
 0.03 (July 13, 2011)
 - Add file exist check. Fix error in abs_path('(eval)') on Windows.
