@@ -144,12 +144,12 @@ L<Error::Pure::Utils(3pm)>.
 
 =head1 REPOSITORY
 
- https://github.com/tupinek/Error-Pure
+L<https://github.com/tupinek/Error-Pure>
 
 =head1 AUTHOR
 
  Michal Špaček L<skim@cpan.org>
- http://skim.cz
+ L<http://skim.cz>
 
 =head1 LICENSE AND COPYRIGHT
 

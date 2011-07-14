@@ -192,16 +192,16 @@ L<Error::Pure::Print(3pm)>.
 
 =head1 ACKNOWLEDGMENTS
 
- Jakub Špičak and his Masser (http://masser.sf.net).
+ Jakub Špičak and his Masser (L<http://masser.sf.net>).
 
 =head1 REPOSITORY
 
- https://github.com/tupinek/Error-Pure
+L<https://github.com/tupinek/Error-Pure>
 
 =head1 AUTHOR
 
  Michal Špaček L<skim@cpan.org>
- http://skim.cz
+ L<http://skim.cz>
 
 =head1 LICENSE AND COPYRIGHT
 
