@@ -2,7 +2,10 @@ TODO
 ====
 11. Testy pro priklady v dokumentaci.
 12. Testy pro verzi v dokumentaci oproti verzi v kodu.
-16.
+16. Vyresit
+    http://www.cpantesters.org/cpan/report/fcd14774-acbe-11e0-ae9f-f74291091c5e
+    Mela by tam byt podminka pro vetsi nez perl 5.008
+17.
 
 Applied
 =======
