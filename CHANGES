@@ -3,6 +3,7 @@
 - Fix links in documentation.
 - Fix email link in documentation.
 - Better AUTHOR section in doc.
+- Remove obsolete ';' in code.
 
 0.03 (July 13, 2011)
 - Add file exist check. Fix error in abs_path('(eval)') on Windows.
