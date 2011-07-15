@@ -2,6 +2,7 @@
 - Fix situation with Test::Pod. It not usable in Perl lesser then 5.8.0.
 - Fix links in documentation.
 - Fix email link in documentation.
+- Better AUTHOR section in doc.
 
 0.03 (July 13, 2011)
 - Add file exist check. Fix error in abs_path('(eval)') on Windows.

@@ -105,14 +105,15 @@ SEE ALSO
     Error::Pure::Output::Text(3pm), Error::Pure::Print(3pm).
 
 ACKNOWLEDGMENTS
-     Jakub Špičak and his Masser (http://masser.sf.net).
+    Jakub Špičak and his Masser (<http://masser.sf.net>).
 
 REPOSITORY
-     https://github.com/tupinek/Error-Pure
+    <https://github.com/tupinek/Error-Pure>
 
 AUTHOR
-     Michal Špaček L<skim@cpan.org>
-     http://skim.cz
+    Michal Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
 
 LICENSE AND COPYRIGHT
     BSD license.
