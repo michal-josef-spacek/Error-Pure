@@ -14,6 +14,6 @@ use Test::Pod;
 SKIP: {
 	if ($PERL_VERSION lt v5.8.0) {
 		skip 'Perl version lesser then 5.8.0.', 1;
-	};
+	}
 	pod_file_ok(realpath(catfile($Bin, '..', '..', 'Pure', 'Error.pm')));
 };
