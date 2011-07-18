@@ -295,18 +295,18 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
 =head1 DEPENDENCIES
 
-L<Exporter(3pm)>,
-L<Readonly(3pm)>.
+L<Exporter>,
+L<Readonly>.
 
 =head1 SEE ALSO
 
-L<Error::Pure(3pm)>,
-L<Error::Pure::AllError(3pm)>,
-L<Error::Pure::Die(3pm)>,
-L<Error::Pure::Error(3pm)>,
-L<Error::Pure::ErrorList(3pm)>,
-L<Error::Pure::Print(3pm)>,
-L<Error::Pure::Utils(3pm)>,
+L<Error::Pure>,
+L<Error::Pure::AllError>,
+L<Error::Pure::Die>,
+L<Error::Pure::Error>,
+L<Error::Pure::ErrorList>,
+L<Error::Pure::Print>,
+L<Error::Pure::Utils>,
 
 =head1 REPOSITORY
 

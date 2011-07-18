@@ -114,20 +114,20 @@ Error::Pure::Print - Error::Pure module for simple error print.
 
 =head1 DEPENDENCIES
 
-L<Error::Pure::Utils(3pm)>,
-L<Exporter(3pm)>,
-L<List::MoreUtils(3pm)>,
-L<Readonly(3pm)>.
+L<Error::Pure::Utils>,
+L<Exporter>,
+L<List::MoreUtils>,
+L<Readonly>.
 
 =head1 SEE ALSO
 
-L<Error::Pure(3pm)>,
-L<Error::Pure::AllError(3pm)>,
-L<Error::Pure::Die(3pm)>,
-L<Error::Pure::Error(3pm)>,
-L<Error::Pure::ErrorList(3pm)>,
-L<Error::Pure::Output::Text(3pm)>,
-L<Error::Pure::Utils(3pm)>.
+L<Error::Pure>,
+L<Error::Pure::AllError>,
+L<Error::Pure::Die>,
+L<Error::Pure::Error>,
+L<Error::Pure::ErrorList>,
+L<Error::Pure::Output::Text>,
+L<Error::Pure::Utils>.
 
 =head1 REPOSITORY
 

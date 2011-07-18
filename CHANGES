@@ -4,6 +4,7 @@
 - Fix email link in documentation.
 - Better AUTHOR section in doc.
 - Remove obsolete ';' in code.
+- Remove "(3pm)" from pod doc.
 
 0.03 (July 13, 2011)
 - Add file exist check. Fix error in abs_path('(eval)') on Windows.
