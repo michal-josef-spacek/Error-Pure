@@ -21,6 +21,7 @@ resources 'repository' => {
 	'type' => 'git',
 };
 test_requires 'Cwd' => 0;
+test_requires 'English' => 0;
 test_requires 'File::Spec::Functions' => 0;
 test_requires 'FindBin' => 0;
 test_requires 'Test::More' => 0;
