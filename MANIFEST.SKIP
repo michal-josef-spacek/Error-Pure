@@ -3,6 +3,7 @@
 ^Makefile$
 \.bak$
 \.old$
+cover_db/
 pm_to_blib
 MANIFEST.SKIP
 TODO
