@@ -1,5 +1,6 @@
 0.06
 - Fix print for AllError output.
+- Rewrite to new version of build system.
 
 0.05 (July 28, 2011)
 - Test::Pod not usable in Perl lesser then 5.8.0. (again)
