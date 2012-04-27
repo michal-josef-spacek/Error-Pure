@@ -33,7 +33,7 @@ sub err_bt_pretty {
 				last;
 			}
 			$ret .= $f;
-			if ($t) {
+			if (defined $t) {
 				$ret .= ': '.$t;
 			}
 			$ret .= "\n";
