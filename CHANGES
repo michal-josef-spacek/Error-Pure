@@ -1,5 +1,6 @@
 0.06
 - Fix print for AllError output.
+- Add test for different key=value pair in backtrace.
 - Rewrite to new version of build system.
 
 0.05 (July 28, 2011)
