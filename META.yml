@@ -23,6 +23,7 @@ meta-spec:
 name: Error-Pure
 no_index:
   directory:
+    - examples
     - inc
     - t
 requires:
