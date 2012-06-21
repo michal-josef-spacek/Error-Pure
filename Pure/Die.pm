@@ -11,7 +11,7 @@ use List::MoreUtils qw(none);
 use Readonly;
 
 # Version.
-our $VERSION = 0.08;
+our $VERSION = 0.09;
 
 # Constants.
 Readonly::Array our @EXPORT_OK => qw(err);
@@ -186,6 +186,6 @@ BSD license.
 
 =head1 VERSION
 
-0.08
+0.09
 
 =cut
