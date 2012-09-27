@@ -2,7 +2,11 @@ TODO
 ====
 11. Testy pro priklady v dokumentaci.
 12. Testy pro verzi v dokumentaci oproti verzi v kodu.
-17.
+17. Dam err "Error", "foo", "bar" a cele to odchytnu a pridam dalsi error.
+    Potom v error structure je zprava tech tri dohromady. Overit, pripadne to
+    zase prekonvertovat do zprav. 'msg' => [].
+18.
+    
 
 Applied
 =======
