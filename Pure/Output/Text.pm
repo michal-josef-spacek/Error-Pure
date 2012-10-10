@@ -18,13 +18,13 @@ our $VERSION = 0.09;
 # Pretty print of backtrace.
 sub err_bt_pretty {
 	my @errors = @_;
-	my $ret;
+	my @ret;
 	my $l_ar = _lenghts(@errors);
 	foreach my $error_hr (@errors) {
 		my @msg = @{$error_hr->{'msg'}};
 		my $e = shift @msg;
 		chomp $e;
-		$ret .= 'ERROR: '.$e."\n";
+		push @ret, 'ERROR: '.$e;
 		while (@msg) {
 			my $f = shift @msg;
 			my $t = shift @msg;
@@ -32,25 +32,25 @@ sub err_bt_pretty {
 			if (! defined $f) {
 				last;
 			}
-			$ret .= $f;
+			my $ret = $f;
 			if (defined $t) {
 				$ret .= ': '.$t;
 			}
-			$ret .= "\n";
+			push @ret, $ret;
 		}
 		foreach my $i (0 .. $#{$error_hr->{'stack'}}) {
 			my $st = $error_hr->{'stack'}->[$i];
-			$ret .= $st->{'class'};
+			my $ret = $st->{'class'};
 			$ret .=  $SPACE x ($l_ar->[0] - length $st->{'class'});
 			$ret .=  $st->{'sub'};
 			$ret .=  $SPACE x ($l_ar->[1] - length $st->{'sub'});
 			$ret .=  $st->{'prog'};
 			$ret .=  $SPACE x ($l_ar->[2] - length $st->{'prog'});
 			$ret .=  $st->{'line'};
-			$ret .= "\n";
+			push @ret, $ret;
 		}
 	}
-	return $ret;
+	return wantarray ? @ret : (join "\n", @ret)."\n";
 }
 
 sub err_line_all {

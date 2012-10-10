@@ -34,7 +34,7 @@ sub err {
 		&& none { $_ eq $EVAL || $_ =~ m/^eval '/ms }
 		map { $_->{'sub'} } @{$stack_ar}) {
 
-		die err_bt_pretty(@errors);
+		die scalar err_bt_pretty(@errors);
 
 	# Die for eval.
 	} else {

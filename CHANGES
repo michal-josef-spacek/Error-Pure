@@ -1,4 +1,6 @@
 0.09
+- Rewrite Error::Pure::Output::Text::err_bt_pretty() to version, which returns
+  array of lines or original text with newlines.
 
 0.08 (June 22, 2012)
 - Fix Makefile.PL to Module::CPANTS::Analyse conformity.
