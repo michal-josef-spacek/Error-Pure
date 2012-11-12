@@ -1,4 +1,4 @@
-0.09
+0.09 (November 12, 2012)
 - Rewrite Error::Pure::Output::Text::err_bt_pretty() to version, which returns
   array of lines or original text with newlines.
 
