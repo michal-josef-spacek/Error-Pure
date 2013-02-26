@@ -6,7 +6,8 @@ use warnings;
 use FindBin qw($Bin);
 use English qw(-no_match_vars);
 use Error::Pure::Print qw(err);
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
+use Test::NoWarnings;
 
 # Path to dir with T.pm. And load T.pm.
 BEGIN {

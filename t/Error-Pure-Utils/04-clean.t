@@ -4,7 +4,8 @@ use warnings;
 
 # Modules.
 use Error::Pure::Utils qw(clean);
-use Test::More 'tests' => 1;
+use Test::More 'tests' => 2;
+use Test::NoWarnings;
 
 # Test.
 @Error::Pure::Utils::ERRORS = qw(XXX);

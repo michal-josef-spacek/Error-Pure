@@ -4,7 +4,8 @@ use warnings;
 
 # Modules.
 use Error::Pure::Utils;
-use Test::More 'tests' => 1;
+use Test::More 'tests' => 2;
+use Test::NoWarnings;
 
 # Test.
-is($Error::Pure::Utils::VERSION, 0.10, 'Version.');
+is($Error::Pure::Utils::VERSION, 0.1, 'Version.');

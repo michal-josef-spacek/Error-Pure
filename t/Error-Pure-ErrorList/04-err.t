@@ -5,7 +5,8 @@ use warnings;
 # Modules.
 use English qw(-no_match_vars);
 use Error::Pure::ErrorList qw(err);
-use Test::More 'tests' => 2;
+use Test::More 'tests' => 3;
+use Test::NoWarnings;
 
 # Test.
 eval {

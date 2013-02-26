@@ -4,7 +4,8 @@ use warnings;
 
 # Modules.
 use Error::Pure::Utils qw(clean err_helper);
-use Test::More 'tests' => 2;
+use Test::More 'tests' => 3;
+use Test::NoWarnings;
 
 # Test.
 my @ret = err_helper('FOO', 'BAR');

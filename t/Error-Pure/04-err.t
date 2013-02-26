@@ -5,7 +5,8 @@ use warnings;
 # Modules.
 use English qw(-no_match_vars);
 use Error::Pure qw(err);
-use Test::More 'tests' => 5;
+use Test::More 'tests' => 6;
+use Test::NoWarnings;
 
 # Test.
 if (exists $ENV{'ERROR_PURE_TYPE'}) {

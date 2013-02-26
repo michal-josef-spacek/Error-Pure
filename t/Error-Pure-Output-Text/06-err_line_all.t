@@ -4,7 +4,8 @@ use warnings;
 
 # Modules.
 use Error::Pure::Output::Text qw(err_line_all);
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
+use Test::NoWarnings;
 
 # Test.
 my @errors = (
