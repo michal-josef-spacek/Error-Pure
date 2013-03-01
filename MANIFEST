@@ -38,6 +38,7 @@ Pure/Output/Text.pm
 Pure/Print.pm
 Pure/Utils.pm
 README
+SIGNATURE
 t/Error-Pure-AllError/00-use.t
 t/Error-Pure-AllError/01-version.t
 t/Error-Pure-AllError/02-pod_coverage.t

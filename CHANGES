@@ -1,5 +1,6 @@
 0.10
 - Add Test::NoWarnings to tests.
+- Add SIGNATURE file.
 
 0.09 (November 12, 2012)
 - Rewrite Error::Pure::Output::Text::err_bt_pretty() to version, which returns
