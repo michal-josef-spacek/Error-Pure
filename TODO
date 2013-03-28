@@ -5,7 +5,8 @@ TODO
 17. Dam err "Error", "foo", "bar" a cele to odchytnu a pridam dalsi error.
     Potom v error structure je zprava tech tri dohromady. Overit, pripadne to
     zase prekonvertovat do zprav. 'msg' => [].
-18.
+18. Az pridam treba Error::Pure::HTTPText, tak pridat do SEE ALSO.
+19.
     
 
 Applied
