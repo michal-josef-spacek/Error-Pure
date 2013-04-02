@@ -2,6 +2,7 @@
 - Add Test::NoWarnings to tests.
 - Add SIGNATURE file.
 - Fix doc SEE ALSO section.
+- Fix Error::Pure::Output::Text::err_bt_pretty() doc.
 - Improve Error::Pure::Output::Text doc.
 
 0.09 (November 12, 2012)

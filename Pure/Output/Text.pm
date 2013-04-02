@@ -128,7 +128,8 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
 =item B<err_bt_pretty(@errors)>
 
- Returns string with full backtrace.
+ Returns string with full backtrace in scalar context.
+ Returns array of full backtrace lines in array context.
  Format of error is:
          ERROR: %s
          %s: %s
