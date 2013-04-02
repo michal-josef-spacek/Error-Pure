@@ -130,16 +130,16 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
  Returns string with full backtrace.
  Format of error is:
-  ERROR: %s
-  %s: %s
-  ...
-  %s %s %s %s
-  ...
+         ERROR: %s
+         %s: %s
+         ...
+         %s %s %s %s
+         ...
  Values of error are:
-  message
-  message as key, $message as value
-  ...
-  sub, caller, program, line
+         message
+         message as key, $message as value
+         ...
+         sub, caller, program, line
 
 =item B<err_line_all(@errors)>
 
