@@ -1,7 +1,7 @@
 0.10
 - Add Test::NoWarnings to tests.
 - Add SIGNATURE file.
-- Fix doc SEE ALSO section.
+- Fix SEE ALSO section in Error::Pure::ErrorList doc.
 - Fix Error::Pure::Output::Text::err_bt_pretty() doc.
 - Improve Error::Pure::Output::Text doc.
 
