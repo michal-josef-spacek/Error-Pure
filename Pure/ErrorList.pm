@@ -136,7 +136,7 @@ L<Readonly>.
 
 L<Error::Pure>,
 L<Error::Pure::AllError>,
-L<Error::Pure::die>,
+L<Error::Pure::Die>,
 L<Error::Pure::Error>,
 L<Error::Pure::Output::Text>,
 L<Error::Pure::Print>,
