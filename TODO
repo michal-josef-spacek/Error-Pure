@@ -13,7 +13,8 @@ TODO
     "
 20. err (); neprojde dobre.
 21. Pridat testy na err undef.
-22.
+22. Prepsat err() tak, aby opakujici se cast byla na jednom miste.
+23.
 
 Applied
 =======
