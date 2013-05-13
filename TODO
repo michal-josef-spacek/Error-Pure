@@ -6,8 +6,13 @@ TODO
     Potom v error structure je zprava tech tri dohromady. Overit, pripadne to
     zase prekonvertovat do zprav. 'msg' => [].
 18. Az pridam treba Error::Pure::HTTP::*, tak pridat do SEE ALSO.
-19.
-    
+19. Kdyz zadam Error type neco neznameho, tak:
+    Array found where operator expected at (eval 30) line 1, at end of line
+        (Do you need to predeclare Error::Pure::Error::List::err?)
+    syntax error at (eval 30) line 2, near "Error::Pure::Error::List::err @msg
+    "
+20. err (); neprojde dobre.
+21.
 
 Applied
 =======
