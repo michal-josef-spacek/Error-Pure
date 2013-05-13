@@ -12,7 +12,8 @@ TODO
     syntax error at (eval 30) line 2, near "Error::Pure::Error::List::err @msg
     "
 20. err (); neprojde dobre.
-21.
+21. Pridat testy na err undef.
+22.
 
 Applied
 =======
