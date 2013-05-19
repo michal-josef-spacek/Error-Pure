@@ -29,7 +29,11 @@ sub err {
 	my @errors = err_helper(@msg);
 
 	# Error messages.
-	chomp $errors[-1]->{'msg'}->[0];
+	my $e = $errors[-1]->{'msg'}->[0];
+	if (! defined $e) {
+		$e = 'undef';
+	}
+	chomp $e;
 
 	# Finalize in main on last err.
 	my $stack_ar = $errors[-1]->{'stack'};
@@ -43,7 +47,6 @@ sub err {
 
 	# Die for eval.
 	} else {
-		my $e = $errors[-1]->{'msg'}->[0];
 		die "$e\n";
 	}
 

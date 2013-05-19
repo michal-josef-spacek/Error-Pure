@@ -30,6 +30,9 @@ sub err {
 
 	# Error message.
 	my $e = $errors[-1]->{'msg'}->[0];
+	if (! defined $e) {
+		$e = 'undef';
+	}
 	chomp $e;
 
 	# Finalize in main on last err.
