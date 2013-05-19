@@ -11,8 +11,6 @@ TODO
         (Do you need to predeclare Error::Pure::Error::List::err?)
     syntax error at (eval 30) line 2, near "Error::Pure::Error::List::err @msg
     "
-20. err (); neprojde dobre.
-21. Pridat testy na err undef.
 22. Prepsat err() tak, aby opakujici se cast byla na jednom miste.
 23.
 
@@ -74,3 +72,9 @@ OK [20110712] skim
     http://www.cpantesters.org/cpan/report/fcd14774-acbe-11e0-ae9f-f74291091c5e
     Mela by tam byt podminka pro vetsi nez perl 5.008
 OK [20110714] skim
+
+20. err (); neprojde dobre.
+OK [20130519] skim
+
+21. Pridat testy na err undef.
+OK [20130519] skim
