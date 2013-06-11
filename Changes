@@ -1,3 +1,5 @@
+0.12
+
 0.11 (June 11, 2013)
 - Add LICENSE file.
 - Add error check for require Error::Pure module.

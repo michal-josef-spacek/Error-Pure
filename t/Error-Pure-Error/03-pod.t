@@ -3,10 +3,8 @@ use strict;
 use warnings;
 
 # Modules.
-use Cwd qw(realpath);
 use English qw(-no_match_vars);
-use File::Spec::Functions qw(catfile);
-use FindBin qw($Bin);
+use File::Object;
 use Test::More 'tests' => 2;
 use Test::NoWarnings;
 
@@ -16,6 +14,5 @@ SKIP: {
 		skip 'Perl version lesser then 5.8.0.', 1;
 	}
 	require Test::Pod;
-	Test::Pod::pod_file_ok(realpath(catfile($Bin, '..', '..', 'Pure',
-		'Error.pm')));
+	Test::Pod::pod_file_ok(File::Object->new->up(2)->file('Pure', 'Error.pm')->s);
 };
