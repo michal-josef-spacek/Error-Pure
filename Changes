@@ -1,7 +1,7 @@
 0.10
 - Add Error::Pure::HTTP::* modules to SEE ALSO sections.
-- Add Test::NoWarnings to tests.
 - Add SIGNATURE file.
+- Add Test::NoWarnings to tests.
 - Change situation with `err undef` or `err ()`. Returns 'undef' string now.
 - Fix SEE ALSO section in Error::Pure::ErrorList doc.
 - Fix Error::Pure::Output::Text::err_bt_pretty() doc.
