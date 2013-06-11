@@ -41,6 +41,11 @@ sub err {
 		$class = 'Error::Pure::'.$TYPE_DEFAULT;
 	}
 	eval "require $class";
+	if ($EVAL_ERROR) {
+		my $err = $EVAL_ERROR;
+		$err =~ s/\ at.*$//ms;
+		die $err;
+	}
 	eval $class.'::err @msg';
 	if ($EVAL_ERROR) {
 		die $EVAL_ERROR;
