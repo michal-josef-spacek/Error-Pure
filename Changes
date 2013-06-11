@@ -1,4 +1,5 @@
 0.10
+- Add Error::Pure::HTTP::* modules to SEE ALSO sections.
 - Add Test::NoWarnings to tests.
 - Add SIGNATURE file.
 - Change situation with `err undef` or `err ()`. Returns 'undef' string now.

@@ -5,7 +5,6 @@ TODO
 17. Dam err "Error", "foo", "bar" a cele to odchytnu a pridam dalsi error.
     Potom v error structure je zprava tech tri dohromady. Overit, pripadne to
     zase prekonvertovat do zprav. 'msg' => [].
-18. Az pridam treba Error::Pure::HTTP::*, tak pridat do SEE ALSO.
 19. Kdyz zadam Error type neco neznameho, tak:
     Array found where operator expected at (eval 30) line 1, at end of line
         (Do you need to predeclare Error::Pure::Error::List::err?)
@@ -78,3 +77,6 @@ OK [20130519] skim
 
 21. Pridat testy na err undef.
 OK [20130519] skim
+
+18. Az pridam treba Error::Pure::HTTP::*, tak pridat do SEE ALSO.
+OK [20130611] skim

@@ -129,6 +129,10 @@ L<Error::Pure::AllError>,
 L<Error::Pure::Die>,
 L<Error::Pure::Error>,
 L<Error::Pure::ErrorList>,
+L<Error::Pure::HTTP::AllError>,
+L<Error::Pure::HTTP::Error>,
+L<Error::Pure::HTTP::ErrorList>,
+L<Error::Pure::HTTP::Print>,
 L<Error::Pure::Output::Text>,
 L<Error::Pure::Utils>.
 
