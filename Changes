@@ -4,6 +4,7 @@
 - Change situation with `err undef` or `err ()`. Returns 'undef' string now.
 - Fix SEE ALSO section in Error::Pure::ErrorList doc.
 - Fix Error::Pure::Output::Text::err_bt_pretty() doc.
+- Fix examples with err_get() in doc.
 - Improve Error::Pure::Output::Text doc.
 
 0.09 (November 12, 2012)
