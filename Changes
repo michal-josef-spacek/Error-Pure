@@ -1,6 +1,7 @@
 0.11
 - Add LICENSE file.
 - Add error check for require Error::Pure module.
+- Fix bug with File::Object in tests (from 0.10 release).
 
 0.10 (June 11, 2013)
 - Add Error::Pure::HTTP::* modules to SEE ALSO sections.
