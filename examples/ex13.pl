@@ -13,13 +13,13 @@ use Error::Pure::Utils qw(err_get);
 eval { err '1', '2', '3'; };
 
 # Error structure.
-my $err_ar = err_get();
+my @err = err_get();
 
 # Dump.
 my $dump = Dumpvalue->new;
-$dump->dumpValues($err_ar);
+$dump->dumpValues(\@err);
 
-# In $err_ar:
+# In \@err:
 # [
 #         {
 #                 'msg' => [

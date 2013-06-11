@@ -6,6 +6,7 @@
 - Fix Error::Pure::Output::Text::err_bt_pretty() doc.
 - Fix examples with err_get() in doc.
 - Improve Error::Pure::Output::Text doc.
+- Update examples/ directory.
 
 0.09 (November 12, 2012)
 - Rewrite Error::Pure::Output::Text::err_bt_pretty() to version, which returns
