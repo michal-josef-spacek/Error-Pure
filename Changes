@@ -1,4 +1,4 @@
-0.11
+0.11 (June 11, 2013)
 - Add LICENSE file.
 - Add error check for require Error::Pure module.
 - Fix bug with File::Object in tests (from 0.10 release).
