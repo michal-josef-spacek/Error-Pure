@@ -1,4 +1,5 @@
 0.12
+- Add sign command to Makefile.PL.
 
 0.11 (June 11, 2013)
 - Add LICENSE file.
