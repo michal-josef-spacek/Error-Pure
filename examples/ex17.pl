@@ -32,7 +32,7 @@ my $err_hr = {
 };
 
 # Print out.
-print err_bt_pretty($err_hr);
+print scalar err_bt_pretty($err_hr);
 
 # Output:
 # ERROR: FOO

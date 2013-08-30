@@ -196,7 +196,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
  };
 
  # Print out.
- print err_bt_pretty($err_hr);
+ print scalar err_bt_pretty($err_hr);
 
  # Output:
  # ERROR: FOO
