@@ -1,6 +1,7 @@
 0.12
 - Add sign command to Makefile.PL.
 - Fix Error::Pure::Output::Text first example in doc.
+- Fix years in LICENSE file.
 
 0.11 (June 11, 2013)
 - Add LICENSE file.
