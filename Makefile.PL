@@ -31,8 +31,5 @@ test_requires 'Test::Pod::Coverage' => 0;
 tests_recursive;
 version '0.12';
 
-# Sign.
-sign;
-
 # Run.
 WriteAll();
