@@ -1,4 +1,5 @@
 0.12
+- Add modules to SEE ALSO section in doc.
 - Add sign command to Makefile.PL.
 - Fix Error::Pure::Output::Text first example in doc.
 - Fix years in LICENSE file.
