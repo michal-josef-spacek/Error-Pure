@@ -6,7 +6,6 @@ TODO
     Potom v error structure je zprava tech tri dohromady. Overit, pripadne to
     zase prekonvertovat do zprav. 'msg' => [].
 22. Prepsat err() tak, aby opakujici se cast byla na jednom miste.
-23. Update SEE ALSO section.
 24.
 
 Applied
@@ -83,3 +82,6 @@ OK [20130611] skim
     syntax error at (eval 30) line 2, near "Error::Pure::Error::List::err @msg
     "
 OK [20130611] skim
+
+23. Update SEE ALSO section.
+OK [20130919] skim
