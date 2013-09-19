@@ -100,10 +100,12 @@ DEPENDENCIES
     English, Error::Pure::Utils, Exporter, Readonly.
 
 SEE ALSO
-    Error::Pure, Error::Pure::AllError, Error::Pure::Die,
-    Error::Pure::Error, Error::Pure::ErrorList, Error::Pure::HTTP::AllError,
-    Error::Pure::HTTP::Error, Error::Pure::HTTP::ErrorList,
-    Error::Pure::HTTP::Print, Error::Pure::Output::Text, Error::Pure::Print.
+    Error::Pure, Error::Pure::AllError, Error::Pure::Always,
+    Error::Pure::Die, Error::Pure::Error, Error::Pure::ErrorList,
+    Error::Pure::HTTP::AllError, Error::Pure::HTTP::Error,
+    Error::Pure::HTTP::ErrorList, Error::Pure::HTTP::JSON,
+    Error::Pure::HTTP::Print, Error::Pure::JSON, Error::Pure::Output::JSON,
+    Error::Pure::Output::Text, Error::Pure::Print.
 
 ACKNOWLEDGMENTS
     Jakub Špičak and his Masser (<http://masser.sf.net>).
