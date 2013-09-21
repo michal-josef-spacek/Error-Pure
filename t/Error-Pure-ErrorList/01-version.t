@@ -8,4 +8,4 @@ use Test::More 'tests' => 2;
 use Test::NoWarnings;
 
 # Test.
-is($Error::Pure::ErrorList::VERSION, 0.12, 'Version.');
+is($Error::Pure::ErrorList::VERSION, 0.13, 'Version.');

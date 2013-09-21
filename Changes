@@ -1,3 +1,5 @@
+0.13
+
 0.12 2013-09-21
  - Add modules to SEE ALSO section in doc.
  - Fix Error::Pure::Output::Text first example in doc.

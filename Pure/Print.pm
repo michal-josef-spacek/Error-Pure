@@ -16,7 +16,7 @@ Readonly::Scalar my $EMPTY_STR => q{};
 Readonly::Scalar my $EVAL => 'eval {...}';
 
 # Version.
-our $VERSION = 0.12;
+our $VERSION = 0.13;
 
 # Ignore die signal.
 $SIG{__DIE__} = 'IGNORE';
@@ -152,6 +152,6 @@ BSD license.
 
 =head1 VERSION
 
-0.12
+0.13
 
 =cut
