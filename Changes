@@ -1,61 +1,59 @@
 0.12
- - Add modules to SEE ALSO section in doc.
- - Fix Error::Pure::Output::Text first example in doc.
- - Fix years in LICENSE file.
- - Rewrite Changes file to CPAN::Changes::SPEC format.
- - Update README.
+- Add modules to SEE ALSO section in doc.
+- Fix Error::Pure::Output::Text first example in doc.
+- Fix years in LICENSE file.
+- Update README.
 
-0.11 2013-06-11
- - Add LICENSE file.
- - Add error check for require Error::Pure module.
- - Fix bug with File::Object in tests (from 0.10 release).
+0.11 (June 11, 2013)
+- Add LICENSE file.
+- Add error check for require Error::Pure module.
+- Fix bug with File::Object in tests (from 0.10 release).
 
-0.10 2013-06-11
- - Add Error::Pure::HTTP::* modules to SEE ALSO sections.
- - Add SIGNATURE file.
- - Add Test::NoWarnings to tests.
- - Change situation with `err undef` or `err ()`. Returns 'undef' string
-   now.
- - Fix SEE ALSO section in Error::Pure::ErrorList doc.
- - Fix Error::Pure::Output::Text::err_bt_pretty() doc.
- - Fix examples with err_get() in doc.
- - Improve Error::Pure::Output::Text doc.
- - Update examples/ directory.
+0.10 (June 11, 2013)
+- Add Error::Pure::HTTP::* modules to SEE ALSO sections.
+- Add SIGNATURE file.
+- Add Test::NoWarnings to tests.
+- Change situation with `err undef` or `err ()`. Returns 'undef' string now.
+- Fix SEE ALSO section in Error::Pure::ErrorList doc.
+- Fix Error::Pure::Output::Text::err_bt_pretty() doc.
+- Fix examples with err_get() in doc.
+- Improve Error::Pure::Output::Text doc.
+- Update examples/ directory.
 
-0.09 2012-11-12
- - Rewrite Error::Pure::Output::Text::err_bt_pretty() to version, which
-   returns
+0.09 (November 12, 2012)
+- Rewrite Error::Pure::Output::Text::err_bt_pretty() to version, which returns
+  array of lines or original text with newlines.
 
-0.08 2012-06-22
- - Fix Makefile.PL to Module::CPANTS::Analyse conformity.
+0.08 (June 22, 2012)
+- Fix Makefile.PL to Module::CPANTS::Analyse conformity.
 
-0.07 2012-05-16
- - Add examples/ directory.
+0.07 (May 16, 2012)
+- Add examples/ directory.
 
-0.06 2012-04-27
- - Fix print for AllError output.
- - Add test for different key=value pair in backtrace.
- - Rewrite to new version of build system.
+0.06 (April 27, 2012)
+- Fix print for AllError output.
+- Add test for different key=value pair in backtrace.
+- Rewrite to new version of build system.
 
-0.05 2011-07-28
- - Test::Pod not usable in Perl lesser then 5.8.0. (again)
+0.05 (July 28, 2011)
+- Test::Pod not usable in Perl lesser then 5.8.0. (again)
 
-0.04 2011-07-19
- - Fix situation with Test::Pod. It not usable in Perl lesser then 5.8.0.
- - Fix links in documentation.
- - Fix email link in documentation.
- - Better AUTHOR section in doc.
- - Remove obsolete ';' in code.
- - Remove "(3pm)" from pod doc.
+0.04 (July 19, 2011)
+- Fix situation with Test::Pod. It not usable in Perl lesser then 5.8.0.
+- Fix links in documentation.
+- Fix email link in documentation.
+- Better AUTHOR section in doc.
+- Remove obsolete ';' in code.
+- Remove "(3pm)" from pod doc.
 
-0.03 2011-07-13
- - Add file exist check. Fix error in abs_path('(eval)') on Windows.
+0.03 (July 13, 2011)
+- Add file exist check. Fix error in abs_path('(eval)') on Windows.
 
-0.02 2011-07-12
- - Rename module test directories to better names (':' isn't allowed on
-   window
- - Add ACKNOWLEDGMENTS section to Error::Pure doc.
- - Rewrite build system to Module::Install.
+0.02 (July 12, 2011)
+- Rename module test directories to better names (':' isn't allowed on window
+  platform). PR#69402
+- Add ACKNOWLEDGMENTS section to Error::Pure doc.
+- Rewrite build system to Module::Install.
 
-0.01 2011-07-11
- - First version.
+0.01 (July 11, 2011)
+- First version.
