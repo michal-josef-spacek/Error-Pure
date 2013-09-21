@@ -2,6 +2,7 @@
  - Add modules to SEE ALSO section in doc.
  - Fix Error::Pure::Output::Text first example in doc.
  - Fix years in LICENSE file.
+ - Rewrite Changes file to CPAN::Changes::SPEC format
  - Update README.
 
 0.11 2013-06-11
