@@ -16,7 +16,7 @@ Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $EVAL => 'eval {...}';
 
 # Version.
-our $VERSION = 0.13;
+our $VERSION = 0.14;
 
 # Ignore die signal.
 $SIG{__DIE__} = 'IGNORE';
@@ -145,6 +145,6 @@ BSD license.
 
 =head1 VERSION
 
-0.13
+0.14
 
 =cut
