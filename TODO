@@ -6,7 +6,9 @@ TODO
     Potom v error structure je zprava tech tri dohromady. Overit, pripadne to
     zase prekonvertovat do zprav. 'msg' => [].
 22. Prepsat err() tak, aby opakujici se cast byla na jednom miste.
-24.
+24. Co kdyz errory budou s newline (napr err "1", "Error", "foo\nbar", kdy tam
+    davam odchytnute veci.) Jak toto formatovat?
+25.
 
 Applied
 =======
