@@ -189,22 +189,23 @@ Error::Pure::Utils - Utilities for structured errors.
 =item B<clean()>
 
  Resets internal variables with errors.
- Is exportable.
+ It is exportable.
+ Returns undef.
 
 =item B<err_get([$clean])>
 
  Get and clean processed errors.
  err_get() returns error structure.
  err_get(1) returns error structure and delete it internally.
+ It is exportable.
  Returns array of errors.
- Is exportable.
 
 =item B<err_helper(@msg)>
 
  Subroutine for additional module above Error::Pure.
  @msg is array of messages.
+ It is exportable.
  Returns array of errors.
- Is exportable.
 
 =back
 
