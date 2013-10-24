@@ -1,6 +1,7 @@
 0.14
  - Add Error::Pure::Utils::err_msg() subroutine.
  - Add Error::Pure::Utils::err_msg_hr() subroutine.
+ - Add example to Error::Pure doc.
 
 0.13 2013-09-22
  - Fix deploing in 0.12 version :-(.

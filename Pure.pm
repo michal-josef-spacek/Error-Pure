@@ -178,6 +178,36 @@ Error::Pure - Perl module for structured errors.
  # Output.
  # #Error [path_to_script.pl:17] Error
 
+=head1 EXAMPLE5
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use English qw(-no_match_vars);
+ use Error::Pure qw(err);
+ use Error::Pure::Utils qw(err_msg_hr);
+
+ # Eval block.
+ eval {
+        err 'Error',
+               'Key1', 'Value1',
+               'Key2', 'Value2';
+ };
+ if ($EVAL_ERROR) {
+        print $EVAL_ERROR;
+        my $err_msg_hr = err_msg_hr();
+        foreach my $key (sort keys %{$err_msg_hr}) {
+               print "$key: $err_msg_hr->{$key}\n";
+        }
+ }
+
+ # Output.
+ # Error
+ # Key1: Value1
+ # Key2: Value2
+
 =head1 DEPENDENCIES
 
 L<English>,

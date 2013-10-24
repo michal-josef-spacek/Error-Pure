@@ -7,6 +7,7 @@ use warnings;
 # Modules.
 use English qw(-no_match_vars);
 use Error::Pure qw(err);
+use Error::Pure::Utils qw(err_msg_hr);
 
 # Eval block.
 eval {
@@ -16,7 +17,13 @@ eval {
 };
 if ($EVAL_ERROR) {
        print $EVAL_ERROR;
+       my $err_msg_hr = err_msg_hr();
+       foreach my $key (sort keys %{$err_msg_hr}) {
+              print "$key: $err_msg_hr->{$key}\n";
+       }
 }
 
 # Output.
-# TODO
+# Error
+# Key1: Value1
+# Key2: Value2
