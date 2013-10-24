@@ -179,7 +179,7 @@ Error::Pure::Utils - Utilities for structured errors.
 
  use Error::Pure::Utils qw(clean err_get err_helper);
  clean();
- my @errors = err_get(1);
+ my @errors = err_get($clean);
  my @errors = err_helper('This is a fatal error', 'name', 'value');
 
 =head1 SUBROUTINES
