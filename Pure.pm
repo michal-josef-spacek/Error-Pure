@@ -16,7 +16,7 @@ Readonly::Scalar my $TYPE_DEFAULT => 'Die';
 Readonly::Scalar my $LEVEL_DEFAULT => 4;
 
 # Version.
-our $VERSION = 0.14;
+our $VERSION = 0.15;
 
 # Type of error.
 our $TYPE = $TYPE_DEFAULT;
@@ -253,6 +253,6 @@ BSD license.
 
 =head1 VERSION
 
-0.14
+0.15
 
 =cut
