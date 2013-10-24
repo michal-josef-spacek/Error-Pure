@@ -1,4 +1,4 @@
-0.14
+0.14 2013-10-24
  - Add Error::Pure::Utils::err_msg() subroutine.
  - Add Error::Pure::Utils::err_msg_hr() subroutine.
  - Add example to Error::Pure doc.
