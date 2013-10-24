@@ -5,33 +5,43 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure::Output::Text qw(err_line);
+use Dumpvalue;
+use Error::Pure::Die qw(err);
+use Error::Pure::Utils qw(err_get);
 
-# Fictional error structure.
-my $err_hr = {
-        'msg' => [
-                'FOO',
-                'BAR',
-        ],
-        'stack' => [
-                {
-                        'args' => '(2)',
-                        'class' => 'main',
-                        'line' => 1,
-                        'prog' => 'script.pl',
-                        'sub' => 'err',
-                }, {
-                        'args' => '',
-                        'class' => 'main',
-                        'line' => 20,
-                        'prog' => 'script.pl',
-                        'sub' => 'eval {...}',
-                }
-        ],
-};
+# Error in eval.
+eval { err '1', '2', '3'; };
 
-# Print out.
-print err_line($err_hr);
+# Error structure.
+my @err = err_get();
 
-# Output:
-# #Error [script.pl:1] FOO
+# Dump.
+my $dump = Dumpvalue->new;
+$dump->dumpValues(\@err);
+
+# In \@err:
+# [
+#         {
+#                 'msg' => [
+#                         '1',
+#                         '2',
+#                         '3',
+#                 ],
+#                 'stack' => [
+#                         {
+#                                 'args' => '(1)',
+#                                 'class' => 'main',
+#                                 'line' => '9',
+#                                 'prog' => 'script.pl',
+#                                 'sub' => 'err',
+#                         },
+#                         {
+#                                 'args' => '',
+#                                 'class' => 'main',
+#                                 'line' => '9',
+#                                 'prog' => 'script.pl',
+#                                 'sub' => 'eval {...}',
+#                         },
+#                 ],
+#         },
+# ],

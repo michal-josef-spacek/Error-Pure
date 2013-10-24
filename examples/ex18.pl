@@ -5,47 +5,10 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure::Output::Text qw(err_line_all);
+use Error::Pure::Die qw(err);
 
-# Fictional error structure.
-my @err = (
-        {
-                'msg' => [
-                        'FOO',
-                        'BAR',
-                ],
-                'stack' => [
-                        {
-                                'args' => '(2)',
-                                'class' => 'main',
-                                'line' => 1,
-                                'prog' => 'script.pl',
-                                'sub' => 'err',
-                        }, {
-                                'args' => '',
-                                'class' => 'main',
-                                'line' => 20,
-                                'prog' => 'script.pl',
-                                'sub' => 'eval {...}',
-                        }
-                ],
-        }, {
-                'msg' => ['XXX'],
-                'stack' => [
-                        {
-                                'args' => '',
-                                'class' => 'main',
-                                'line' => 2,
-                                'prog' => 'script.pl',
-                                'sub' => 'err',
-                        },
-                ],
-        }
-);
-
-# Print out.
-print err_line_all(@err);
+# Error.
+err '1', '2', '3';
 
 # Output:
-# #Error [script.pl:1] FOO
-# #Error [script.pl:2] XXX
+# 1 at example2.pl line 9.

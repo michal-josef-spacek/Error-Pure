@@ -5,10 +5,18 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure::Error qw(err);
+use English qw(-no_match_vars);
+use Error::Pure qw(err);
 
-# Error.
-err '1';
+# Eval block.
+eval {
+       err 'Error',
+              'Key1', 'Value1',
+              'Key2', 'Value2';
+};
+if ($EVAL_ERROR) {
+       print $EVAL_ERROR;
+}
 
-# Output:
-# #Error [example1.pl:9] 1
+# Output.
+# TODO

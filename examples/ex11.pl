@@ -5,10 +5,15 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure::Print qw(err);
+use English qw(-no_match_vars);
+use Error::Pure::ErrorList qw(err);
 
 # Error.
-err '1';
+eval { err "1"; };
+if ($EVAL_ERROR) {
+       err "2";
+}
 
 # Output:
-# 1
+# #Error [example3.pl:10] 1
+# #Error [example3.pl:11] 2

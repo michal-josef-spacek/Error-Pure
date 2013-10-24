@@ -8,7 +8,7 @@ use warnings;
 use Error::Pure::Error qw(err);
 
 # Error.
-err '1', '2', '3';
+err '1';
 
 # Output:
-# #Error [example2.pl:9] 1
+# #Error [example1.pl:9] 1

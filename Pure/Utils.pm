@@ -13,7 +13,7 @@ use Readonly;
 our $VERSION = 0.14;
 
 # Constants.
-Readonly::Array our @EXPORT_OK => qw(clean err_get err_helper);
+Readonly::Array our @EXPORT_OK => qw(clean err_get err_helper err_msg err_msg_hr);
 Readonly::Scalar my $DOTS => '...';
 Readonly::Scalar my $EMPTY_STR => q{};
 Readonly::Scalar my $EVAL => 'eval {...}';
@@ -67,6 +67,21 @@ sub err_helper {
 	};
 
 	return @ERRORS;
+}
+
+# Get first error messages array.
+sub err_msg {
+	my @err = err_get();
+	my @ret = @{$err[0]->{'msg'}};
+	return @ret;
+}
+
+# Get first error message key, value pairs as hash reference.
+sub err_msg_hr {
+	my @err = err_get();
+	my @ret = @{$err[0]->{'msg'}};
+	shift @ret;
+	return {@ret};
 }
 
 # Get information about place of error.
@@ -177,9 +192,11 @@ Error::Pure::Utils - Utilities for structured errors.
 
 =head1 SYNOPSIS
 
- use Error::Pure::Utils qw(clean err_get err_helper);
+ use Error::Pure::Utils qw(clean err_get err_helper err_msg err_msg_hr);
  clean();
  my @errors = err_get($clean);
+ my @err_msg = err_msg();
+ my $err_msg_hr = err_msg_hr();
  my @errors = err_helper('This is a fatal error', 'name', 'value');
 
 =head1 SUBROUTINES
@@ -199,6 +216,24 @@ Error::Pure::Utils - Utilities for structured errors.
  err_get(1) returns error structure and delete it internally.
  It is exportable.
  Returns array of errors.
+
+=item B<err_msg()>
+
+ Get first error messages array.
+ Is is usable in situation >>err 'Error', 'item1', 'item2', 'item3', 'item4'<<.
+ Then returns ('Error', 'item1', 'item2', 'item3', 'item4') array.
+ See EXAMPLE2.
+ It is exportable.
+ Returns array of error messages.
+
+=item B<err_msg_hr()>
+
+ Get first error message key, value pairs as hash reference.
+ Is is usable in situation >>err 'Error', 'key1', 'val1', 'key2', 'val2'<<.
+ Then returns {'key1' => 'val1', 'key2' => 'val2'} structure.
+ See EXAMPLE3.
+ It is exportable.
+ Returns reference to hash with error messages.
 
 =item B<err_helper(@msg)>
 
@@ -240,7 +275,7 @@ Default value is 50.
 
 =back
 
-=head1 EXAMPLE
+=head1 EXAMPLE1
 
  # Pragmas.
  use strict;
@@ -287,6 +322,65 @@ Default value is 50.
  #                 ],
  #         },
  # ],
+
+=head1 EXAMPLE2
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use English qw(-no_match_vars);
+ use Error::Pure qw(err);
+ use Error::Pure::Utils qw(err_msg);
+
+ # Error in eval.
+ eval {
+         err 'Error', 'item1', 'item2', 'item3', 'item4';
+ };
+ if ($EVAL_ERROR) {
+         my @err_msg = err_msg();
+         foreach my $item (@err_msg) {
+                 print "$item\n";
+         }
+ }
+
+ # Output:
+ # Error
+ # item1
+ # item2
+ # item3
+ # item4
+
+=head1 EXAMPLE3
+
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ use English qw(-no_match_vars);
+ use Error::Pure qw(err);
+ use Error::Pure::Utils qw(err_msg_hr);
+
+ # Error in eval.
+ eval {
+         err 'Error',
+                 'key1', 'val1',
+                 'key2', 'val2';
+ };
+ if ($EVAL_ERROR) {
+         print $EVAL_ERROR;
+         my $err_msg_hr = err_msg_hr();
+         foreach my $key (sort keys %{$err_msg_hr}) {
+                 print "$key: $err_msg_hr->{$key}\n";
+         }
+ }
+
+ # Output:
+ # Error
+ # key1: val1
+ # key2: val2
 
 =head1 DEPENDENCIES
 
