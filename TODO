@@ -8,7 +8,14 @@ TODO
 22. Prepsat err() tak, aby opakujici se cast byla na jednom miste.
 24. Co kdyz errory budou s newline (napr err "1", "Error", "foo\nbar", kdy tam
     davam odchytnute veci.) Jak toto formatovat?
-25.
+25. Mam skript:
+    - Skript pouziva tridu, ktera pouziva Error::Pure::err(), ktery nastavuje
+      LEVEL na 4.
+    - Ve skriptu pouzivam nejakou konkretni Error::Pure::Print::err(), ktera
+      nenastavuje LEVEL vubec. Spravne by LEVEL mel byt na 2 jako default.
+    - Ve skriptu odchytnu eval a chci pouzit err(), ale zafunguje LEVEL == 4
+      misto LEVEL == 2. Co s tim?
+26.
 
 Applied
 =======
