@@ -41,9 +41,10 @@ sub err {
 		&& none { $_ eq $EVAL || $_ =~ /^eval '/ms }
 		map { $_->{'sub'} } @{$stack_ar}) {
 
-		die (join $EMPTY_STR, @{$errors[-1]->{'msg'}}).
-			"at $stack_ar->[0]->{'prog'} line ".
-			"$stack_ar->[0]->{'line'}.\n";
+		my $die = (join $EMPTY_STR, @{$errors[-1]->{'msg'}}).
+			" at $stack_ar->[0]->{'prog'} line ".
+			"$stack_ar->[0]->{'line'}.";
+		die "$die\n";
 
 	# Die for eval.
 	} else {

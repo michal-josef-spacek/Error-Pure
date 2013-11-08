@@ -1,4 +1,5 @@
 0.15
+ - Fix die with join.
 
 0.14 2013-10-24
  - Add Error::Pure::Utils::err_msg() subroutine.
