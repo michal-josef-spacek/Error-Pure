@@ -7,6 +7,9 @@ use warnings;
 # Modules.
 use Error::Pure qw(err);
 
+# Set env error type.
+$ENV{'ERROR_PURE_TYPE'} = 'Die';
+
 # Error.
 err '1';
 
