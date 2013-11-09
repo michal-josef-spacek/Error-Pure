@@ -1,4 +1,5 @@
 0.15
+ - Add 'readme_from' directive to Makefile.PL.
  - Fix die with join.
  - Improve example in Error::Pure doc to explicit set to default
    Error::Pure::TYPE.
