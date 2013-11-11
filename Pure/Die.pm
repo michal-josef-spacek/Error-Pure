@@ -75,7 +75,7 @@ Error::Pure::Die - Error::Pure module with classic die.
 
 =over 8
 
-=item B<err(@messages)>
+=item C<err(@messages)>
 
  Process error with messages @messages.
 

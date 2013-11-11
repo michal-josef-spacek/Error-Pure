@@ -203,13 +203,13 @@ Error::Pure::Utils - Utilities for structured errors.
 
 =over 8
 
-=item B<clean()>
+=item C<clean()>
 
  Resets internal variables with errors.
  It is exportable.
  Returns undef.
 
-=item B<err_get([$clean])>
+=item C<err_get([$clean])>
 
  Get and clean processed errors.
  err_get() returns error structure.
@@ -217,7 +217,7 @@ Error::Pure::Utils - Utilities for structured errors.
  It is exportable.
  Returns array of errors.
 
-=item B<err_msg()>
+=item C<err_msg()>
 
  Get first error messages array.
  Is is usable in situation >>err 'Error', 'item1', 'item2', 'item3', 'item4'<<.
@@ -226,7 +226,7 @@ Error::Pure::Utils - Utilities for structured errors.
  It is exportable.
  Returns array of error messages.
 
-=item B<err_msg_hr()>
+=item C<err_msg_hr()>
 
  Get first error message key, value pairs as hash reference.
  Is is usable in situation >>err 'Error', 'key1', 'val1', 'key2', 'val2'<<.
@@ -235,7 +235,7 @@ Error::Pure::Utils - Utilities for structured errors.
  It is exportable.
  Returns reference to hash with error messages.
 
-=item B<err_helper(@msg)>
+=item C<err_helper(@msg)>
 
  Subroutine for additional module above Error::Pure.
  @msg is array of messages.
@@ -248,27 +248,27 @@ Error::Pure::Utils - Utilities for structured errors.
 
 =over 8
 
-=item B<$LEVEL>
+=item C<$LEVEL>
 
 Default value is 2.
 
-=item B<$MAX_LEVELS>
+=item C<$MAX_LEVELS>
 
 Default value is 50.
 
-=item B<$MAX_EVAL>
+=item C<$MAX_EVAL>
 
 Default value is 100.
 
-=item B<$MAX_ARGS>
+=item C<$MAX_ARGS>
 
 Default value is 10.
 
-=item B<$MAX_ARG_LEN>
+=item C<$MAX_ARG_LEN>
 
 Default value is 50.
 
-=item B<$PROGRAM>
+=item C<$PROGRAM>
 
  Program name in stack information.
  Default value is ''.

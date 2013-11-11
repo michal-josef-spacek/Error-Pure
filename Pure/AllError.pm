@@ -71,7 +71,7 @@ Error::Pure::AllError - Error::Pure module with full backtrace.
 
 =over 4
 
-=item B<err(@messages)>
+=item C<err(@messages)>
 
  Process error with messages @messages.
 

@@ -71,7 +71,7 @@ Error::Pure::Error - Error::Pure module with error on one line with informations
 
 =over 8
 
-=item B<err(@messages)>
+=item C<err(@messages)>
 
  Process error with messages @messages.
 

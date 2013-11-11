@@ -3,6 +3,7 @@
  - Fix die with join.
  - Improve example in Error::Pure doc to explicit set to default
    Error::Pure::TYPE.
+ - Rewrite B<> to C<> in doc for code.
 
 0.14 2013-10-24
  - Add Error::Pure::Utils::err_msg() subroutine.

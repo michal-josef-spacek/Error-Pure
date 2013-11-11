@@ -74,7 +74,7 @@ Error::Pure - Perl module for structured errors.
 
 =over 8
 
-=item B<err(@messages)>
+=item C<err(@messages)>
 
  Process error with messages @messages.
 
@@ -84,12 +84,12 @@ Error::Pure - Perl module for structured errors.
 
 =over 8
 
-=item B<$LEVEL>
+=item C<$LEVEL>
 
  Error level for Error::Pure.
  Default value is 4.
 
-=item B<$TYPE>
+=item C<$TYPE>
 
  Available are last names in Error::Pure::* modules.
  Error::Pure::ErrorList means 'ErrorList'.

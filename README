@@ -6,7 +6,7 @@ SYNOPSIS
      err 'This is a fatal error', 'name', 'value';
 
 SUBROUTINES
-    err(@messages)
+    "err(@messages)"
              Process error with messages @messages.
 
 VARIABLES

@@ -126,7 +126,7 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
 
 =over 8
 
-=item B<err_bt_pretty(@errors)>
+=item C<err_bt_pretty(@errors)>
 
  Returns string with full backtrace in scalar context.
  Returns array of full backtrace lines in array context.
@@ -142,14 +142,14 @@ Error::Pure::Output::Text - Output subroutines for Error::Pure.
          ...
          sub, caller, program, line
 
-=item B<err_line_all(@errors)>
+=item C<err_line_all(@errors)>
 
  Returns string with errors each on one line.
  Use all errors in @errors structure.
  Format of error line is: "#Error [%s:%s] %s\n"
  Values of error line are: $program, $line, $message
 
-=item B<err_line(@errors)>
+=item C<err_line(@errors)>
 
  Returns string with error on one line.
  Use last error in @errors structure..
