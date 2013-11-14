@@ -1,3 +1,5 @@
+0.16
+
 0.15 2013-11-13
  - Add 'readme_from' directive to Makefile.PL.
  - Fix die with join.
