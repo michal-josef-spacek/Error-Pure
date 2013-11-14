@@ -1,4 +1,4 @@
-0.15
+0.15 2013-11-13
  - Add 'readme_from' directive to Makefile.PL.
  - Fix die with join.
  - Improve example in Error::Pure doc to explicit set to default
