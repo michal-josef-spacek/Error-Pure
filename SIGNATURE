@@ -14,21 +14,21 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 eec4856df1f4d503017757ffee704fb05f9af0e2 Changes
+SHA1 c793806ed8ad940e91b9175d7faae241a27a93dd Changes
 SHA1 575467fea43580c236a5dfa674d0cc9279272cbe LICENSE
-SHA1 e40a46a7c61bbcf832e59fa44328befcffa6b85a MANIFEST
-SHA1 1fa20fab3e215229ce346f1a6e82b01921397cdb META.yml
-SHA1 f2699e5acd067fb1caee0c2bfdb2520183af3edf Makefile.PL
-SHA1 c5eef041eb7faef2511a642ea1e51bee19d54ee8 Pure.pm
-SHA1 e2b3be3e0f9412a99cad9df11206d2e8d16c651e Pure/AllError.pm
-SHA1 86d5845a3b01f489c639ad106e053ab0e4e831d6 Pure/Die.pm
-SHA1 a0279a4b4ba58c6f521dad64e895427ffefa8c62 Pure/Error.pm
-SHA1 2dda66a97984cb22d129129328be92fe4944d0bf Pure/ErrorList.pm
-SHA1 28ec8ac1f0f88afc7991779aa9af82a5a61cb200 Pure/Output/Text.pm
-SHA1 649a5e06fa8881cb22876d0aec451cc9f3b68421 Pure/Print.pm
-SHA1 da33bb4ce97e6d3b01dba1d46a2137c3469dd7ad Pure/Utils.pm
-SHA1 57f072d3ae2e3c9d753d7344d53591ca7db15e5f README
-SHA1 90d2373c13913ace55a771017da5419396f7a837 examples/ex1.pl
+SHA1 7f87a88dabfac5497239bf4487af426d3e30ec67 MANIFEST
+SHA1 57d95c65ab95521d8c3b351bb259a422f0fc0ef5 META.yml
+SHA1 cde12046dc74aff6758a2ce1f1e529c14ad172d5 Makefile.PL
+SHA1 abe013b4bf03b3db537372d468017d608742488a Pure.pm
+SHA1 ebd4ff77051d296d64f0b03e2bcda459f191714f Pure/AllError.pm
+SHA1 a8d17c3939f3283a885c7444a1575985e32b89cc Pure/Die.pm
+SHA1 c3dc142abcf2f3e08e4177849b14dd9cd369b13a Pure/Error.pm
+SHA1 0a6ce6d78a70c15d89b0fcb26c8148384c6a9125 Pure/ErrorList.pm
+SHA1 e609d8f6c57a962dcd9941d6bc93cf26ed29945b Pure/Output/Text.pm
+SHA1 957bc6865a6d997af00ea17ec9b992489dc94bbc Pure/Print.pm
+SHA1 765fb58130ebcae9af0b4be2616fe294319d8c03 Pure/Utils.pm
+SHA1 0d135389586b792e37d22e77412a70fcf92b2936 README
+SHA1 7cadac90ecd85afe9f9108ff1e6bf09e7e435c07 examples/ex1.pl
 SHA1 24d733dd4c8b1b8742390555b43796afdb83cef1 examples/ex10.pl
 SHA1 e13e77b7b2127d099bd123100128e71a76f934b8 examples/ex11.pl
 SHA1 5cb3db0a3285a8431171cdd1378c49f4c2fb8ffc examples/ex12.pl
@@ -56,43 +56,44 @@ SHA1 f0e01fff7d73cd145fbf22331579918d4628ddb0 inc/Module/Install/Can.pm
 SHA1 7328966e4fda0c8451a6d3850704da0b84ac1540 inc/Module/Install/Fetch.pm
 SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
 SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
+SHA1 79f5b4199f622e8b05aac266b0c39f6a85bb303f inc/Module/Install/ReadmeFromPod.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
 SHA1 6c7be191f468725f7205493d27f0972950cbb90e t/Error-Pure-AllError/00-use.t
-SHA1 7f25ff08520d23e9994473c3394e75cc205fcfa9 t/Error-Pure-AllError/01-version.t
+SHA1 09f483629a2f4dd4b09bf4fbd9fe434d4955b766 t/Error-Pure-AllError/01-version.t
 SHA1 1b2e5e45bc24cceddf7645d9fd2e02d8cde1aa0d t/Error-Pure-AllError/02-pod_coverage.t
 SHA1 fdb312d155566d6f688ff5030039c0ec794d047c t/Error-Pure-AllError/03-pod.t
 SHA1 00e483228db1360b91d2859b1b376e962cfdd5d5 t/Error-Pure-AllError/04-err.t
 SHA1 1f5e6ac97825911a1251c097355ee90ddea75456 t/Error-Pure-Die/00-use.t
-SHA1 63bc1119de3fc6a163719e45b8d73d0d95fd3b8a t/Error-Pure-Die/01-version.t
+SHA1 47e42cde1c1358a5adef3a2d053c5430710b4ae1 t/Error-Pure-Die/01-version.t
 SHA1 7271fadaa670deafd8dd127d4a94266101d7da23 t/Error-Pure-Die/02-pod_coverage.t
 SHA1 67b0ff951260e11f7eeea85e3b84ba6f3f84e558 t/Error-Pure-Die/03-pod.t
 SHA1 dbbb4a9bbe8619d59805ed26eefbb79244a67a5f t/Error-Pure-Die/04-err.t
 SHA1 fdcc0988359f62bdad6dc4810fd4e83b7cdd45d2 t/Error-Pure-Error/00-use.t
-SHA1 7b3349ed6dd76f91065398ed92fe716bfe658889 t/Error-Pure-Error/01-version.t
+SHA1 b5c26ec2b0e165c49bb400de6dbf1eb8ba59c1ce t/Error-Pure-Error/01-version.t
 SHA1 57eb4fcd22439ee48608afd286b603419dbe25b1 t/Error-Pure-Error/02-pod_coverage.t
 SHA1 8c27b5190c218f16a61b54a1d5752be451fb190c t/Error-Pure-Error/03-pod.t
 SHA1 91c572b3c0147b6e30212d59a2e8fa240c14459d t/Error-Pure-Error/04-err.t
 SHA1 50258feb868f6fee4add49b59aca24f9ea4b0cc1 t/Error-Pure-ErrorList/00-use.t
-SHA1 c3581f8d2220bf55a849c87af6aff9ec4fe43b90 t/Error-Pure-ErrorList/01-version.t
+SHA1 2757df820d85434811f2e73ba31fa6d4a3af36db t/Error-Pure-ErrorList/01-version.t
 SHA1 62e80704415846e3b9e55364f031c8d9975702e4 t/Error-Pure-ErrorList/02-pod_coverage.t
 SHA1 bc3a3b65b9b4daefb0b5fdba9416382d7f4c2c63 t/Error-Pure-ErrorList/03-pod.t
 SHA1 1bb59dfc2d3b168cc642ed4470155275f22d3eda t/Error-Pure-ErrorList/04-err.t
 SHA1 05c2538d24f12cc06180e04a25cc796fa67a4e2a t/Error-Pure-Output-Text/00-use.t
-SHA1 c0caf06429ee94163f4464e36828cf6ef1d1443d t/Error-Pure-Output-Text/01-version.t
+SHA1 d9bcc8e7b60d69292a5cfaecaf98566e1ebba020 t/Error-Pure-Output-Text/01-version.t
 SHA1 764f776bc8fc0df5b598be5fdb7899e666396f99 t/Error-Pure-Output-Text/02-pod_coverage.t
 SHA1 ad307686f1d7200a1d0bbbd1cdc0f21f142b6ed3 t/Error-Pure-Output-Text/03-pod.t
 SHA1 d6232b568062812d923a5b2d2efd9145e4fd5637 t/Error-Pure-Output-Text/04-err_bt_pretty.t
 SHA1 c6814efbcb55cc5c9b0d764048483282883f5e06 t/Error-Pure-Output-Text/05-err_line.t
 SHA1 956aa333e6d404f77f735ec13f91a00db51a370d t/Error-Pure-Output-Text/06-err_line_all.t
 SHA1 24312febd892544fcb76ad2cb89dece81e50a43b t/Error-Pure-Print/00-use.t
-SHA1 ddaafb820c13299a612dbba162f88f3a0904a390 t/Error-Pure-Print/01-version.t
+SHA1 47809582a88ba5c9dacc21356dbee5d339244a3d t/Error-Pure-Print/01-version.t
 SHA1 7ade833cd85cffc1e881e1cd2cd0dba45a602213 t/Error-Pure-Print/02-pod_coverage.t
 SHA1 fd90f3a789c9a23a4e22123057cfbef6d1440059 t/Error-Pure-Print/03-pod.t
 SHA1 0d1a0ca197c9139df7c0edd7c386241c9ad6d8ae t/Error-Pure-Print/04-err.t
 SHA1 52e87e24955b6e81029161898dbbcf47f87e7fb1 t/Error-Pure-Print/T.pm
 SHA1 17f25399bfb5aa1b76c3b69d0c7e6f5dc9bd8421 t/Error-Pure-Utils/00-use.t
-SHA1 6ac6a545fbaa9c84b656fc815f70b0bab024ca32 t/Error-Pure-Utils/01-version.t
+SHA1 82c5b25d580a00f336da9baf952d0f53387a442e t/Error-Pure-Utils/01-version.t
 SHA1 0cf9f81e3562f42b3a5bb39984de1a97e9a29bba t/Error-Pure-Utils/02-pod_coverage.t
 SHA1 28826e3283aa189b23baeca28a301a5fa65b41d5 t/Error-Pure-Utils/03-pod.t
 SHA1 3dd64032c55865fb6eeca95a62b9e0121de96764 t/Error-Pure-Utils/04-clean.t
@@ -101,18 +102,18 @@ SHA1 6fc85c20f0e890ab5f5c677defed3edf37d8ccfb t/Error-Pure-Utils/06-err_helper.t
 SHA1 da184f82cc73eebbabed224fed818389d62a5e50 t/Error-Pure-Utils/07-err_msg.t
 SHA1 6342bacce5cc84bfaf7e4632a3cc59fd2ecc7ead t/Error-Pure-Utils/08-err_msg_hr.t
 SHA1 545fb56e2b9577addc6041587b802b967f0a4991 t/Error-Pure/00-use.t
-SHA1 558f60582b31e14d07487e36eee93333d3b8d7c5 t/Error-Pure/01-version.t
+SHA1 604ec1cf0df0399077415455f160e251c45b616d t/Error-Pure/01-version.t
 SHA1 6c7bd8d1511b26ccace97b21dbea0bd0c48fb8ed t/Error-Pure/02-pod_coverage.t
 SHA1 978d43bead46f493f91f2eccdf7d43473dc8af0b t/Error-Pure/03-pod.t
 SHA1 4b22ec08586e106fac679d979474feea6d2214af t/Error-Pure/04-err.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.12 (GNU/Linux)
 
-iQEcBAEBAgAGBQJSaSGWAAoJEAwa+cf4dLBa6V8IAM5wH4OgZr0f7Zh2ZnxmHjsD
-f50wDvChfdTsnUY/y/mTIaglqFOp+0mzgcF9RoO9feUGzHtQ0zQEeWcxQALAOfgM
-tjBtvEHmwaWwS8ufEC1Nkrz12KPTNjGft8ot/1/ehMRu0eSxCcQy07KzDzQPGj9q
-48O8ikKKDghu181Bxu27SZVkdZF4PF9qrAq7O8szoVpuV0F7LjQ1gH6rLHZ46JYO
-r5e1Y8PQfbFBhL4FubYKgbv3Z+GiVRgavZgqLCRioLZeeT6UnACbsGQbDd+OHvf/
-bOe8rsOsQauEzfiqEJ4ukvHSRU6HVRAqZNHzC7z9p2eP42v8scZpbdUPIBEiyRg=
-=CCjn
+iQEcBAEBAgAGBQJShIZdAAoJEAwa+cf4dLBaLa0IAJ1oeUQCU3N1MZDwh07qwD5W
+VeIV+MxgNCJVpWjhF6jSzPZgCDXW7HrUgZQWoDowu2StA5373v3zLi4Jg+kYLDo1
+FmBupq9ThxtmQ1Cm7tZoU94F9Ympk8RoOcpsbFnQ3HfxNPa5w6GLZhrl92i3QuCG
+7ZB+D1mtlANaDMIgCoMCjiu3NoB4QDpw1cAsranQW8+GSCeHvWVV6CNiOhrdlWu6
+zq2jpaY5tFFLfeawDjwGUSN9ONjWhDZaDfQ0/vUJSgDV/L9IZM0UpYb+nf2fngw6
+EPCaHTh5j8nKX0vpcbDjD3EVfYJFyMZAmWTav7MxaJlpF2eC+Ux1JtniUC9Umb0=
+=FmdZ
 -----END PGP SIGNATURE-----
