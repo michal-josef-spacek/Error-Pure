@@ -71,8 +71,12 @@ sub err_helper {
 
 # Get first error messages array.
 sub err_msg {
+	my $index = shift;
+	if (! defined $index) {
+		$index = -1;
+	}
 	my @err = err_get();
-	my @ret = @{$err[0]->{'msg'}};
+	my @ret = @{$err[$index]->{'msg'}};
 	return @ret;
 }
 
@@ -199,7 +203,7 @@ Error::Pure::Utils - Utilities for structured errors.
  use Error::Pure::Utils qw(clean err_get err_helper err_msg err_msg_hr);
  clean();
  my @errors = err_get($clean);
- my @err_msg = err_msg();
+ my @err_msg = err_msg($index);
  my $err_msg_hr = err_msg_hr($index);
  my @errors = err_helper('This is a fatal error', 'name', 'value');
 
@@ -221,9 +225,10 @@ Error::Pure::Utils - Utilities for structured errors.
  It is exportable.
  Returns array of errors.
 
-=item C<err_msg()>
+=item C<err_msg([$index])>
 
- Get first error messages array.
+ Get $index error messages array.
+ If $index isn't present, use -1 as last message.
  Is is usable in situation >>err 'Error', 'item1', 'item2', 'item3', 'item4'<<.
  Then returns ('Error', 'item1', 'item2', 'item3', 'item4') array.
  See EXAMPLE2.
