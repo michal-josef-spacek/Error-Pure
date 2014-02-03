@@ -1,4 +1,4 @@
-0.16
+0.16 2014-02-03
  [Error::Pure::Utils]
  - Rewrite err_msg() to use index value of errors. Default value of index is -1
    (last error).
