@@ -78,8 +78,12 @@ sub err_msg {
 
 # Get first error message key, value pairs as hash reference.
 sub err_msg_hr {
+	my $index = shift;
+	if (! defined $index) {
+		$index = -1;
+	}
 	my @err = err_get();
-	my @ret = @{$err[0]->{'msg'}};
+	my @ret = @{$err[$index]->{'msg'}};
 	shift @ret;
 	return {@ret};
 }
@@ -196,7 +200,7 @@ Error::Pure::Utils - Utilities for structured errors.
  clean();
  my @errors = err_get($clean);
  my @err_msg = err_msg();
- my $err_msg_hr = err_msg_hr();
+ my $err_msg_hr = err_msg_hr($index);
  my @errors = err_helper('This is a fatal error', 'name', 'value');
 
 =head1 SUBROUTINES
@@ -226,9 +230,10 @@ Error::Pure::Utils - Utilities for structured errors.
  It is exportable.
  Returns array of error messages.
 
-=item C<err_msg_hr()>
+=item C<err_msg_hr([$index])>
 
- Get first error message key, value pairs as hash reference.
+ Get $index error message key, value pairs as hash reference.
+ If $index isn't present, use -1 as last message.
  Is is usable in situation >>err 'Error', 'key1', 'val1', 'key2', 'val2'<<.
  Then returns {'key1' => 'val1', 'key2' => 'val2'} structure.
  See EXAMPLE3.
