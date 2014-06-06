@@ -19,7 +19,10 @@ TODO
     Od erroru, ktery je nejblize uzivateli az po ty, ktere jsou kdovikde.
 27. Formatovaci funkce presunout do samostatneho modulu.
     A umoznit je menit.
-28.
+28. Pridat doporuceni, ze je dobre nastavit promennou prostredi na Print.
+    Protoze jinak je vystup jako die a u slozitejsich erroru slozitejsi.
+29. U die nevykreslovat promenne?
+30.
 
 Applied
 =======
