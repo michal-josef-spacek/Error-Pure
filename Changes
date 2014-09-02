@@ -2,7 +2,7 @@
  [Common]
  - Fix LICENSE file.
  - Update years in LICENSE file.
- - Update Module::Install to 1.10 version.
+ - Update Module::Install to 1.12 version.
 
 0.16 2014-02-03
  [Error::Pure::Utils]
