@@ -17,6 +17,7 @@ TODO
       misto LEVEL == 2. Co s tim?
 26. V Error::Pure::AllError by se melo vypisovat spise opacne, ne?
     Od erroru, ktery je nejblize uzivateli az po ty, ktere jsou kdovikde.
+Je to v Error::Pure::Output::Text::err_bt_pretty_rev().
 27. Formatovaci funkce presunout do samostatneho modulu.
 Ok
     A umoznit je menit.
