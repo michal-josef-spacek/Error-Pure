@@ -11,9 +11,6 @@ examples/ex17.pl
 examples/ex18.pl
 examples/ex19.pl
 examples/ex2.pl
-examples/ex20.pl
-examples/ex21.pl
-examples/ex22.pl
 examples/ex3.pl
 examples/ex4.pl
 examples/ex5.pl
@@ -39,7 +36,6 @@ Pure/AllError.pm
 Pure/Die.pm
 Pure/Error.pm
 Pure/ErrorList.pm
-Pure/Output/Text.pm
 Pure/Print.pm
 Pure/Utils.pm
 README
@@ -64,13 +60,6 @@ t/Error-Pure-ErrorList/01-version.t
 t/Error-Pure-ErrorList/02-pod_coverage.t
 t/Error-Pure-ErrorList/03-pod.t
 t/Error-Pure-ErrorList/04-err.t
-t/Error-Pure-Output-Text/00-use.t
-t/Error-Pure-Output-Text/01-version.t
-t/Error-Pure-Output-Text/02-pod_coverage.t
-t/Error-Pure-Output-Text/03-pod.t
-t/Error-Pure-Output-Text/04-err_bt_pretty.t
-t/Error-Pure-Output-Text/05-err_line.t
-t/Error-Pure-Output-Text/06-err_line_all.t
 t/Error-Pure-Print/00-use.t
 t/Error-Pure-Print/01-version.t
 t/Error-Pure-Print/02-pod_coverage.t

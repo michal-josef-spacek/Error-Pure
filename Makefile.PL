@@ -7,13 +7,14 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'Perl module for structured errors.';
-author 'Michal Špaček <skim@cpan.org>';
+author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Error-Pure';
 readme_from 'Pure.pm';
 requires 'Cwd' => 0;
 requires 'English' => 0;
 requires 'Exporter' => 0;
+requires 'Error::Pure::Output::Text' => 0.17;
 requires 'List::MoreUtils' => 0;
 requires 'Readonly' => 0;
 requires 'perl' => '5.6.2';

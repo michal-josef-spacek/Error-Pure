@@ -4,6 +4,9 @@
  - Update years in LICENSE file.
  - Update Module::Install to 1.12 version.
 
+ [Error::Pure::Output::Text]
+ - Move to independent distribution.
+
 0.16 2014-02-03
  [Error::Pure::Utils]
  - Rewrite err_msg() to use index value of errors. Default value of index is -1

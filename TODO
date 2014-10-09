@@ -18,6 +18,7 @@ TODO
 26. V Error::Pure::AllError by se melo vypisovat spise opacne, ne?
     Od erroru, ktery je nejblize uzivateli az po ty, ktere jsou kdovikde.
 27. Formatovaci funkce presunout do samostatneho modulu.
+Ok
     A umoznit je menit.
 28. Pridat doporuceni, ze je dobre nastavit promennou prostredi na Print.
     Protoze jinak je vystup jako die a u slozitejsich erroru slozitejsi.
