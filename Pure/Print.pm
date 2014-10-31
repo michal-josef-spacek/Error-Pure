@@ -32,8 +32,9 @@ sub err {
 	my $e = $errors[-1]->{'msg'}->[0];
 	if (! defined $e) {
 		$e = 'undef';
+	} else {
+		chomp $e;
 	}
-	chomp $e;
 
 	# Finalize in main on last err.
 	my $stack_ar = $errors[-1]->{'stack'};
