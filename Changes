@@ -1,4 +1,7 @@
 0.18
+ [Common]
+ - Update Module::Install to 1.14 version.
+
  [Error::Pure::Print]
  - Code optimalization.
 
