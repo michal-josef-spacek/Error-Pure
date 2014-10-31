@@ -24,7 +24,16 @@ Ok
 28. Pridat doporuceni, ze je dobre nastavit promennou prostredi na Print.
     Protoze jinak je vystup jako die a u slozitejsich erroru slozitejsi.
 29. U die nevykreslovat promenne?
-30.
+30. Nejaka zvlastni chyba:
+    think:~/ibsmm/PROJECTS/ls_mas01_web_app_patient_save>
+    ./ls-mas01-web-app-patient-save.pl 'source_room_identification=room4 lang=slk date=0.0.0'
+    Kdyz oddelam z >>$p->{'db'}->perform_statement_one('INS_PATIENT', undef,<<
+    to posledni undef.
+    Chyba vypada:
+    Modification of non-creatable array value attempted, subscript -1 at /usr/local/share/perl/5.14.2/Error/Pure/HTTP/JSON/Advance.pm line 36.
+    Musi byt vycistine ls_patient a ls_operation tabulky, aby se to zavolalo.
+    Proste ziska stack, ktery je prazdny a pak to rve ve vsech Error::Pure modulech.
+31.
 
 Applied
 =======
