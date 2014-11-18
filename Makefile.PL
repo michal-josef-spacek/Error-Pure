@@ -14,7 +14,7 @@ readme_from 'Pure.pm';
 requires 'Cwd' => 0;
 requires 'English' => 0;
 requires 'Exporter' => 0;
-requires 'Error::Pure::Output::Text' => 0.17;
+requires 'Error::Pure::Output::Text' => 0.21;
 requires 'List::MoreUtils' => 0;
 requires 'Readonly' => 0;
 requires 'perl' => '5.8.0';

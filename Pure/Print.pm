@@ -6,6 +6,7 @@ use strict;
 use warnings;
 
 # Modules.
+use Error::Pure::Output::Text qw(err_print);
 use Error::Pure::Utils qw(err_helper);
 use List::MoreUtils qw(none);
 use Readonly;
@@ -34,14 +35,7 @@ sub err {
 		&& none { $_ eq $EVAL || $_ =~ /^eval '/ms }
 		map { $_->{'sub'} } @{$stack_ar}) {
 
-		my $class = $errors[-1]->{'stack'}->[0]->{'class'};
-		if ($class eq 'main') {
-			$class = $EMPTY_STR
-		}
-		if ($class) {
-			$class .= ': ';
-		}
-		die $class."$errors[-1]->{'msg'}->[0]\n";
+		die err_print(@errors)."\n";
 
 	# Die for eval.
 	} else {
@@ -110,6 +104,7 @@ Error::Pure::Print - Error::Pure module for simple error print.
 
 =head1 DEPENDENCIES
 
+L<Error::Pure::Output::Text>,
 L<Error::Pure::Utils>,
 L<Exporter>,
 L<List::MoreUtils>,
