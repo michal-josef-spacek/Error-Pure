@@ -11,6 +11,9 @@
  [Error::Pure::Error]
  - Clean code across new err_helper().
 
+ [Error::Pure::ErrorList]
+ - Clean code across new err_helper().
+
  [Error::Pure::Print]
  - Code optimalization.
 
