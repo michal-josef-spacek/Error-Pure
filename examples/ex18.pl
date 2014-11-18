@@ -8,7 +8,7 @@ use warnings;
 use Error::Pure::Die qw(err);
 
 # Error.
-err '1', '2', '3';
+err '1';
 
 # Output:
-# 1 at example2.pl line 9.
+# 1 at example1.pl line 9.

@@ -5,10 +5,25 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure::Die qw(err);
+use English qw(-no_match_vars);
+use Error::Pure qw(err);
+use Error::Pure::Utils qw(err_msg_hr);
 
-# Error.
-err '1';
+# Error in eval.
+eval {
+        err 'Error',
+                'key1', 'val1',
+                'key2', 'val2';
+};
+if ($EVAL_ERROR) {
+        print $EVAL_ERROR;
+        my $err_msg_hr = err_msg_hr();
+        foreach my $key (sort keys %{$err_msg_hr}) {
+                print "$key: $err_msg_hr->{$key}\n";
+        }
+}
 
 # Output:
-# 1 at example1.pl line 9.
+# Error
+# key1: val1
+# key2: val2

@@ -7,23 +7,22 @@ use warnings;
 # Modules.
 use English qw(-no_match_vars);
 use Error::Pure qw(err);
-use Error::Pure::Utils qw(err_msg_hr);
+use Error::Pure::Utils qw(err_msg);
 
 # Error in eval.
 eval {
-        err 'Error',
-                'key1', 'val1',
-                'key2', 'val2';
+        err 'Error', 'item1', 'item2', 'item3', 'item4';
 };
 if ($EVAL_ERROR) {
-        print $EVAL_ERROR;
-        my $err_msg_hr = err_msg_hr();
-        foreach my $key (sort keys %{$err_msg_hr}) {
-                print "$key: $err_msg_hr->{$key}\n";
+        my @err_msg = err_msg();
+        foreach my $item (@err_msg) {
+                print "$item\n";
         }
 }
 
 # Output:
 # Error
-# key1: val1
-# key2: val2
+# item1
+# item2
+# item3
+# item4
