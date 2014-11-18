@@ -34,7 +34,7 @@ requires:
   Exporter: 0
   List::MoreUtils: 0
   Readonly: 0
-  perl: 5.6.2
+  perl: 5.8.0
 resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Error-Pure
   homepage: https://github.com/tupinek/Error-Pure

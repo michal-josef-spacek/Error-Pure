@@ -1,5 +1,6 @@
 0.18
  [Common]
+ - Fix minimal version of Perl.
  - Update Module::Install to 1.14 version.
 
  [Error::Pure::AllError]
