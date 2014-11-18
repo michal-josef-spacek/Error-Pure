@@ -8,6 +8,9 @@
  [Error::Pure::Die]
  - Clean code across new err_helper().
 
+ [Error::Pure::Error]
+ - Clean code across new err_helper().
+
  [Error::Pure::Print]
  - Code optimalization.
 
