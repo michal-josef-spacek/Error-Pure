@@ -234,7 +234,8 @@ L<Error::Pure::HTTP::Print>,
 L<Error::Pure::JSON>,
 L<Error::Pure::Output::JSON>,
 L<Error::Pure::Output::Text>,
-L<Error::Pure::Print>.
+L<Error::Pure::Print>,
+L<Error::Pure::PrintVar>.
 
 =head1 ACKNOWLEDGMENTS
 

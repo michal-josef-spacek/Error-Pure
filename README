@@ -137,7 +137,7 @@ SEE ALSO
     Error::Pure::HTTP::AllError, Error::Pure::HTTP::Error,
     Error::Pure::HTTP::ErrorList, Error::Pure::HTTP::JSON,
     Error::Pure::HTTP::Print, Error::Pure::JSON, Error::Pure::Output::JSON,
-    Error::Pure::Output::Text, Error::Pure::Print.
+    Error::Pure::Output::Text, Error::Pure::Print, Error::Pure::PrintVar.
 
 ACKNOWLEDGMENTS
     Jakub Špičak and his Masser (<http://masser.sf.net>).

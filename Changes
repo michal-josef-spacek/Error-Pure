@@ -21,6 +21,9 @@
  - Code optimalization.
  - Rewrite to use Error::Pure::Output::Text::err_print() subroutine.
 
+ [Error::Pure::PrintVar]
+ - First version.
+
  [Error::Pure::Utils]
  - Improve processing of messages in err_helper(). Improve doc.
 

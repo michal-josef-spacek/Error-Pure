@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+package T;
 
 # Pragmas.
 use strict;
@@ -7,8 +7,9 @@ use warnings;
 # Modules.
 use Error::Pure::Print qw(err);
 
-# Error.
-err '1';
+# Example err function.
+sub example {
+	err 'Something.';
+}
 
-# Output:
-# 1
+1;

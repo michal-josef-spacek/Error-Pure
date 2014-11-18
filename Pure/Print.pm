@@ -150,6 +150,7 @@ L<Error::Pure::HTTP::Error>,
 L<Error::Pure::HTTP::ErrorList>,
 L<Error::Pure::HTTP::Print>,
 L<Error::Pure::Output::Text>,
+L<Error::Pure::PrintVar>,
 L<Error::Pure::Utils>.
 
 =head1 REPOSITORY

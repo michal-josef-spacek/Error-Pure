@@ -5,15 +5,14 @@ use strict;
 use warnings;
 
 # Modules.
-use English qw(-no_match_vars);
-use Error::Pure::ErrorList qw(err);
+use Error::Pure::AllError qw(err);
 
-# Error.
-eval { err "1"; };
-if ($EVAL_ERROR) {
-       err "2";
-}
+print "1\n";
+err "This is a fatal error.", "name", "value";
+print "2\n";
 
 # Output:
-# #Error [example3.pl:10] 1
-# #Error [example3.pl:11] 2
+# 1
+# ERROR: This is a fatal error.
+# name: value
+# main  err  ./script.pl  12
