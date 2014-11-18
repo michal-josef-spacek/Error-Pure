@@ -50,11 +50,18 @@ sub err_get {
 sub err_helper {
 	my @msg = @_;
 
-	# Check to undefined values in @msg.
+	# Check to undefined values in @msg and chomp.
 	for (my $i = 0; $i < @msg; $i++) {
 		if (! defined $msg[$i]) {
 			$msg[$i] = $UNDEF;
+		} else {
+			chomp $msg[$i];
 		}
+	}
+
+	# When is list blank, add undef.
+	if (! @msg) {
+		push @msg, $UNDEF;
 	}
 
 	# Get calling stack.
@@ -249,6 +256,9 @@ Error::Pure::Utils - Utilities for structured errors.
 
  Subroutine for additional module above Error::Pure.
  @msg is array of messages.
+ If last error is undef, rewrite it to 'undef' string.
+ If @msg is blank, add 'undef' string.
+ Chomp last error.
  It is exportable.
  Returns array of errors.
 

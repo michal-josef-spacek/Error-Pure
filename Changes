@@ -5,6 +5,9 @@
  [Error::Pure::Print]
  - Code optimalization.
 
+ [Error::Pure::Utils]
+ - Improve processing of messages in err_helper(). Improve doc.
+
 0.17 2014-10-09T12:41:59+02:00
  [Common]
  - Fix LICENSE file.
