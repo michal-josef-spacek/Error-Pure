@@ -2,6 +2,9 @@
  [Common]
  - Update Module::Install to 1.14 version.
 
+ [Error::Pure::AllError]
+ - Clean code across new err_helper().
+
  [Error::Pure::Print]
  - Code optimalization.
 
