@@ -5,6 +5,9 @@
  [Error::Pure::AllError]
  - Clean code across new err_helper().
 
+ [Error::Pure::Die]
+ - Clean code across new err_helper().
+
  [Error::Pure::Print]
  - Code optimalization.
 

@@ -28,13 +28,6 @@ sub err {
 	# Get errors structure.
 	my @errors = err_helper(@msg);
 
-	# Error messages.
-	my $e = $errors[-1]->{'msg'}->[0];
-	if (! defined $e) {
-		$e = 'undef';
-	}
-	chomp $e;
-
 	# Finalize in main on last err.
 	my $stack_ar = $errors[-1]->{'stack'};
 	if ($stack_ar->[-1]->{'class'} eq 'main'
@@ -48,7 +41,7 @@ sub err {
 
 	# Die for eval.
 	} else {
-		die "$e\n";
+		die "$errors[-1]->{'msg'}->[0]\n";
 	}
 
 	return;
