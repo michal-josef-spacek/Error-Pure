@@ -45,6 +45,8 @@ Pure/PrintVar.pm
 Pure/Utils.pm
 README
 SIGNATURE
+t/data/ex1.pl
+t/data/ex2.pl
 t/Error-Pure-AllError/00-use.t
 t/Error-Pure-AllError/01-version.t
 t/Error-Pure-AllError/02-pod_coverage.t
