@@ -3,9 +3,13 @@ use strict;
 use warnings;
 
 # Modules.
+use Cwd qw(realpath);
 use English qw(-no_match_vars);
 use Error::Pure::ErrorList qw(err);
-use Test::More 'tests' => 5;
+use File::Spec::Functions qw(catfile);
+use FindBin qw($Bin);
+use IO::CaptureOutput qw(capture);
+use Test::More 'tests' => 9;
 use Test::NoWarnings;
 
 # Test.
@@ -35,3 +39,21 @@ eval {
 	err ();
 };
 is($EVAL_ERROR, "undef\n", 'Error blank array.');
+
+# Test.
+my ($stdout, $stderr);
+capture sub {
+	system 'perl', realpath(catfile($Bin, '..', 'data', 'ex3.pl'));
+} => \$stdout, \$stderr;
+is($stdout, '', 'Error in standalone script - stdout.');
+like($stderr, qr{^\#Error \[.*?Error-Pure/t/data/ex3.pl:11\] Error\.\n$},
+	'Error in standalone script - stderr.');
+
+# Test.
+($stdout, $stderr) = ('', '');
+capture sub {
+	system 'perl', realpath(catfile($Bin, '..', 'data', 'ex4.pl'));
+} => \$stdout, \$stderr;
+is($stdout, '', 'Error with parameter and value in standalone script - stdout.');
+like($stderr, qr{^\#Error \[.*?Error-Pure/t/data/ex4.pl:11\] Error\.\n$},
+	'Error with parameter and value in standalone script - stderr.');

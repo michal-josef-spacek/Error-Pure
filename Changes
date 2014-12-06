@@ -2,6 +2,9 @@
  [Common]
  - Improve LICENSE AND COPYRIGHT section in doc.
 
+ [Error::Pure::ErrorList]
+ - Add tests for error to console.
+
  [Error::Pure::Print]
  - Add tests for error to console.
 
