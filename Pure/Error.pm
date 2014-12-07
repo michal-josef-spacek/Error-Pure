@@ -16,7 +16,7 @@ Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $EVAL => 'eval {...}';
 
 # Version.
-our $VERSION = 0.21;
+our $VERSION = 0.22;
 
 # Ignore die signal.
 $SIG{__DIE__} = 'IGNORE';
@@ -141,6 +141,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.21
+0.22
 
 =cut
