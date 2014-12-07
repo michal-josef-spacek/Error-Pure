@@ -11,7 +11,7 @@ use List::MoreUtils qw(none);
 use Readonly;
 
 # Version.
-our $VERSION = 0.20;
+our $VERSION = 0.21;
 
 # Constants.
 Readonly::Array our @EXPORT_OK => qw(err);
@@ -189,6 +189,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.20
+0.21
 
 =cut
