@@ -62,7 +62,7 @@ is($EVAL_ERROR, "undef\n", 'Error blank array.');
 # Test.
 my ($stdout, $stderr);
 capture sub {
-	system 'perl', realpath(catfile($Bin, '..', 'data', 'ex1.pl'));
+	system $EXECUTABLE_NAME, realpath(catfile($Bin, '..', 'data', 'ex1.pl'));
 } => \$stdout, \$stderr;
 is($stdout, '', 'Error in standalone script - stdout.');
 is($stderr, "Error.\n", 'Error in standalone script - stderr.');
@@ -70,7 +70,7 @@ is($stderr, "Error.\n", 'Error in standalone script - stderr.');
 # Test.
 ($stdout, $stderr) = ('', '');
 capture sub {
-	system 'perl', realpath(catfile($Bin, '..', 'data', 'ex2.pl'));
+	system $EXECUTABLE_NAME, realpath(catfile($Bin, '..', 'data', 'ex2.pl'));
 } => \$stdout, \$stderr;
 is($stdout, '', 'Error with parameter and value in standalone script - stdout.');
 is($stderr, "Error.\n", 'Error with parameter and value in standalone script - stderr.');

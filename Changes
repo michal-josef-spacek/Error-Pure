@@ -3,6 +3,10 @@
  - Rewrite Perl program in test to $EXECUTABLE_NAME instead 'perl'. Thanks
    Slaven Rezić (#100765)
 
+ [Error::Pure::Print]
+ - Rewrite Perl program in test to $EXECUTABLE_NAME instead 'perl'. Thanks
+   Slaven Rezić (#100765)
+
 0.20 2014-12-07T09:55:21+01:00
  [Error::Pure::ErrorList]
  - Fix tests added in 0.19.
