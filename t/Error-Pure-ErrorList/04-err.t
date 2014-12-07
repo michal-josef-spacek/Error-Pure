@@ -43,7 +43,7 @@ is($EVAL_ERROR, "undef\n", 'Error blank array.');
 # Test.
 my ($stdout, $stderr);
 capture sub {
-	system 'perl', realpath(catfile($Bin, '..', 'data', 'ex3.pl'));
+	system $EXECUTABLE_NAME, realpath(catfile($Bin, '..', 'data', 'ex3.pl'));
 } => \$stdout, \$stderr;
 is($stdout, '', 'Error in standalone script - stdout.');
 like($stderr, qr{^\#Error \[.*?t/data/ex3.pl:11\] Error\.\n$},
@@ -52,7 +52,7 @@ like($stderr, qr{^\#Error \[.*?t/data/ex3.pl:11\] Error\.\n$},
 # Test.
 ($stdout, $stderr) = ('', '');
 capture sub {
-	system 'perl', realpath(catfile($Bin, '..', 'data', 'ex4.pl'));
+	system $EXECUTABLE_NAME, realpath(catfile($Bin, '..', 'data', 'ex4.pl'));
 } => \$stdout, \$stderr;
 is($stdout, '', 'Error with parameter and value in standalone script - stdout.');
 like($stderr, qr{^\#Error \[.*?t/data/ex4.pl:11\] Error\.\n$},
