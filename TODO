@@ -33,7 +33,9 @@ Ok
     Modification of non-creatable array value attempted, subscript -1 at /usr/local/share/perl/5.14.2/Error/Pure/HTTP/JSON/Advance.pm line 36.
     Musi byt vycistine ls_patient a ls_operation tabulky, aby se to zavolalo.
     Proste ziska stack, ktery je prazdny a pak to rve ve vsech Error::Pure modulech.
-31.
+31. Kdyz odchytavam, tak odchytnu jenom die a ostatni informace zmizi. Stava se
+    mi u D-Bus erroru.
+32.
 
 Applied
 =======
