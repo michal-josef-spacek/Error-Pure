@@ -1,4 +1,6 @@
 0.22
+ [Common]
+ - Improve LICENSE AND COPYRIGHT section in doc.
 
 0.21 2014-12-07T22:51:27+01:00
  [Error::Pure::ErrorList]
