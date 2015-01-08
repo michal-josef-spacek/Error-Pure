@@ -19,9 +19,6 @@ Readonly::Scalar my $EVAL => 'eval {...}';
 # Version.
 our $VERSION = 0.22;
 
-# Ignore die signal.
-$SIG{__DIE__} = 'IGNORE';
-
 # Process error.
 sub err {
 	my @msg = @_;

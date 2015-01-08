@@ -18,9 +18,6 @@ Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $EVAL => 'eval {...}';
 Readonly::Scalar my $EMPTY_STR => q{};
 
-# Ignore die signal.
-$SIG{__DIE__} = 'IGNORE';
-
 # Process error.
 sub err {
 	my @msg = @_;

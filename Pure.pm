@@ -24,9 +24,6 @@ our $TYPE = $TYPE_DEFAULT;
 # Level for this class.
 our $LEVEL = $LEVEL_DEFAULT;
 
-# Ignore die signal.
-$SIG{__DIE__} = 'IGNORE';
-
 # Process error.
 sub err {
 	my @msg = @_;

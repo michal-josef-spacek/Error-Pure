@@ -1,6 +1,7 @@
 0.22
  [Common]
  - Improve LICENSE AND COPYRIGHT section in doc.
+ - Remove ignoring of __DIE__ signal. This breaks Error::Pure::Always.
  - Update copyright years to 2015.
 
 0.21 2014-12-07T22:51:27+01:00
