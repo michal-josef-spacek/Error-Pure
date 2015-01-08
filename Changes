@@ -1,4 +1,4 @@
-0.22
+0.22 2015-01-08T19:54:52+01:00
  [Common]
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Remove ignoring of __DIE__ signal. This breaks Error::Pure::Always.
