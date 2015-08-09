@@ -37,7 +37,8 @@ Ok
     mi u D-Bus erroru.
 32. Mam Error::Pure::XXX::Web, kde volam Error::Pure::Tags::CustomHTMLPage::err(@err).
     A pak blbne Error::Pure::err(). Je tam problem s podminkou s LEVELEM.
-33.
+33. Vylepsit SEE ALSO sekci na muj standard.
+34.
 
 Applied
 =======
