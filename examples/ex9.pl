@@ -5,11 +5,10 @@ use strict;
 use warnings;
 
 # Modules.
-use Error::Pure::PrintVar qw(err);
+use Error::Pure::ErrorList qw(err);
 
 # Error.
-err '1', '2', '3';
+err '1';
 
 # Output:
-# 1
-# 2: 3
+# #Error [example1.pl:9] 1

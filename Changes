@@ -4,6 +4,7 @@
  - Rewrite tests after t/ and xt/ split.
  - Update Module::Install to 1.16 version.
  - Update copyright years to 2015.
+ - Update examples/ directory.
 
 0.22 2015-01-08T19:54:52+01:00
  [Common]
