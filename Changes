@@ -1,6 +1,7 @@
 0.23
  [Common]
  - Move admin tests to xt/ directory.
+ - Rewrite tests after t/ and xt/ split.
  - Update Module::Install to 1.16 version.
  - Update copyright years to 2015.
 
