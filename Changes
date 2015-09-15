@@ -1,3 +1,5 @@
+0.24
+
 0.23 2015-09-16T00:53:57+02:00
  [Common]
  - Move admin tests to xt/ directory. Thanks Karen Etheridge (#105637).

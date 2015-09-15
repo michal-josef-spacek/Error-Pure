@@ -16,7 +16,7 @@ Readonly::Scalar my $TYPE_DEFAULT => 'Die';
 Readonly::Scalar my $LEVEL_DEFAULT => 4;
 
 # Version.
-our $VERSION = 0.23;
+our $VERSION = 0.24;
 
 # Type of error.
 our $TYPE = $TYPE_DEFAULT;
@@ -246,6 +246,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.23
+0.24
 
 =cut
