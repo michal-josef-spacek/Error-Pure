@@ -1,6 +1,6 @@
 0.23
  [Common]
- - Move admin tests to xt/ directory (#105637). Thanks Karen Etheridge.
+ - Move admin tests to xt/ directory. Thanks Karen Etheridge (#105637).
  - Rewrite tests after t/ and xt/ split.
  - Improve SEE ALSO section in doc.
  - Update Module::Install to 1.16 version.
