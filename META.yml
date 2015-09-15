@@ -28,6 +28,7 @@ no_index:
     - examples
     - inc
     - t
+    - xt
 requires:
   Cwd: 0
   English: 0

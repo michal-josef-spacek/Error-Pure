@@ -11,6 +11,7 @@ author 'Michal Spacek <skim@cpan.org>';
 license 'bsd';
 name 'Error-Pure';
 readme_from 'Pure.pm';
+recursive_author_tests('xt');
 requires 'Cwd' => 0;
 requires 'English' => 0;
 requires 'Exporter' => 0;
