@@ -410,17 +410,13 @@ L<Readonly>.
 
 =head1 SEE ALSO
 
-L<Error::Pure>,
-L<Error::Pure::AllError>,
-L<Error::Pure::Error>,
-L<Error::Pure::ErrorList>,
-L<Error::Pure::HTTP::AllError>,
-L<Error::Pure::HTTP::Error>,
-L<Error::Pure::HTTP::ErrorList>,
-L<Error::Pure::HTTP::Print>,
-L<Error::Pure::Output::Text>,
-L<Error::Pure::Print>,
-L<Error::Pure::PrintVar>.
+=over
+
+=item L<Task::Error::Pure>
+
+Install the Error::Pure modules.
+
+=back
 
 =head1 REPOSITORY
 
