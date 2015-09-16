@@ -23,6 +23,7 @@ examples/ex7.pl
 examples/ex8.pl
 examples/ex9.pl
 inc/Module/Install.pm
+inc/Module/Install/AuthorRequires.pm
 inc/Module/Install/AuthorTests.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm

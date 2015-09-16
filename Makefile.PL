@@ -8,6 +8,8 @@ use inc::Module::Install;
 # Definition.
 abstract 'Perl module for structured errors.';
 author 'Michal Spacek <skim@cpan.org>';
+author_requires 'Test::Pod' => 0;
+author_requires 'Test::Pod::Coverage' => 0;
 license 'bsd';
 name 'Error-Pure';
 readme_from 'Pure.pm';
@@ -30,8 +32,6 @@ test_requires 'FindBin' => 0;
 test_requires 'IO::CaptureOutput' => 1.02;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
-test_requires 'Test::Pod' => 0;
-test_requires 'Test::Pod::Coverage' => 0;
 tests_recursive;
 version '0.24';
 
