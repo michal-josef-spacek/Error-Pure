@@ -8,6 +8,10 @@ use inc::Module::Install;
 # Definition.
 abstract 'Perl module for structured errors.';
 author 'Michal Spacek <skim@cpan.org>';
+author_requires 'Cwd' => 0;
+author_requires 'English' => 0;
+author_requires 'File::Spec::Functions' => 0;
+author_requires 'FindBin' => 0;
 author_requires 'Test::Pod' => 0;
 author_requires 'Test::Pod::Coverage' => 0;
 license 'bsd';
