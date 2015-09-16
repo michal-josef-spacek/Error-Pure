@@ -17,7 +17,7 @@ Readonly::Scalar my $EMPTY_STR => q{};
 Readonly::Scalar my $EVAL => 'eval {...}';
 
 # Version.
-our $VERSION = 0.24;
+our $VERSION = 0.25;
 
 # Process error.
 sub err {
@@ -164,6 +164,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.24
+0.25
 
 =cut

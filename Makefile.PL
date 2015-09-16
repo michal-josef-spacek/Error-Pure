@@ -33,7 +33,7 @@ test_requires 'IO::CaptureOutput' => 1.02;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
 tests_recursive;
-version '0.24';
+version '0.25';
 
 # Run.
 WriteAll();
