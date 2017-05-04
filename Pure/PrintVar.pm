@@ -1,11 +1,9 @@
 package Error::Pure::PrintVar;
 
-# Pragmas.
 use base qw(Exporter);
 use strict;
 use warnings;
 
-# Modules.
 use Error::Pure::Utils qw(err_helper);
 use Error::Pure::Output::Text qw(err_print_var);
 use List::MoreUtils qw(none);
@@ -16,7 +14,6 @@ Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $EMPTY_STR => q{};
 Readonly::Scalar my $EVAL => 'eval {...}';
 
-# Version.
 our $VERSION = 0.25;
 
 # Process error.

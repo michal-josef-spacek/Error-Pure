@@ -1,11 +1,9 @@
 package Error::Pure::Die;
 
-# Pragmas.
 use base qw(Exporter);
 use strict;
 use warnings;
 
-# Modules.
 use Error::Pure::Utils qw(err_helper);
 use List::MoreUtils qw(none);
 use Readonly;
@@ -13,7 +11,6 @@ use Readonly;
 # Version.
 our $VERSION = 0.25;
 
-# Constants.
 Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $EVAL => 'eval {...}';
 Readonly::Scalar my $EMPTY_STR => q{};

@@ -1,18 +1,15 @@
 package Error::Pure::Utils;
 
-# Pragmas.
 use base qw(Exporter);
 use strict;
 use warnings;
 
-# Modules.
 use Cwd qw(abs_path);
 use Readonly;
 
 # Version.
 our $VERSION = 0.25;
 
-# Constants.
 Readonly::Array our @EXPORT_OK => qw(clean err_get err_helper err_msg err_msg_hr);
 Readonly::Scalar my $DOTS => '...';
 Readonly::Scalar my $EMPTY_STR => q{};

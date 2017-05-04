@@ -2,6 +2,7 @@
  [Common]
  - Add missing author requires.
  - Fix minimal Perl version.
+ - Fix #121028 - Makefile.PL fails with no '.' in @INC.
  - Update copyright years.
 
 0.24 2015-09-16T09:50:44+02:00
