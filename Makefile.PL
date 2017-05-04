@@ -6,7 +6,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'Perl module for structured errors.';
-author 'Michal Spacek <skim@cpan.org>';
+author 'Michal Josef Spacek <skim@cpan.org>';
 author_requires 'Cwd' => 0;
 author_requires 'English' => 0;
 author_requires 'File::Spec::Functions' => 0;
