@@ -4,6 +4,7 @@
  - Fix minimal Perl version.
  - Fix #121028 - Makefile.PL fails with no '.' in @INC.
  - Update copyright years.
+ - Update to new Module::Install.
 
 0.24 2015-09-16T09:50:44+02:00
  [Common]
