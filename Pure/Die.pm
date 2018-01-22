@@ -8,7 +8,6 @@ use Error::Pure::Utils qw(err_helper);
 use List::MoreUtils qw(none);
 use Readonly;
 
-# Version.
 our $VERSION = 0.26;
 
 Readonly::Array our @EXPORT_OK => qw(err);

@@ -1,8 +1,6 @@
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Cwd qw(realpath);
 use English qw(-no_match_vars);
 use Error::Pure::ErrorList qw(err);

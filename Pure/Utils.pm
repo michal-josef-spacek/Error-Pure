@@ -7,7 +7,6 @@ use warnings;
 use Cwd qw(abs_path);
 use Readonly;
 
-# Version.
 our $VERSION = 0.26;
 
 Readonly::Array our @EXPORT_OK => qw(clean err_get err_helper err_msg err_msg_hr);

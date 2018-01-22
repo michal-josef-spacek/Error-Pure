@@ -1,11 +1,9 @@
 package Error::Pure;
 
-# Pragmas.
 use base qw(Exporter);
 use strict;
 use warnings;
 
-# Modules.
 use English qw(-no_match_vars);
 use Error::Pure::Utils qw();
 use Readonly;
@@ -15,7 +13,6 @@ Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $TYPE_DEFAULT => 'Die';
 Readonly::Scalar my $LEVEL_DEFAULT => 4;
 
-# Version.
 our $VERSION = 0.26;
 
 # Type of error.
