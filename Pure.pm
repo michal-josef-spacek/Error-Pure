@@ -235,13 +235,13 @@ L<https://github.com/tupinek/Error-Pure>
 
 =head1 AUTHOR
 
-Michal Špaček L<mailto:skim@cpan.org>
+Michal Josef Špaček L<mailto:skim@cpan.org>
 
 L<http://skim.cz>
 
 =head1 LICENSE AND COPYRIGHT
 
- © 2008-2016 Michal Špaček
+ © 2008-2016 Michal Josef Špaček
  BSD 2-Clause License
 
 =head1 VERSION
