@@ -5,6 +5,7 @@
  - Fix #121028 - Makefile.PL fails with no '.' in @INC.
  - Update Module::Install to 1.19 version.
  - Update copyright years.
+ - Update examples/ directory.
 
 0.24 2015-09-16T09:50:44+02:00
  [Common]
