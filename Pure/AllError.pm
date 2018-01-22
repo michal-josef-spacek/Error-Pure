@@ -13,7 +13,7 @@ use Readonly;
 Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $EVAL => 'eval {...}';
 
-our $VERSION = 0.25;
+our $VERSION = 0.26;
 
 # Process error.
 sub err {
@@ -119,6 +119,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.25
+0.26
 
 =cut

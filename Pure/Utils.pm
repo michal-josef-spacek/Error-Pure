@@ -8,7 +8,7 @@ use Cwd qw(abs_path);
 use Readonly;
 
 # Version.
-our $VERSION = 0.25;
+our $VERSION = 0.26;
 
 Readonly::Array our @EXPORT_OK => qw(clean err_get err_helper err_msg err_msg_hr);
 Readonly::Scalar my $DOTS => '...';
@@ -432,6 +432,6 @@ L<http://skim.cz>
 
 =head1 VERSION
 
-0.25
+0.26
 
 =cut
