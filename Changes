@@ -2,6 +2,7 @@
  [Common]
  - Improve LICENSE AND COPYRIGHT section in doc.
  - Improve SYNOPSIS section in doc.
+ - Rewrite subroutines to use =head2 in doc.
  - Update author github username.
  - Update copyright years.
 

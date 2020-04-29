@@ -59,13 +59,11 @@ Error::Pure::PrintVar - Error::Pure module for simple error print with all varia
 
 =head1 SUBROUTINES
 
-=over 8
+=head2 C<err>
 
-=item C<err(@messages)>
+ err 'This is a fatal error', 'name', 'value';
 
- Process error with messages @messages.
-
-=back
+Process error with message(s). There is key => value list after first message.
 
 =head1 EXAMPLE1
 
