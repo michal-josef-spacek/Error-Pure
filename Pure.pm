@@ -228,7 +228,7 @@ Jakub Špičak and his Masser (L<http://masser.sf.net>).
 
 =head1 REPOSITORY
 
-L<https://github.com/tupinek/Error-Pure>
+L<https://github.com/michal-josef-spacek/Error-Pure>
 
 =head1 AUTHOR
 
