@@ -38,7 +38,8 @@ Ok
 32. Mam Error::Pure::XXX::Web, kde volam Error::Pure::Tags::CustomHTMLPage::err(@err).
     A pak blbne Error::Pure::err(). Je tam problem s podminkou s LEVELEM.
 34. Vymyslet nejak plugovatelnou konverzi ruznych objektu a die na Error::Pure structury?
-35.
+35. Mam jeden vazny problem. Pokud mam nastaveny vykreslovac na nejaky, tak mi nefunguje eval { err "foo"; }
+36.
 
 Applied
 =======
