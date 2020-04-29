@@ -100,11 +100,9 @@ Error::Pure - Perl module for structured errors.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure qw(err);
 
  # Set env error type.
@@ -118,11 +116,9 @@ Error::Pure - Perl module for structured errors.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure qw(err);
 
  # Set env error type.
@@ -136,11 +132,9 @@ Error::Pure - Perl module for structured errors.
 
 =head1 EXAMPLE3
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure qw(err);
 
  # Set error type.
@@ -155,11 +149,9 @@ Error::Pure - Perl module for structured errors.
 
 =head1 EXAMPLE4
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure qw(err);
 
  $SIG{__DIE__} = sub {
@@ -178,11 +170,9 @@ Error::Pure - Perl module for structured errors.
 
 =head1 EXAMPLE5
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use English qw(-no_match_vars);
  use Error::Pure qw(err);
  use Error::Pure::Utils qw(err_msg_hr);

@@ -70,11 +70,9 @@ Error::Pure::Die - Error::Pure module with classic die.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::Die qw(err);
 
  # Error.
@@ -85,11 +83,9 @@ Error::Pure::Die - Error::Pure module with classic die.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::Die qw(err);
 
  # Error.
@@ -100,11 +96,9 @@ Error::Pure::Die - Error::Pure module with classic die.
 
 =head1 EXAMPLE3
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Dumpvalue;
  use Error::Pure::Die qw(err);
  use Error::Pure::Utils qw(err_get);

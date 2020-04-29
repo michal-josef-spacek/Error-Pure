@@ -44,7 +44,7 @@ capture sub {
 	system $EXECUTABLE_NAME, realpath(catfile($Bin, '..', 'data', 'ex3.pl'));
 } => \$stdout, \$stderr;
 is($stdout, '', 'Error in standalone script - stdout.');
-like($stderr, qr{^\#Error \[.*?t/data/ex3.pl:11\] Error\.\n$},
+like($stderr, qr{^\#Error \[.*?t/data/ex3.pl:9\] Error\.\n$},
 	'Error in standalone script - stderr.');
 
 # Test.
@@ -53,5 +53,5 @@ capture sub {
 	system $EXECUTABLE_NAME, realpath(catfile($Bin, '..', 'data', 'ex4.pl'));
 } => \$stdout, \$stderr;
 is($stdout, '', 'Error with parameter and value in standalone script - stdout.');
-like($stderr, qr{^\#Error \[.*?t/data/ex4.pl:11\] Error\.\n$},
+like($stderr, qr{^\#Error \[.*?t/data/ex4.pl:9\] Error\.\n$},
 	'Error with parameter and value in standalone script - stderr.');

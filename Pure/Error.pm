@@ -68,11 +68,9 @@ Error::Pure::Error - Error::Pure module with error on one line with informations
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::Error qw(err);
 
  # Error.
@@ -83,11 +81,9 @@ Error::Pure::Error - Error::Pure module with error on one line with informations
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::Error qw(err);
 
  # Error.

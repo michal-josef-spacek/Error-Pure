@@ -69,11 +69,9 @@ Error::Pure::PrintVar - Error::Pure module for simple error print with all varia
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::PrintVar qw(err);
 
  # Error.
@@ -84,11 +82,9 @@ Error::Pure::PrintVar - Error::Pure module for simple error print with all varia
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::PrintVar qw(err);
 
  # Error.
@@ -102,11 +98,9 @@ Error::Pure::PrintVar - Error::Pure module for simple error print with all varia
 
  package Example3;
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::PrintVar qw(err);
 
  # Test with error.
@@ -116,7 +110,6 @@ Error::Pure::PrintVar - Error::Pure module for simple error print with all varia
 
  package main;
 
- # Pragmas.
  use strict;
  use warnings;
 

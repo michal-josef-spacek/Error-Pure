@@ -27,11 +27,9 @@ VARIABLES
              3) $Error::Pure::TYPE_DEFAULT = 'Die'
 
 EXAMPLE1
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Error::Pure qw(err);
 
      # Set env error type.
@@ -44,11 +42,9 @@ EXAMPLE1
      # 1 at example1.pl line 9.
 
 EXAMPLE2
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Error::Pure qw(err);
 
      # Set env error type.
@@ -61,11 +57,9 @@ EXAMPLE2
      # #Error [path_to_script:12] 1
 
 EXAMPLE3
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Error::Pure qw(err);
 
      # Set error type.
@@ -79,11 +73,9 @@ EXAMPLE3
      # main  err  path_to_script  12
 
 EXAMPLE4
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use Error::Pure qw(err);
 
      $SIG{__DIE__} = sub {
@@ -101,11 +93,9 @@ EXAMPLE4
      # #Error [path_to_script.pl:17] Error
 
 EXAMPLE5
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use English qw(-no_match_vars);
      use Error::Pure qw(err);
      use Error::Pure::Utils qw(err_msg_hr);

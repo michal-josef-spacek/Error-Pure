@@ -68,11 +68,9 @@ Error::Pure::AllError - Error::Pure module with full backtrace.
 
 =head1 EXAMPLE
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::AllError qw(err);
 
  print "1\n";

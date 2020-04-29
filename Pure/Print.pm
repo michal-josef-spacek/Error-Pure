@@ -69,11 +69,9 @@ Error::Pure::Print - Error::Pure module for simple error print.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::Print qw(err);
 
  # Error.
@@ -84,11 +82,9 @@ Error::Pure::Print - Error::Pure module for simple error print.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::Print qw(err);
 
  # Error.
@@ -101,11 +97,9 @@ Error::Pure::Print - Error::Pure module for simple error print.
 
  package Example3;
  
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::Print qw(err);
 
  # Test with error.
@@ -115,7 +109,6 @@ Error::Pure::Print - Error::Pure module for simple error print.
 
  package main;
 
- # Pragmas.
  use strict;
  use warnings;
 

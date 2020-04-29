@@ -69,11 +69,9 @@ with informations.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::ErrorList qw(err);
 
  # Error.
@@ -84,11 +82,9 @@ with informations.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Error::Pure::ErrorList qw(err);
 
  # Error.
@@ -99,11 +95,9 @@ with informations.
 
 =head1 EXAMPLE3
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use English qw(-no_match_vars);
  use Error::Pure::ErrorList qw(err);
 

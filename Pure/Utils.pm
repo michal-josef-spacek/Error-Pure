@@ -294,11 +294,9 @@ Default value is 50.
 
 =head1 EXAMPLE1
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use Dumpvalue;
  use Error::Pure::Die qw(err);
  use Error::Pure::Utils qw(err_get);
@@ -342,11 +340,9 @@ Default value is 50.
 
 =head1 EXAMPLE2
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use English qw(-no_match_vars);
  use Error::Pure qw(err);
  use Error::Pure::Utils qw(err_msg);
@@ -371,11 +367,9 @@ Default value is 50.
 
 =head1 EXAMPLE3
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use English qw(-no_match_vars);
  use Error::Pure qw(err);
  use Error::Pure::Utils qw(err_msg_hr);
