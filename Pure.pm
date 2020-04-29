@@ -13,7 +13,7 @@ Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $TYPE_DEFAULT => 'Die';
 Readonly::Scalar my $LEVEL_DEFAULT => 4;
 
-our $VERSION = 0.26;
+our $VERSION = 0.27;
 
 # Type of error.
 our $TYPE = $TYPE_DEFAULT;
@@ -233,6 +233,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.26
+0.27
 
 =cut
