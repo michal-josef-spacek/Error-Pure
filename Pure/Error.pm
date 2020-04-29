@@ -53,6 +53,7 @@ Error::Pure::Error - Error::Pure module with error on one line with informations
 =head1 SYNOPSIS
 
  use Error::Pure::Error qw(err);
+
  err 'This is a fatal error', 'name', 'value';
 
 =head1 SUBROUTINES

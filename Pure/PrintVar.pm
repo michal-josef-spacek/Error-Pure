@@ -54,6 +54,7 @@ Error::Pure::PrintVar - Error::Pure module for simple error print with all varia
 =head1 SYNOPSIS
 
  use Error::Pure::PrintVar qw(err);
+
  err 'This is a fatal error', 'name', 'value';
 
 =head1 SUBROUTINES

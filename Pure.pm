@@ -62,6 +62,7 @@ Error::Pure - Perl module for structured errors.
 =head1 SYNOPSIS
 
  use Error::Pure qw(err);
+
  err 'This is a fatal error', 'name', 'value';
 
 =head1 SUBROUTINES

@@ -54,6 +54,7 @@ with informations.
 =head1 SYNOPSIS
 
  use Error::Pure::ErrorList qw(err);
+
  err "This is a fatal error.", "name", "value";
 
 =head1 SUBROUTINES

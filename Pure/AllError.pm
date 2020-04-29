@@ -53,6 +53,7 @@ Error::Pure::AllError - Error::Pure module with full backtrace.
 =head1 SYNOPSIS
 
  use Error::Pure::AllError qw(err);
+
  err "This is a fatal error.", "name", "value";
 
 =head1 SUBROUTINES

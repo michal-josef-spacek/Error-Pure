@@ -204,6 +204,7 @@ Error::Pure::Utils - Utilities for structured errors.
 =head1 SYNOPSIS
 
  use Error::Pure::Utils qw(clean err_get err_helper err_msg err_msg_hr);
+
  clean();
  my @errors = err_get($clean);
  my @err_msg = err_msg($index);

@@ -55,6 +55,7 @@ Error::Pure::Die - Error::Pure module with classic die.
 =head1 SYNOPSIS
 
  use Error::Pure::Die qw(err);
+
  err 'This is a fatal error', 'name', 'value';
 
 =head1 SUBROUTINES
