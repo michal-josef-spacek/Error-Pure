@@ -39,7 +39,8 @@ Ok
     A pak blbne Error::Pure::err(). Je tam problem s podminkou s LEVELEM.
 34. Vymyslet nejak plugovatelnou konverzi ruznych objektu a die na Error::Pure structury?
 35. Mam jeden vazny problem. Pokud mam nastaveny vykreslovac na nejaky, tak mi nefunguje eval { err "foo"; }
-36.
+36. Nemel bych misto vlastniho handlovani stack trace, resit toto pomoci Devel::StackTrace?
+37.
 
 Applied
 =======
