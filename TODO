@@ -41,7 +41,8 @@ Ok
 35. Mam jeden vazny problem. Pokud mam nastaveny vykreslovac na nejaky, tak mi nefunguje eval { err "foo"; }
 36. Nemel bych misto vlastniho handlovani stack trace, resit toto pomoci Devel::StackTrace?
 37. Kdyz dam $Error::Pure::TYPE = 'Die' a mam env AllError, tak to vypise AllError, nevim proc.
-38.
+38. Muzu nejak vypnout ziskavani stacku?
+39.
 
 Applied
 =======
