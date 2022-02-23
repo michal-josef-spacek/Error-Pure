@@ -1,4 +1,7 @@
 0.27
+ [Common]
+ - Update copyright years.
+
  [Error::Pure]
  - Fix situation, when i set Error::Pure::TYPE (or via ENV variables) and
    this module doesn't exist.
