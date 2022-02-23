@@ -42,7 +42,8 @@ Ok
 36. Nemel bych misto vlastniho handlovani stack trace, resit toto pomoci Devel::StackTrace?
 37. Kdyz dam $Error::Pure::TYPE = 'Die' a mam env AllError, tak to vypise AllError, nevim proc.
 38. Muzu nejak vypnout ziskavani stacku?
-39.
+39. Kdyz nastavim ERROR_PURE_TYPE na neco, co neexistuje, tak mi to zhavaruje, misto detekovani, ze modul neexistuje a prechodu na default.
+40.
 
 Applied
 =======
