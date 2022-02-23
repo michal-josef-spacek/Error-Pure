@@ -36,9 +36,15 @@ sub err {
 	}
 	eval "require $class";
 	if ($EVAL_ERROR) {
-		my $err = $EVAL_ERROR;
-		$err =~ s/\ at.*$//ms;
-		die $err;
+
+		# Switch to default, module doesn't exist.
+		$class = 'Error::Pure::'.$TYPE_DEFAULT;
+		eval "require $class";
+		if ($EVAL_ERROR) {
+			my $err = $EVAL_ERROR;
+			$err =~ s/\ at.*$//ms;
+			die $err;
+		}
 	}
 	eval $class.'::err @msg';
 	if ($EVAL_ERROR) {
