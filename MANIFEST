@@ -51,6 +51,8 @@ t/data/ex1.pl
 t/data/ex2.pl
 t/data/ex3.pl
 t/data/ex4.pl
+t/data/ex5.pl
+t/data/ex6.pl
 t/Error-Pure-AllError/01-use.t
 t/Error-Pure-AllError/02-version.t
 t/Error-Pure-AllError/03-err.t
@@ -81,6 +83,7 @@ t/Error-Pure-Utils/07-err_msg_hr.t
 t/Error-Pure/01-use.t
 t/Error-Pure/02-version.t
 t/Error-Pure/03-err.t
+t/Error-Pure/04-err-script.t
 xt/Error-Pure-AllError/01-pod_coverage.t
 xt/Error-Pure-AllError/02-pod.t
 xt/Error-Pure-Die/01-pod_coverage.t

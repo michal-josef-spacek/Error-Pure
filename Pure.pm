@@ -16,7 +16,7 @@ Readonly::Scalar my $LEVEL_DEFAULT => 4;
 our $VERSION = 0.28;
 
 # Type of error.
-our $TYPE = $TYPE_DEFAULT;
+our $TYPE;
 
 # Level for this class.
 our $LEVEL = $LEVEL_DEFAULT;
@@ -26,7 +26,7 @@ sub err {
 	my @msg = @_;
 	$Error::Pure::Utils::LEVEL = $LEVEL;
 	my $class;
-	if ($TYPE && $TYPE ne $TYPE_DEFAULT) {
+	if (defined $TYPE) {
 		$class = 'Error::Pure::'.$TYPE;
 	} elsif ($ENV{'ERROR_PURE_TYPE'}) {
 		$class = 'Error::Pure::'.
