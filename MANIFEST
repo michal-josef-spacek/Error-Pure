@@ -68,6 +68,7 @@ t/Error-Pure-ErrorList/03-err.t
 t/Error-Pure-Print/01-use.t
 t/Error-Pure-Print/02-version.t
 t/Error-Pure-Print/03-err.t
+t/Error-Pure-Print/04-err-script.t
 t/Error-Pure-Print/T.pm
 t/Error-Pure-PrintVar/01-use.t
 t/Error-Pure-PrintVar/02-version.t
