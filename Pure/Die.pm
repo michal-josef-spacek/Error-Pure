@@ -8,7 +8,7 @@ use Error::Pure::Utils qw(err_helper);
 use List::MoreUtils qw(none);
 use Readonly;
 
-our $VERSION = 0.28;
+our $VERSION = 0.29;
 
 Readonly::Array our @EXPORT_OK => qw(err);
 Readonly::Scalar my $EVAL => 'eval {...}';
@@ -178,6 +178,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.28
+0.29
 
 =cut
