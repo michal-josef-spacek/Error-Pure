@@ -1,6 +1,7 @@
 0.28
  [Common]
  - Change bugtracker to github.
+ - Rename example files to better names.
 
  [Error::Pure]
  - Remove default settings for $Error::Pure::Type variable. It broke

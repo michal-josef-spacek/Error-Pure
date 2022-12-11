@@ -305,6 +305,8 @@ Default value is 50.
 
 =head1 EXAMPLE1
 
+=for comment filename=err_get.pl
+
  use strict;
  use warnings;
 
@@ -351,6 +353,8 @@ Default value is 50.
 
 =head1 EXAMPLE2
 
+=for comment filename=err_msg.pl
+
  use strict;
  use warnings;
 
@@ -377,6 +381,8 @@ Default value is 50.
  # item4
 
 =head1 EXAMPLE3
+
+=for comment filename=err_msg_hr.pl
 
  use strict;
  use warnings;

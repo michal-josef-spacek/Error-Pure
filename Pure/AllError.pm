@@ -66,6 +66,8 @@ Process error with message(s). There is key => value list after first message.
 
 =head1 EXAMPLE
 
+=for comment filename=err_via_all_error.pl
+
  use strict;
  use warnings;
 

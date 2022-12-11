@@ -67,6 +67,8 @@ Process error with message(s). There is key => value list after first message.
 
 =head1 EXAMPLE1
 
+=for comment filename=err_via_print.pl
+
  use strict;
  use warnings;
 
@@ -80,6 +82,8 @@ Process error with message(s). There is key => value list after first message.
 
 =head1 EXAMPLE2
 
+=for comment filename=err_via_print_with_params.pl
+
  use strict;
  use warnings;
 
@@ -92,6 +96,8 @@ Process error with message(s). There is key => value list after first message.
  # 1
 
 =head1 EXAMPLE3
+
+=for comment filename=err_via_print_from_module.pl
 
  package Example3;
  

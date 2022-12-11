@@ -66,6 +66,8 @@ Process error with message(s). There is key => value list after first message.
 
 =head1 EXAMPLE1
 
+=for comment filename=err_via_error.pl
+
  use strict;
  use warnings;
 
@@ -78,6 +80,8 @@ Process error with message(s). There is key => value list after first message.
  # #Error [example1.pl:9] 1
 
 =head1 EXAMPLE2
+
+=for comment filename=err_via_error_with_params.pl
 
  use strict;
  use warnings;
