@@ -1,4 +1,6 @@
 0.29
+ [Common]
+ - Move from List::MoreUtils to List::Util.
 
 0.28 2022-12-11T18:00:17+01:00
  [Common]

@@ -6,7 +6,7 @@ use warnings;
 
 use Error::Pure::Utils qw(err_helper);
 use Error::Pure::Output::Text qw(err_print_var);
-use List::MoreUtils qw(none);
+use List::Util qw(none);
 use Readonly;
 
 # Constants.
@@ -129,7 +129,7 @@ Process error with message(s). There is key => value list after first message.
 L<Error::Pure::Utils>,
 L<Error::Pure::Output::Text>,
 L<Exporter>,
-L<List::MoreUtils>,
+L<List::Util>,
 L<Readonly>.
 
 =head1 SEE ALSO

@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 use Error::Pure::Utils qw(err_helper);
-use List::MoreUtils qw(none);
+use List::Util qw(none);
 use Readonly;
 
 our $VERSION = 0.29;
@@ -147,7 +147,7 @@ Process error with message(s). There is key => value list after first message.
 =head1 DEPENDENCIES
 
 L<Exporter>,
-L<List::MoreUtils>,
+L<List::Util>,
 L<Readonly>.
 
 =head1 SEE ALSO

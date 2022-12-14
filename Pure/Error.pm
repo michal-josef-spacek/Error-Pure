@@ -6,7 +6,7 @@ use warnings;
 
 use Error::Pure::Utils qw(err_helper);
 use Error::Pure::Output::Text qw(err_line);
-use List::MoreUtils qw(none);
+use List::Util qw(none);
 use Readonly;
 
 # Constants.
