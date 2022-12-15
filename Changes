@@ -1,4 +1,6 @@
 0.30
+ [Common]
+ - Fix minimal dependency for List::Util with none().
 
 0.29 2022-12-14T08:27:18+01:00
  [Common]
