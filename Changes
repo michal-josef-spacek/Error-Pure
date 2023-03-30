@@ -1,6 +1,7 @@
 0.31
  [Common]
  - Rewrite from IO::CaptureOutput to Capture::Tiny.
+ - Update copyright years.
 
 0.30 2022-12-15T16:09:25+01:00
  [Common]
