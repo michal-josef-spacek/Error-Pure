@@ -1,4 +1,4 @@
-0.31
+0.31 2023-03-30T19:05:08+02:00
  [Common]
  - Rewrite from IO::CaptureOutput to Capture::Tiny.
  - Update copyright years.
