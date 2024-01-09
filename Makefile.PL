@@ -35,7 +35,7 @@ test_requires 'FindBin' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
 tests_recursive;
-version '0.32';
+version '0.33';
 
 # Run.
 WriteAll();
