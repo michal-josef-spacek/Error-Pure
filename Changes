@@ -1,6 +1,7 @@
 0.32
  [Common]
  - Update Module::Install to 1.21 version.
+ - Update copyright years.
 
  [Error::Pure]
  - Add DESCRIPTION section to doc.
