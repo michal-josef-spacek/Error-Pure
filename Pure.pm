@@ -71,6 +71,22 @@ Error::Pure - Perl module for structured errors.
 
  err 'This is a fatal error', 'name', 'value';
 
+=head1 DESCRIPTION
+
+L<Error::Pure> system is replacement for usage of Perl C<die> or L<Carp> C<croak>.
+
+Main features are:
+
+=over
+
+=item * Structured and defined output
+
+=item * Stack trace support inside
+
+=back
+
+Full description of intent is in L<Error::Pure::Intent>.
+
 =head1 SUBROUTINES
 
 =head2 C<err>

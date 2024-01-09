@@ -2,6 +2,9 @@
  [Common]
  - Update Module::Install to 1.21 version.
 
+ [Error::Pure]
+ - Add DESCRIPTION section to doc.
+
 0.31 2023-03-30T19:05:08+02:00
  [Common]
  - Rewrite from IO::CaptureOutput to Capture::Tiny.

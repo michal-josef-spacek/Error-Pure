@@ -6,6 +6,18 @@ SYNOPSIS
 
      err 'This is a fatal error', 'name', 'value';
 
+DESCRIPTION
+    Error::Pure system is replacement for usage of Perl "die" or Carp
+    "croak".
+
+    Main features are:
+
+    *   Structured and defined output
+
+    *   Stack trace support inside
+
+    Full description of intent is in Error::Pure::Intent.
+
 SUBROUTINES
   "err"
      err 'This is a fatal error', 'name', 'value';
