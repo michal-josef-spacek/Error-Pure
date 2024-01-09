@@ -20,7 +20,7 @@ Main features are:
 
 Simple Perl script, which have two subroutines and there is error inside.
 Error output via L<Error::Pure> is to console and with ANSI colors.
-Output formatter is placed in L<Error::Pure::Output::ANSIColor/error_bt_pretty>.
+Output formatter is placed in L<Error::Pure::Output::ANSIColor/err_bt_pretty>.
 
 Perl script
 

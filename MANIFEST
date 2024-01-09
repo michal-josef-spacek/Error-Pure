@@ -1,4 +1,5 @@
 Changes
+Error/Pure/Intent.pod
 examples/die_via_err.pl
 examples/err_get.pl
 examples/err_in_eval_and_print.pl
@@ -43,7 +44,6 @@ Pure/AllError.pm
 Pure/Die.pm
 Pure/Error.pm
 Pure/ErrorList.pm
-Pure/Intent.pod
 Pure/Print.pm
 Pure/PrintVar.pm
 Pure/Utils.pm
