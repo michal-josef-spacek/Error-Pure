@@ -22,6 +22,18 @@ Simple Perl script, which have two subroutines and there is error inside.
 Error output via L<Error::Pure> is to console and with ANSI colors.
 Output formatter is placed in L<Error::Pure::Output::ANSIColor/err_bt_pretty>.
 
+Environment set of output formatter
+
+ on bash
+ export ERROR_PURE_TYPE=ANSIColor::AllError
+
+ on tcsh
+ setenv ERROR_PURE_TYPE ANSIColor::AllError
+
+Alternative way is add formatter to code
+
+ $Error::Pure::TYPE = 'ANSIColor::AllError';
+
 Perl script
 
  #!/usr/bin/env perl
