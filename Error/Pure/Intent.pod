@@ -59,12 +59,12 @@ Perl script
          ;
  }
 
- first("Hellow world");
+ first("Hello world");
 
 Output to stderr
 
  ERROR: This is error
- Context: Hellow world
+ Context: Hello world
  main  err     /home/skim/data/gitprac/lang/perl/perl/MODULES/Error-Pure/ex19.pl  19
  main  second  /home/skim/data/gitprac/lang/perl/perl/MODULES/Error-Pure/ex19.pl  11
  main  first   /home/skim/data/gitprac/lang/perl/perl/MODULES/Error-Pure/ex19.pl  24
