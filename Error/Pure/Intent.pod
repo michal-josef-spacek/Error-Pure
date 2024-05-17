@@ -81,7 +81,7 @@ Output is in ANSI colors, you could look to image
 
 =head1 Capture error
 
-The sama example as previous with capturing of error and print all information
+The same example as previous with capturing of error and print all information
 which we have. About fetching of information look to L<Error::Pure::Utils>.
 
 Perl script
