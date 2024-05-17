@@ -79,4 +79,90 @@ Output is in ANSI colors, you could look to image
 
 =end html
 
+=head1 Capture error
+
+The sama example as previous with capturing of error and print all information
+which we have. About fetching of information look to L<Error::Pure::Utils>.
+
+Perl script
+
+ #!/usr/bin/env perl
+
+ use strict;
+ use warnings;
+
+ use Data::Printer;
+ use English;
+ use Error::Pure qw(err);
+ use Error::Pure::Utils qw(err_get);
+
+ sub first {
+         my $text = shift;
+
+         second($text);
+
+         return;
+ }
+
+ sub second {
+         my $text = shift;
+
+         err 'This is error',
+                 'Context', $text,
+         ;
+ }
+
+ eval {
+         first("Hello world");
+ };
+ if ($EVAL_ERROR) {
+         print 'EVAL_ERROR: '.$EVAL_ERROR."\n";
+         my @errors = err_get();
+         p @errors;
+ }
+
+Output
+
+ EVAL_ERROR: This is error
+ 
+ [
+     [0] {
+             msg     [
+                 [0] "This is error",
+                 [1] "Context",
+                 [2] "Hello world"
+             ],
+             stack   [
+                 [0] {
+                         args    "('This is error', 'Context', 'Hello world')",
+                         class   "main",
+                         line    22,
+                         prog    "/home/skim/err.pl",
+                         sub     "err"
+                     },
+                 [1] {
+                         args    "('Hello world')",
+                         class   "main",
+                         line    14,
+                         prog    "/home/skim/err.pl",
+                         sub     "second"
+                     },
+                 [2] {
+                         args    "('Hello world')",
+                         class   "main",
+                         line    28,
+                         prog    "/home/skim/err.pl",
+                         sub     "first"
+                     },
+                 [3] {
+                         args    "",
+                         class   "main",
+                         line    27,
+                         prog    "/home/skim/err.pl",
+                         sub     "eval {...}"
+                     }
+             ]
+         }
+ ]
+
 =cut

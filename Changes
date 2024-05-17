@@ -1,5 +1,6 @@
 0.34
  [Common]
+ - Add another use case to Intent doc.
  - Add missing =end html to Intent doc.
  - Add setting of formatter to Intent doc.
  - Fix typo in doc.
